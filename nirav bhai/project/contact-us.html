@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us - Heryatech</title>
+<script src="https://cdn.tailwindcss.com"></script>
+
+<style>
+    /* Simple input focus animation */
+    .input-field {
+        transition: all 0.3s ease;
+    }
+
+    .input-field:focus {
+        box-shadow: 0 0 0 3px rgba(37, 75, 160, 0.2);
+        border-color: #254ba0;
+    }
+</style>
+</head>
+
+<body class="bg-gray-50 font-sans">
+
+<!-- Header -->
+<header class="bg-white shadow-sm py-4">
+    <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+        <h1 class="text-2xl font-bold text-blue-900">Heryatech</h1>
+        <a href="index.html" class="text-blue-900 font-medium hover:text-blue-600 transition">Home</a>
+    </div>
+</header>
+
+<!-- Hero Section -->
+<section class="bg-blue-900 text-white py-16 text-center">
+    <h2 class="text-4xl font-bold mb-4">Get In Touch</h2>
+    <p class="text-lg opacity-90">We would love to hear from you. Send us a message!</p>
+</section>
+
+<!-- Contact Section -->
+<section class="py-16">
+    <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12">
+
+        <!-- Contact Info -->
+        <div>
+            <h3 class="text-2xl font-bold text-blue-900 mb-6">Contact Information</h3>
+
+            <div class="space-y-6 text-gray-700">
+                <div>
+                    <h4 class="font-semibold text-blue-900">📍 Address</h4>
+                    <p>Surat, Gujarat, India</p>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold text-blue-900">📧 Email</h4>
+                    <p>info@heryatech.com</p>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold text-blue-900">📞 Phone</h4>
+                    <p>+91 98765 43210</p>
+                </div>
+            </div>
+
+            <!-- Map Placeholder -->
+            <div class="mt-8 rounded-lg overflow-hidden shadow">
+                <iframe 
+                    class="w-full h-64"
+                    src="https://maps.google.com/maps?q=surat&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="bg-white p-8 rounded-xl shadow-lg">
+            <h3 class="text-2xl font-bold text-blue-900 mb-6">Send Message</h3>
+
+            <form id="contactForm" class="space-y-6">
+                <input type="text" placeholder="Your Name" required
+                    class="w-full border border-gray-300 rounded-lg px-4 py-3 input-field outline-none">
+
+                <input type="email" placeholder="Your Email" required
+                    class="w-full border border-gray-300 rounded-lg px-4 py-3 input-field outline-none">
+
+                <input type="text" placeholder="Subject" required
+                    class="w-full border border-gray-300 rounded-lg px-4 py-3 input-field outline-none">
+
+                <textarea rows="5" placeholder="Your Message" required
+                    class="w-full border border-gray-300 rounded-lg px-4 py-3 input-field outline-none"></textarea>
+
+                <button type="submit"
+                    class="w-full bg-blue-900 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition duration-300">
+                    Send Message
+                </button>
+            </form>
+
+            <p id="successMessage" class="text-green-600 mt-4 hidden font-medium">
+                ✅ Message sent successfully!
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-blue-900 text-white text-center py-6 mt-10">
+    © 2026 Heryatech. All rights reserved.
+</footer>
+
+<script>
+document.getElementById("contactForm").addEventListener("submit", function(e){
+    e.preventDefault();
+    document.getElementById("successMessage").classList.remove("hidden");
+    this.reset();
+});
+</script>
+
+</body>
+</html>

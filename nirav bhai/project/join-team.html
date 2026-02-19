@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Join Our Team | Heryatech</title>
+<script src="https://cdn.tailwindcss.com"></script>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<script>
+tailwind.config = {
+    theme: {
+        extend: {
+            fontFamily: {
+                sans: ['Inter', 'sans-serif'],
+            },
+            colors: {
+                brand: {
+                    dark: '#1a2b4b',
+                    blue: '#254ba0',
+                    lightBlue: '#f0f4ff',
+                }
+            }
+        }
+    }
+}
+</script>
+</head>
+
+<body class="font-sans bg-white text-gray-800">
+<!-- HEADER -->
+<header class="container mx-auto px-4 md:px-6 py-4 md:py-6 flex justify-between items-center">
+
+    <div class="flex items-center gap-2">
+        <div class="w-6 h-6 md:w-8 md:h-8 bg-brand-dark rounded transform rotate-45 flex items-center justify-center">
+            <div class="w-3 h-3 md:w-4 md:h-4 bg-white"></div>
+        </div>
+        <span class="text-xl md:text-2xl font-bold text-brand-dark">
+            Heryatech
+        </span>
+    </div>
+
+    <a href="index.html" class="text-sm md:text-base text-brand-dark hover:text-brand-blue font-medium">
+        ← Back
+    </a>
+
+</header>
+
+<!-- HERO SECTION -->
+<section class="bg-brand-lightBlue py-20">
+    <div class="max-w-6xl mx-auto px-6 text-center">
+        <h1 class="text-5xl font-bold text-brand-dark mb-6">
+            Join Our Team
+        </h1>
+        <p class="text-gray-600 max-w-2xl mx-auto">
+            Become part of a team that builds innovative digital solutions across industries.
+            We are looking for passionate developers, designers and tech enthusiasts.
+        </p>
+    </div>
+</section>
+
+
+<!-- WHY JOIN US -->
+<section class="py-20">
+    <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-10 text-center">
+
+        <div class="p-8 rounded-xl shadow hover:shadow-xl transition hover:scale-105 bg-blue-50">
+            <i class="fas fa-lightbulb text-4xl text-brand-blue mb-4"></i>
+            <h3 class="font-bold text-xl text-brand-dark mb-2">Innovation Driven</h3>
+            <p class="text-gray-600 text-sm">Work on cutting-edge technologies and real-world impactful projects.</p>
+        </div>
+
+        <div class="p-8 rounded-xl shadow hover:shadow-xl transition hover:scale-105 bg-blue-50">
+            <i class="fas fa-users text-4xl text-brand-blue mb-4"></i>
+            <h3 class="font-bold text-xl text-brand-dark mb-2">Collaborative Culture</h3>
+            <p class="text-gray-600 text-sm">We believe in teamwork, creativity and continuous learning.</p>
+        </div>
+
+        <div class="p-8 rounded-xl shadow hover:shadow-xl transition hover:scale-105 bg-blue-50">
+            <i class="fas fa-rocket text-4xl text-brand-blue mb-4"></i>
+            <h3 class="font-bold text-xl text-brand-dark mb-2">Career Growth</h3>
+            <p class="text-gray-600 text-sm">Grow professionally with mentorship and skill development programs.</p>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- APPLICATION FORM -->
+<section class="py-20 bg-gray-50">
+<div class="max-w-4xl mx-auto px-6">
+
+    <div class="bg-white p-10 rounded-2xl shadow-lg">
+        <h2 class="text-3xl font-bold text-brand-dark mb-8 text-center">
+            Apply Now
+        </h2>
+
+        <form class="grid md:grid-cols-2 gap-6">
+
+            <div>
+                <label class="text-sm font-medium text-black">Full Name</label>
+                <input type="text" class="w-full mt-2 p-3 border rounded-lg focus:ring-2 focus:ring-brand-blue focus:outline-none">
+            </div>
+
+            <div>
+                <label class="text-sm font-medium text-black">Email Address</label>
+                <input type="email" class="w-full mt-2 p-3 border rounded-lg focus:ring-2 focus:ring-brand-blue focus:outline-none">
+            </div>
+
+            <div>
+                <label class="text-sm font-medium text-black">Phone Number</label>
+                <input type="tel" class="w-full mt-2 p-3 border rounded-lg focus:ring-2 focus:ring-brand-blue focus:outline-none">
+            </div>
+
+            <div>
+                <label class="text-sm font-medium text-black">Position Applying For</label>
+                <select class="w-full mt-2 p-3 border rounded-lg focus:ring-2 focus:ring-brand-blue focus:outline-none">
+                    <option>Frontend Developer</option>
+                    <option>Backend Developer</option>
+                    <option>UI/UX Designer</option>
+                    <option>Mobile App Developer</option>
+                    <option>Digital Marketing Executive</option>
+                </select>
+            </div>
+
+            <div class="md:col-span-2">
+                <label class="text-sm font-medium text-black">Cover Letter</label>
+                <textarea rows="4" class="w-full mt-2 p-3 border rounded-lg focus:ring-2 focus:ring-brand-blue focus:outline-none"></textarea>
+            </div>
+
+            <div class="md:col-span-2">
+                <label class="text-sm font-medium text-black">Upload Resume</label>
+                <input type="file" class="w-full mt-2">
+            </div>
+
+            <div class="md:col-span-2 text-center">
+                <button type="submit" class="bg-brand-blue text-white px-10 py-3 rounded-lg hover:bg-blue-800 transition">
+                    Submit Application
+                </button>
+            </div>
+
+        </form>
+    </div>
+
+</div>
+</section>
+
+
+
+
+<!-- FOOTER -->
+<footer class="bg-[#0f172a] text-gray-300 py-10 text-center">
+    <p class="text-sm">© 2026 Heryatech. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
