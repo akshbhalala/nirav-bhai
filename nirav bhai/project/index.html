@@ -1,0 +1,1275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heryatech</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            dark: '#1a2b4b',
+                            blue: '#254ba0',
+                            lightBlue: '#f0f4ff',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Background Map Styles */
+        .map-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://www.transparenttextures.com/patterns/cubes.png') repeat;
+            opacity: 0.05;
+            z-index: 0;
+        }
+
+        /* Dropdown Styles */
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-menu {
+            width: auto;
+            height: auto;
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            z-index: 50;
+            min-width: 200px;
+        }
+
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+
+        .dropdown-menu a {
+            display: block;
+            padding: 0.5rem 1rem;
+            color: #374151;
+            text-decoration: none;
+            transition: background 0.2s;
+        }
+
+        .dropdown-menu a:hover {
+            background: #f3f4f6;
+        }
+    </style>
+</head>
+
+<body class="font-sans text-gray-800 relative min-h-screen overflow-x-hidden bg-white">
+
+    <!-- Background Map -->
+    <div class="map-bg"></div>
+
+    <!-- Header -->
+    <header class="container mx-auto px-6 py-6 flex justify-between items-center relative z-50">
+        <!-- Logo -->
+        <div class="flex items-center gap-2 cursor-pointer">
+            <!-- <div class="w-8 h-8 bg-brand-dark rounded transform rotate-45 flex items-center justify-center"> -->
+            <img src="c:\Users\Admin\Pictures\logo.jpeg" alt="Heryatech Logo"
+                class="w-14 h-14 rounded transform rotate-0 object-cover">
+            <span class="text-2xl font-bold text-brand-dark mr-50">Heryatech</span>
+            <div class="w-4 h-4 bg-white"></div>
+        </div>
+
+
+
+
+        <!-- Navigation -->
+        <nav class="hidden md:flex space-x-8 text-brand-dark font-medium text-sm">
+            <div class="dropdown relative">
+                <a href="#" class="hover:text-brand-blue transition flex items-center gap-1">
+                    Services <i class="fas fa-chevron-down text-xs"></i>
+                </a>
+                <div
+                    class="dropdown-menu absolute left-0 top-full mt-3 bg-white shadow-xl rounded-xl p-6 w-[550px] hidden">
+                    <div class="grid grid-cols-2 gap-2 text-sm text-gray-700">
+                        <a href="web-dev.html"><i class="fas fa-code w-5 text-gray-400"></i> Web Development</a>
+                        <a href="mobile-dev.html"><i class="fas fa-mobile-alt w-5 text-gray-400"></i> Mobile App
+                            Development</a>
+                        <a href="cloud-devops.html"><i class="fas fa-cloud w-5 text-gray-400"></i> Cloud & DevOps
+                            Services</a>
+                        <a href="ui-ux.html"><i class="fas fa-pencil-ruler w-5 text-gray-400"></i> UI/UX & Graphics
+                            Design</a>
+                        <a href="ar-dev.html"><i class="fas fa-vr-cardboard w-5 text-gray-400"></i> Augmented
+                            Reality</a>
+                        <a href="game-dev.html"><i class="fas fa-gamepad w-5 text-gray-400"></i> Game Development</a>
+                        <a href="digital-marketing.html"><i class="fas fa-bullhorn w-5 text-gray-400"></i> Digital
+                            Marketing</a>
+                        <a href="seo.html"><i class="fas fa-search w-5 text-gray-400"></i> SEO Optimization</a>
+                        <a href="q-testing.html"><i class="fas fa-bug w-5 text-gray-400"></i> Quality Analysis (QA)</a>
+                        <a href="erp.html"><i class="fas fa-cogs w-5 text-gray-400"></i> ERP Consultation</a>
+                    </div>
+                </div>
+            </div>
+            <div class="dropdown relative">
+                <a href="#" class="hover:text-brand-blue transition flex items-center gap-1">
+                    Industries <i class="fas fa-chevron-down text-xs"></i>
+                </a>
+
+                <div
+                    class="dropdown-menu absolute left-1/2 -translate-x-1/2 top-full mt-3 bg-white shadow-xl rounded-xl p-6 w-[550px] hidden">
+
+                    <div class="grid grid-cols-2 gap-2 text-sm text-gray-700">
+
+                        <a href="Healthcare.html"><i class="fas fa-briefcase-medical w-5 text-gray-400"></i>
+                            Healthcare</a>
+                        <a href="Banking & Finance.html"><i class="fas fa-building-columns w-5 text-gray-400"></i>
+                            Banking & Finance</a>
+                        <a href="Education & eLearning.html"><i class="fas fa-graduation-cap w-5 text-gray-400"></i>
+                            Education & eLearning</a>
+                        <a href="Retail & eCommerce.html"><i class="fas fa-store w-5 text-gray-400"></i> Retail &
+                            eCommerce</a>
+                        <a href="Real Estate.html"><i class="fas fa-warehouse w-5 text-gray-400"></i> Real Estate</a>
+                        <a href="Manufacturing.html"><i class="fas fa-industry w-5 text-gray-400"></i> Manufacturing</a>
+                        <a href="Logistics & Transportation.html"><i class="fas fa-truck w-5 text-gray-400"></i>
+                            Logistics & Transportation</a>
+                        <a href="Travel & Hospitality.html"><i class="fas fa-plane w-5 text-gray-400"></i> Travel &
+                            Hospitality</a>
+                        <a href="Media & Entertainment.html"><i class="fas fa-film w-5 text-gray-400"></i> Media &
+                            Entertainment</a>
+                        <a href="Government.html"><i class="fas fa-landmark-dome w-5 text-gray-400"></i> Government &
+                            Public Sector</a>
+
+                    </div>
+
+                </div>
+            </div>
+            <div class="dropdown relative">
+                <a href="#" class="hover:text-brand-blue transition flex items-center gap-1">
+                    Technologies <i class="fas fa-chevron-down text-xs"></i>
+                </a>
+
+                <div
+                    class="dropdown-menu absolute left-1/2 -translate-x-1/2 top-full mt-3 bg-white shadow-xl rounded-xl p-6 w-[650px] hidden">
+
+                    <div class="grid grid-cols-3 gap-2 text-sm text-gray-700">
+                        <div>
+                            <h4
+                                class="font-bold text-brand-dark mb-2 px-4 uppercase text-xs tracking-wider border-b pb-1">
+                                Mobile</h4>
+                            <a href="React Native.html">React Native</a>
+                            <a href="Flutter.html">Flutter</a>
+                            <a href="iOS.html">iOS</a>
+                            <a href="Android.html">Android</a>
+                        </div>
+                        <div>
+                            <h4
+                                class="font-bold text-brand-dark mb-2 px-4 uppercase text-xs tracking-wider border-b pb-1">
+                                Frontend</h4>
+                            <a href="React.js.html">React.js</a>
+                            <a href="Angular.html">Angular</a>
+                            <a href="Vue.js.html">Vue.js</a>
+                            <a href="Next.js.html">Next.js</a>
+                        </div>
+                        <div>
+                            <h4
+                                class="font-bold text-brand-dark mb-2 px-4 uppercase text-xs tracking-wider border-b pb-1">
+                                Backend & DB</h4>
+                            <a href="#">Node.js</a>
+                            <a href="#">Python / Django</a>
+                            <a href="#">Java / SpringCore</a>
+                            <a href="#">Database / SQL</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <a href="#" class="hover:text-brand-blue transition">Products</a>
+            <a href="#" class="hover:text-brand-blue transition">Company</a>
+        </nav>
+
+        <!-- CTA Button -->
+        <a href="Start a Project.html"
+            class="bg-brand-dark text-white px-6 py-2.5 rounded shadow-lg hover:bg-blue-900 transition flex items-center gap-2 text-sm font-medium">
+            Start a Project
+            <i class="fas fa-rocket text-xs"></i>
+        </a>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-6 pt-12 pb-24">
+
+        <!-- Hero Section -->
+        <div class="grid md:grid-cols-2 gap-12 items-center mb-24">
+            <!-- Hero Text -->
+            <div class="space-y-6">
+                <h1 class="text-4xl md:text-5xl lg:text-4xl font-bold text-brand-dark leading-tight">
+                    Transforming Challenges <br>
+                    Into Opportunities <br>
+                    With <span class="text-brand-blue">Game Development</span>
+                </h1>
+            </div>
+
+            <!-- Hero Image -->
+            <div class="relative flex justify-center md:justify-end">
+                <!-- 3D Mobile Game Illustration Placeholder -->
+                <div class="relative w-full max-w-md">
+                    <!-- Recreating the vibe with an image -->
+                    <img src="https://cdni.iconscout.com/illustration/premium/thumb/game-development-illustration-download-in-svg-png-gif-file-formats--programming-coding-online-games-technology-pack-network-communication-illustrations-4609653.png"
+                        alt="Game Development 3D Illustration" class="w-full h-auto drop-shadow-2xl animate-float">
+                </div>
+            </div>
+        </div>
+
+        <!-- Stats Section -->
+        <div class="mb-32">
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-10 text-center">
+                <div class="stat-item">
+                    <div class="flex justify-center items-baseline gap-1 text-brand-blue font-bold">
+                        <h3 class="text-4xl counter" data-target="30">0</h3>
+                        <span class="text-2xl">+</span>
+                    </div>
+                    <p class="text-brand-dark font-bold mt-1">Country</p>
+                    <p class="text-gray-500 text-xs">we served</p>
+                </div>
+                <div class="stat-item">
+                    <div class="flex justify-center items-baseline gap-1 text-brand-blue font-bold">
+                        <h3 class="text-4xl counter" data-target="250">0</h3>
+                        <span class="text-2xl">+</span>
+                    </div>
+                    <p class="text-brand-dark font-bold mt-1">Clients</p>
+                    <p class="text-gray-500 text-xs">we worked with</p>
+                </div>
+                <div class="stat-item">
+                    <div class="flex justify-center items-baseline gap-1 text-brand-blue font-bold">
+                        <h3 class="text-4xl counter" data-target="500">0</h3>
+                        <span class="text-2xl">+</span>
+                    </div>
+                    <p class="text-brand-dark font-bold mt-1">Projects</p>
+                    <p class="text-gray-500 text-xs">we completed</p>
+                </div>
+                <div class="stat-item">
+                    <div class="flex justify-center items-baseline gap-1 text-brand-blue font-bold">
+                        <h3 class="text-4xl counter" data-target="30">0</h3>
+                        <span class="text-2xl">+</span>
+                    </div>
+                    <p class="text-brand-dark font-bold mt-1">Industries</p>
+                    <p class="text-gray-500 text-xs">we work for</p>
+                </div>
+                <div class="stat-item">
+                    <div class="flex justify-center items-baseline gap-1 text-brand-blue font-bold">
+                        <h3 class="text-4xl counter" data-target="75">0</h3>
+                        <span class="text-2xl">+</span>
+                    </div>
+                    <p class="text-brand-dark font-bold mt-1">Team</p>
+                    <p class="text-gray-500 text-xs">we built</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 360 Degree Services Section -->
+        <div class="relative w-full max-w-6xl mx-auto">
+
+            <!-- Top Row Icons -->
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-8 mb-16 relative z-10">
+                <!-- Item 1 -->
+                <div class="flex flex-col items-center text-center group">
+                    <div
+                        class="w-16 h-16 rounded-2xl bg-white border border-blue-100 shadow-lg flex items-center justify-center mb-4 icon-box group-hover:border-brand-blue transition-colors">
+                        <i class="fas fa-code text-2xl text-brand-blue"></i>
+                    </div>
+                    <a class="text-xs font-medium text-gray-700 max-w-[100px] hover:text-brand-blue transition-colors"
+                        href="web-dev.html">Web Development</a>
+                    <!-- Line connector placeholder -->
+                    <div
+                        class="hidden md:block absolute top-16 left-[10%] w-[1px] h-20 bg-gradient-to-b from-blue-100 to-transparent -z-10">
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="flex flex-col items-center text-center group">
+                    <div
+                        class="w-16 h-16 rounded-2xl bg-white border border-blue-100 shadow-lg flex items-center justify-center mb-4 icon-box group-hover:border-brand-blue transition-colors">
+                        <i class="fas fa-mobile-alt text-2xl text-brand-blue"></i>
+                    </div>
+                    <a class="text-xs font-medium text-gray-700 max-w-[100px] hover:text-brand-blue transition-colors"
+                        href="mobile-dev.html">Mobile App Development</a>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="flex flex-col items-center text-center group">
+                    <div
+                        class="w-16 h-16 rounded-2xl bg-white border border-blue-100 shadow-lg flex items-center justify-center mb-4 icon-box group-hover:border-brand-blue transition-colors">
+                        <i class="fas fa-cloud text-2xl text-brand-blue"></i>
+                    </div>
+                    <a class="text-xs font-medium text-gray-700 max-w-[100px] hover:text-brand-blue transition-colors"
+                        href="cloud-devops.html">Cloud & DevOps Services</a>
+                </div>
+
+                <!-- Item 4 -->
+                <div class="flex flex-col items-center text-center group">
+                    <div
+                        class="w-16 h-16 rounded-2xl bg-white border border-blue-100 shadow-lg flex items-center justify-center mb-4 icon-box group-hover:border-brand-blue transition-colors">
+                        <i class="fas fa-pencil-ruler text-2xl text-brand-blue"></i>
+                    </div>
+                    <a class="text-xs font-medium text-gray-700 max-w-[100px] hover:text-brand-blue transition-colors"
+                        href="ui-ux.html">UI/UX & Graphics Design</a>
+                </div>
+
+                <!-- Item 5 -->
+                <div class="flex flex-col items-center text-center group">
+                    <div
+                        class="w-16 h-16 rounded-2xl bg-white border border-blue-100 shadow-lg flex items-center justify-center mb-4 icon-box group-hover:border-brand-blue transition-colors">
+                        <i class="fas fa-vr-cardboard text-2xl text-brand-blue"></i>
+                    </div>
+                    <a class="text-xs font-medium text-gray-700 max-w-[100px] hover:text-brand-blue transition-colors"
+                        href="ar-dev.html">Augmented Reality Development</a>
+                </div>
+            </div>
+
+            <!-- Center Text -->
+            <div class="text-center py-8 relative z-10">
+                <h2 class="text-5xl md:text-6xl font-bold text-brand-blue mb-2">360 Degree</h2>
+                <p class="text-xl font-bold text-brand-dark">IT Services & Consulting</p>
+            </div>
+
+            <!-- Circuit Lines (SVG Overlay) -->
+            <svg class="absolute top-0 left-0 w-full h-full pointer-events-none hidden md:block" style="z-index: 0;">
+                <!-- We will draw lines from icons to center roughly -->
+                <!-- Assuming center is around 50% width, 50% height -->
+                <!-- Top Row Lines -->
+                <path d="M100,80 Q100,200 500,250" stroke="#e5e7eb" stroke-width="1" fill="none" />
+                <path d="M300,80 Q300,200 520,250" stroke="#e5e7eb" stroke-width="1" fill="none" />
+                <path d="M550,80 L550,230" stroke="#e5e7eb" stroke-width="1" fill="none" />
+                <path d="M800,80 Q800,200 580,250" stroke="#e5e7eb" stroke-width="1" fill="none" />
+                <path d="M1000,80 Q1000,200 600,250" stroke="#e5e7eb" stroke-width="1" fill="none" />
+
+                <!-- Bottom Row Lines -->
+                <path d="M100,500 Q100,380 500,330" stroke="#e5e7eb" stroke-width="1" fill="none" />
+                <path d="M300,500 Q300,380 520,330" stroke="#e5e7eb" stroke-width="1" fill="none" />
+                <path d="M550,500 L550,350" stroke="#e5e7eb" stroke-width="1" fill="none" />
+                <path d="M800,500 Q800,380 580,330" stroke="#e5e7eb" stroke-width="1" fill="none" />
+                <path d="M1000,500 Q1000,380 600,330" stroke="#e5e7eb" stroke-width="1" fill="none" />
+            </svg>
+            <!-- Bottom Row Icons -->
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-8 mt-16 relative z-10">
+                <!-- Item 6 -->
+                <div class="flex flex-col items-center text-center group">
+                    <div
+                        class="w-16 h-16 rounded-2xl bg-white border border-blue-100 shadow-lg flex items-center justify-center mb-4 icon-box group-hover:border-brand-blue transition-colors">
+                        <i class="fas fa-gamepad text-2xl text-brand-blue"></i>
+                    </div>
+                    <a class="text-xs font-medium text-gray-700 max-w-[100px] hover:text-brand-blue transition-colors"
+                        href="game-dev.html">
+                        Game Development</a>
+                </div>
+
+                <!-- Item 7 -->
+                <div class="flex flex-col items-center text-center group">
+                    <div
+                        class="w-16 h-16 rounded-2xl bg-white border border-blue-100 shadow-lg flex items-center justify-center mb-4 icon-box group-hover:border-brand-blue transition-colors">
+                        <i class="fas fa-bullhorn text-2xl text-brand-blue"></i>
+                    </div>
+                    <a class="text-xs font-medium text-gray-700 max-w-[100px] hover:text-brand-blue transition-colors"
+                        href="digital-marketing.html">Digital Marketing</a>
+                </div>
+
+                <!-- Item 8 -->
+                <div class="flex flex-col items-center text-center group">
+                    <div
+                        class="w-16 h-16 rounded-2xl bg-white border border-blue-100 shadow-lg flex items-center justify-center mb-4 icon-box group-hover:border-brand-blue transition-colors">
+                        <i class="fas fa-search text-2xl text-brand-blue"></i>
+                    </div>
+                    <a class="text-xs font-medium text-gray-700 max-w-[100px] hover:text-brand-blue transition-colors"
+                        href="seo.html">SEO</a>
+                </div>
+
+                <!-- Item 9 -->
+                <div class="flex flex-col items-center text-center group">
+                    <div
+                        class="w-16 h-16 rounded-2xl bg-white border border-blue-100 shadow-lg flex items-center justify-center mb-4 icon-box group-hover:border-brand-blue transition-colors">
+                        <i class="fas fa-bug text-2xl text-brand-blue"></i>
+                    </div>
+                    <a class="text-xs font-medium text-gray-700 max-w-[100px] hover:text-brand-blue transition-colors"
+                        href="q-testing.html">Quality Analysis (Testing)</a>
+                </div>
+
+                <!-- Item 10 -->
+                <div class="flex flex-col items-center text-center group">
+                    <div
+                        class="w-16 h-16 rounded-2xl bg-white border border-blue-100 shadow-lg flex items-center justify-center mb-4 icon-box group-hover:border-brand-blue transition-colors">
+                        <i class="fas fa-cogs text-2xl text-brand-blue"></i>
+                    </div>
+                    <a class="text-xs font-medium text-gray-700 max-w-[100px] hover:text-brand-blue transition-colors"
+                        href="erp.html">ERP Consultation & Support</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- How Do We Work Section -->
+        <div class="mt-32 mb-24">
+            <!-- Header -->
+            <div class="text-center mb-16 max-w-4xl mx-auto">
+                <h2
+                    class="text-4xl font-bold text-brand-dark mb-4 inline-block relative pb-2 border-b-4 border-brand-blue">
+                    How Do We Work?</h2>
+                <p class="text-gray-600 mt-6">We are a pleasure to work with and so is our approach straightforward.
+                    Mark our words, we'll redefine what you expect from a leading Software Development Company in USA
+                    hereafter.</p>
+            </div>
+
+            <!-- Timeline Items -->
+            <div class="max-w-5xl mx-auto relative space-y-12">
+
+                <!-- Item 1 -->
+                <div class="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] gap-4 items-center">
+                    <div class="hidden md:flex justify-end pr-8">
+                        <span class="text-8xl font-bold timeline-number opacity-30 hover:text-brand-blue">1</span>
+                    </div>
+                    <div class="flex flex-col items-center relative z-10">
+                        <div
+                            class="w-16 h-16 bg-brand-dark diamond-shape flex items-center justify-center shadow-lg text-white">
+                            <div class="diamond-inner">
+                                <i class="fas fa-clipboard-list text-2xl"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pl-0 md:pl-8 text-center md:text-left relative">
+                        <div
+                            class="hidden md:block absolute left-0 top-1/2 -translate-y-1/2 w-8 border-t-2 border-dashed border-blue-200 -ml-8">
+                        </div>
+                        <h3 class="text-xl font-bold text-brand-blue mb-2">Learning & Planning</h3>
+                        <p class="text-gray-600 text-sm">We'll start with a deep understanding of the client's
+                            expectations to create a custom strategy that fits your goals & requirements.</p>
+                        <div class="md:hidden mt-2 text-6xl font-bold timeline-number opacity-20 mx-auto w-max hover:text-brand-blue">1</div>
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] gap-4 items-center">
+                    <div class="pr-0 md:pr-8 text-center md:text-right relative order-2 md:order-1">
+                        <div
+                            class="hidden md:block absolute right-0 top-1/2 -translate-y-1/2 w-8 border-t-2 border-dashed border-blue-200 -mr-8">
+                        </div>
+                        <h3 class="text-xl font-bold text-brand-blue mb-2">UX & Design</h3>
+                        <p class="text-gray-600 text-sm">An intuitive & visual-treat interface is crafted by our
+                            talented designers for seamless user experience across all platforms.</p>
+                        <div class="md:hidden mt-2 text-6xl font-bold timeline-number opacity-20 mx-auto w-max hover:text-brand-blue">2</div>
+                    </div>
+                    <div class="flex flex-col items-center relative z-10 order-1 md:order-2">
+                        <div
+                            class="w-16 h-16 bg-brand-dark diamond-shape flex items-center justify-center shadow-lg text-white">
+                            <div class="diamond-inner">
+                                <i class="fas fa-bezier-curve text-2xl"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hidden md:flex justify-start pl-8 order-3">
+                        <span class="text-8xl font-bold timeline-number opacity-30 hover:text-brand-blue">2</span>
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] gap-4 items-center">
+                    <div class="hidden md:flex justify-end pr-8">
+                        <span class="text-8xl font-bold timeline-number opacity-30 hover:text-brand-blue">3</span>
+                    </div>
+                    <div class="flex flex-col items-center relative z-10">
+                        <div
+                            class="w-16 h-16 bg-brand-dark diamond-shape flex items-center justify-center shadow-lg text-white">
+                            <div class="diamond-inner">
+                                <i class="fas fa-laptop-code text-2xl"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pl-0 md:pl-8 text-center md:text-left relative">
+                        <div
+                            class="hidden md:block absolute left-0 top-1/2 -translate-y-1/2 w-8 border-t-2 border-dashed border-blue-200 -ml-8">
+                        </div>
+                        <h3 class="text-xl font-bold text-brand-blue mb-2">Development</h3>
+                        <p class="text-gray-600 text-sm">Our expert developers will implement best practices for robust
+                            and scalable solutions coupled with cutting-edge technologies</p>
+                        <div class="md:hidden mt-2 text-6xl font-bold timeline-number opacity-20 mx-auto w-max hover:text-brand-blue">3</div>
+                    </div>
+                </div>
+
+                <!-- Item 4 -->
+                <div class="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] gap-4 items-center">
+                    <div class="pr-0 md:pr-8 text-center md:text-right relative order-2 md:order-1">
+                        <div
+                            class="hidden md:block absolute right-0 top-1/2 -translate-y-1/2 w-8 border-t-2 border-dashed border-blue-200 -mr-8">
+                        </div>
+                        <h3 class="text-xl font-bold text-brand-blue mb-2">Testing & Quality Assurance</h3>
+                        <p class="text-gray-600 text-sm">Each visible element is thoroughly tested for optimal
+                            performance, reliability & security keeping the end-user's vision at the core.</p>
+                        <div class="md:hidden mt-2 text-6xl font-bold timeline-number opacity-20 mx-auto w-max hover:text-brand-blue">4</div>
+                    </div>
+                    <div class="flex flex-col items-center relative z-10 order-1 md:order-2">
+                        <div
+                            class="w-16 h-16 bg-brand-dark diamond-shape flex items-center justify-center shadow-lg text-white">
+                            <div class="diamond-inner">
+                                <i class="fas fa-check-circle text-2xl"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hidden md:flex justify-start pl-8 order-3">
+                        <span class="text-8xl font-bold timeline-number opacity-30 hover:text-brand-blue">4</span>
+                    </div>
+                </div>
+
+                <!-- Item 5 -->
+                <div class="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] gap-4 items-center">
+                    <div class="hidden md:flex justify-end pr-8">
+                        <span class="text-8xl font-bold timeline-number opacity-30 hover:text-brand-blue">5</span>
+                    </div>
+                    <div class="flex flex-col items-center relative z-10">
+                        <div
+                            class="w-16 h-16 bg-brand-dark diamond-shape flex items-center justify-center shadow-lg text-white">
+                            <div class="diamond-inner">
+                                <i class="fas fa-rocket text-2xl"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pl-0 md:pl-8 text-center md:text-left relative">
+                        <div
+                            class="hidden md:block absolute left-0 top-1/2 -translate-y-1/2 w-8 border-t-2 border-dashed border-blue-200 -ml-8">
+                        </div>
+                        <h3 class="text-xl font-bold text-brand-blue mb-2">Deployment</h3>
+                        <p class="text-gray-600 text-sm">Your digital solution is launched with our seamless deployment
+                            practices for ensuring maximum efficacy & bug-free run.</p>
+                        <div class="md:hidden mt-2 text-6xl font-bold timeline-number opacity-20 mx-auto w-max hover:text-brand-blue">5</div>
+                    </div>
+                </div>
+
+                <!-- Item 6 -->
+                <div class="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] gap-4 items-center">
+                    <div class="pr-0 md:pr-8 text-center md:text-right relative order-2 md:order-1">
+                        <div
+                            class="hidden md:block absolute right-0 top-1/2 -translate-y-1/2 w-8 border-t-2 border-dashed border-blue-200 -mr-8">
+                        </div>
+                        <h3 class="text-xl font-bold text-brand-blue mb-2">Maintenance</h3>
+                        <p class="text-gray-600 text-sm">We provide extensive support post-launch with timely updates
+                            and maintenance services to ensure smooth app performance.</p>
+                        <div class="md:hidden mt-2 text-6xl font-bold timeline-number opacity-20 mx-auto w-max hover:text-brand-blue">6</div>
+                    </div>
+                    <div class="flex flex-col items-center relative z-10 order-1 md:order-2">
+                        <div
+                            class="w-16 h-16 bg-brand-dark diamond-shape flex items-center justify-center shadow-lg text-white">
+                            <div class="diamond-inner">
+                                <i class="fas fa-tools text-2xl"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hidden md:flex justify-start pl-8 order-3">
+                        <span class="text-8xl font-bold timeline-number opacity-30 hover:text-brand-blue">6</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Industries We Serve Section -->
+        <div class="mt-32 mb-16">
+            <!-- Header -->
+            <div class="text-center mb-16 max-w-4xl mx-auto">
+                <h2
+                    class="text-4xl font-bold text-brand-dark mb-4 inline-block relative pb-2 border-b-4 border-brand-blue">
+                    Industries Which We Serve The Solutions</h2>
+                <p class="text-gray-600 mt-6 px-4">While we brief them all here, the list could be endless. The top
+                    industries we serve digital solutions are right in front of your eyes!</p>
+            </div>
+
+            <!-- Industries Grid -->
+            <div class="max-w-6xl mx-auto px-4">
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-y-12 gap-x-8 text-center">
+
+                    <!-- Row 1 -->
+                    <div class="group cursor-pointer">
+                        <div class="mb-3 text-brand-blue group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-plane text-4xl"></i>
+                        </div>
+                        <a href="Travel.html"
+                            class="text-gray-600 font-medium hover:text-brand-blue transition-colors duration-300">Travel</a>
+                    </div>
+
+                    <div class="group cursor-pointer">
+                        <div class="mb-3 text-brand-blue group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-table-tennis-paddle-ball text-4xl"></i>
+                        </div>
+                        <a href="Sports.html"
+                            class="text-gray-600 font-medium hover:text-brand-blue transition-colors duration-300">Sports</a>
+                    </div>
+
+                    <div class="group cursor-pointer">
+                        <div class="mb-3 text-brand-blue group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-piggy-bank text-4xl"></i>
+                        </div>
+                        <a href="Fintech.html"
+                            class="text-gray-600 font-medium hover:text-brand-blue transition-colors duration-300">Fintech</a>
+                    </div>
+
+                    <div class="group cursor-pointer">
+                        <div class="mb-3 text-brand-blue group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-dumbbell text-4xl"></i>
+                        </div>
+                        <a href="Fitness.html"
+                            class="text-gray-600 font-medium hover:text-brand-blue transition-colors duration-300">Fitness</a>
+                    </div>
+
+                    <div class="group cursor-pointer">
+                        <div class="mb-3 text-brand-blue group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-graduation-cap text-4xl"></i>
+                        </div>
+                        <a href="Education.html"
+                            class="text-gray-600 font-medium hover:text-brand-blue transition-colors duration-300">Education</a>
+                    </div>
+
+                    <!-- Row 2 -->
+                    <div class="group cursor-pointer">
+                        <div class="mb-3 text-brand-blue group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-warehouse text-4xl"></i>
+                        </div>
+                        <a href="Real Estate.html"
+                            class="text-gray-600 font-medium hover:text-brand-blue transition-colors duration-300">Real
+                            Estate</a>
+                    </div>
+
+                    <div class="group cursor-pointer">
+                        <div class="mb-3 text-brand-blue group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-store text-4xl"></i>
+                        </div>
+                        <a href="Ecommerce.html"
+                            class="text-gray-600 font-medium hover:text-brand-blue transition-colors duration-300">Ecommerce</a>
+                    </div>
+
+                    <div class="group cursor-pointer">
+                        <div class="mb-3 text-brand-blue group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-briefcase-medical text-4xl"></i>
+                        </div>
+                        <a href="Healthcare.html"
+                            class="text-gray-600 font-medium hover:text-brand-blue transition-colors duration-300">Healthcare</a>
+                    </div>
+
+                    <div class="group cursor-pointer">
+                        <div class="mb-3 text-brand-blue group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-seedling text-4xl"></i>
+                        </div>
+                        <a href="Agriculture.html"
+                            class="text-gray-600 font-medium hover:text-brand-blue transition-colors duration-300">Agriculture</a>
+                    </div>
+
+                    <div class="group cursor-pointer">
+                        <div class="mb-3 text-brand-blue group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-microphone-lines text-4xl"></i>
+                        </div>
+                        <a href="Media & Entertainment.html"
+                            class="text-gray-600 font-medium hover:text-brand-blue transition-colors duration-300">Media
+                            & <br> Entertainment</a>
+                    </div>
+
+                    <!-- Row 3 -->
+                    <div class="group cursor-pointer">
+                        <div class="mb-3 text-brand-blue group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-dolly text-4xl"></i>
+                        </div>
+                        <a href="Logistics.html"
+                            class="text-gray-600 font-medium hover:text-brand-blue transition-colors duration-300">Logistics</a>
+                    </div>
+
+                    <div class="group cursor-pointer">
+                        <div class="mb-3 text-brand-blue group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-utensils text-4xl"></i>
+                        </div>
+                        <a href="Restaurant.html"
+                            class="text-gray-600 font-medium hover:text-brand-blue transition-colors duration-300">Restaurant</a>
+                    </div>
+
+                    <div class="group cursor-pointer">
+                        <div class="mb-3 text-brand-blue group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-car text-4xl"></i>
+                        </div>
+                        <a href="Automotive.html"
+                            class="text-gray-600 font-medium hover:text-brand-blue transition-colors duration-300">Automotive</a>
+                    </div>
+
+                    <div class="group cursor-pointer">
+                        <div class="mb-3 text-brand-blue group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-building-columns text-4xl"></i>
+                        </div>
+                        <a href="Banking & Finance.html"
+                            class="text-gray-600 font-medium hover:text-brand-blue transition-colors duration-300">Banking</a>
+                    </div>
+
+                    <div class="group cursor-pointer">
+                        <div class="mb-3 text-brand-blue group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-file-shield text-4xl"></i>
+                        </div>
+                        <a href="Insurance.html"
+                            class="text-gray-600 font-medium hover:text-brand-blue transition-colors duration-300">Insurance</a>
+                    </div>
+
+                    <!-- Row 4 (Centered 3 items) -->
+                    <div class="col-span-2 sm:col-span-1 md:col-start-2 group cursor-pointer">
+                        <div class="mb-3 text-brand-blue group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-solar-panel text-4xl"></i>
+                        </div>
+                        <a href="Renewable Energy.html"
+                            class="text-gray-600 font-medium hover:text-brand-blue transition-colors duration-300">Renewable
+                            <br> Energy</a>
+                    </div>
+
+                    <div class="col-span-2 sm:col-span-1 group cursor-pointer">
+                        <div class="mb-3 text-brand-blue group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-gem text-4xl"></i>
+                        </div>
+                        <a href="Jewellery & Diamond.html"
+                            class="text-gray-600 font-medium hover:text-brand-blue transition-colors duration-300">Jewellery
+                            & <br> Diamond</a>
+                    </div>
+
+                    <div class="col-span-2 sm:col-span-1 group cursor-pointer">
+                        <div class="mb-3 text-brand-blue group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-landmark-dome text-4xl"></i>
+                        </div>
+                        <a href="Government & Public Sector.html"
+                            class="text-gray-600 font-medium hover:text-brand-blue transition-colors duration-300">Government
+                            & <br> Public Sector</a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- Recent Projects Section -->
+        <section class="py-20 bg-blue-50 overflow-hidden">
+            <div class="container mx-auto px-4">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                    <!-- Left Content -->
+                    <div class="lg:col-span-4">
+                        <h2 class="text-4xl font-bold text-brand-dark mb-4">
+                            Our Recent <br>
+                            <span class="text-brand-blue">Projects</span>
+                            <div class="h-1 w-20 bg-brand-blue mt-2"></div>
+                        </h2>
+                        <p class="text-gray-600 mb-8 leading-relaxed">
+                            You may wonder what we're up to. Here are some of our recent projects reflecting our iconic
+                            digital solutions.
+                        </p>
+                        <h3 class="text-xl font-bold text-brand-blue mb-4">Shall we discuss your project?</h3>
+                        <button class="bg-brand-blue text-white px-8 py-3 rounded hover:bg-blue-700 transition-colors">
+                            Start a Project
+                        </button>
+                    </div>
+
+                    <!-- Right Slider -->
+                    <div class="lg:col-span-8 relative">
+                        <!-- Navigation Buttons -->
+                        <div class="absolute -bottom-16 left-0 flex gap-4 z-10">
+                            <button id="prevProject"
+                                class="w-10 h-10 rounded-full border border-brand-blue text-brand-blue flex items-center justify-center hover:bg-brand-blue hover:text-white transition-colors">
+                                <i class="fas fa-arrow-left"></i>
+                            </button>
+                            <button id="nextProject"
+                                class="w-10 h-10 rounded-full border border-brand-blue text-brand-blue flex items-center justify-center hover:bg-brand-blue hover:text-white transition-colors">
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+
+                        <!-- Slider Container -->
+                        <div class="overflow-x-auto pb-8 hide-scrollbar" id="projectsSlider">
+                            <div class="flex gap-6 w-max">
+                                <!-- Project Card 1: Cowberry -->
+                                <div class="w-[300px] md:w-[400px] flex-shrink-0 group">
+                                    <div
+                                        class="bg-white rounded-lg overflow-hidden shadow-lg transition-transform transform group-hover:-translate-y-2 duration-300">
+                                        <div class="h-64 bg-green-50 overflow-hidden relative">
+                                            <!-- Mockup Representation -->
+                                            <div
+                                                class="absolute inset-4 bg-white shadow-md rounded border border-gray-100 flex flex-col">
+                                                <div class="h-8 bg-gray-50 border-b flex items-center px-2 space-x-1">
+                                                    <div class="w-2 h-2 rounded-full bg-red-400"></div>
+                                                    <div class="w-2 h-2 rounded-full bg-yellow-400"></div>
+                                                    <div class="w-2 h-2 rounded-full bg-green-400"></div>
+                                                </div>
+                                                <div class="flex-1 p-4 flex items-center justify-center bg-green-100">
+                                                    <div class="text-center">
+                                                        <i class="fas fa-leaf text-4xl text-green-600 mb-2"></i>
+                                                        <h5 class="font-bold text-green-800">Fresh Fruits</h5>
+                                                        <button
+                                                            class="mt-2 px-3 py-1 bg-green-600 text-white text-xs rounded">Shop
+                                                            Now</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h4 class="mt-4 text-xl font-bold text-brand-dark flex items-center gap-2">
+                                        <span class="w-2 h-2 rounded-full bg-green-500"></span> Cowberry
+                                    </h4>
+                                </div>
+
+                                <!-- Project Card 2: Ecosaa -->
+                                <div class="w-[300px] md:w-[400px] flex-shrink-0 group">
+                                    <div
+                                        class="bg-white rounded-lg overflow-hidden shadow-lg transition-transform transform group-hover:-translate-y-2 duration-300">
+                                        <div class="h-64 bg-orange-50 overflow-hidden relative">
+                                            <!-- Mockup Representation -->
+                                            <div
+                                                class="absolute inset-4 bg-white shadow-md rounded border border-gray-100 flex flex-col">
+                                                <div class="h-8 bg-gray-50 border-b flex items-center px-2 space-x-1">
+                                                    <div class="w-2 h-2 rounded-full bg-red-400"></div>
+                                                    <div class="w-2 h-2 rounded-full bg-yellow-400"></div>
+                                                    <div class="w-2 h-2 rounded-full bg-green-400"></div>
+                                                </div>
+                                                <div class="flex-1 p-4 flex items-center justify-center bg-orange-100">
+                                                    <div class="text-center">
+                                                        <h5 class="font-serif text-2xl text-orange-800 mb-1">The beauty
+                                                            of</h5>
+                                                        <h5 class="font-serif text-2xl text-orange-800 mb-2">your body
+                                                        </h5>
+                                                        <div class="w-8 h-8 rounded-full bg-orange-200 mx-auto"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h4 class="mt-4 text-xl font-bold text-brand-dark flex items-center gap-2">
+                                        <span class="w-2 h-2 rounded-full bg-orange-500"></span> Ecosaa
+                                    </h4>
+                                </div>
+
+                                <!-- Project Card 3: Fintech -->
+                                <div class="w-[300px] md:w-[400px] flex-shrink-0 group">
+                                    <div
+                                        class="bg-white rounded-lg overflow-hidden shadow-lg transition-transform transform group-hover:-translate-y-2 duration-300">
+                                        <div class="h-64 bg-blue-50 overflow-hidden relative">
+                                            <!-- Mockup Representation -->
+                                            <div
+                                                class="absolute inset-4 bg-white shadow-md rounded border border-gray-100 flex flex-col">
+                                                <div class="h-8 bg-gray-50 border-b flex items-center px-2 space-x-1">
+                                                    <div class="w-2 h-2 rounded-full bg-red-400"></div>
+                                                    <div class="w-2 h-2 rounded-full bg-yellow-400"></div>
+                                                    <div class="w-2 h-2 rounded-full bg-green-400"></div>
+                                                </div>
+                                                <div class="flex-1 p-4 flex items-center justify-center bg-blue-100">
+                                                    <div class="text-center">
+                                                        <i class="fas fa-wallet text-4xl text-blue-600 mb-2"></i>
+                                                        <h5 class="font-bold text-blue-800">Digital Wallet</h5>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h4 class="mt-4 text-xl font-bold text-brand-dark flex items-center gap-2">
+                                        <span class="w-2 h-2 rounded-full bg-blue-500"></span> PayFast
+                                    </h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-16">
+            <div class="container mx-auto px-4">
+                <h2 class="text-center text-2xl md:text-3xl font-bold text-brand-dark mb-10">Our Trusted Clients</h2>
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
+                    <div
+                        class="bg-white rounded-lg border border-gray-200 h-16 flex items-center justify-center text-sm font-semibold text-gray-600">
+                        DALATICS</div>
+                    <div
+                        class="bg-white rounded-lg border border-gray-200 h-16 flex items-center justify-center text-sm font-semibold text-gray-600">
+                        ePallet</div>
+                    <div
+                        class="bg-white rounded-lg border border-gray-200 h-16 flex items-center justify-center text-sm font-semibold text-gray-600">
+                        vyrlII</div>
+                    <div
+                        class="bg-white rounded-lg border border-gray-200 h-16 flex items-center justify-center text-sm font-semibold text-gray-600">
+                        360</div>
+                    <div
+                        class="bg-white rounded-lg border border-gray-200 h-16 flex items-center justify-center text-sm font-semibold text-gray-600">
+                        Mintifi</div>
+                    <div
+                        class="bg-white rounded-lg border border-gray-200 h-16 flex items-center justify-center text-sm font-semibold text-gray-600">
+                        Propertyloop</div>
+                    <div
+                        class="bg-white rounded-lg border border-gray-200 h-16 flex items-center justify-center text-sm font-semibold text-gray-600">
+                        infinint</div>
+                    <div
+                        class="bg-white rounded-lg border border-gray-200 h-16 flex items-center justify-center text-sm font-semibold text-gray-600">
+                        ANJALI</div>
+                    <div
+                        class="bg-white rounded-lg border border-gray-200 h-16 flex items-center justify-center text-sm font-semibold text-gray-600">
+                        snapmint</div>
+                    <div
+                        class="bg-white rounded-lg border border-gray-200 h-16 flex items-center justify-center text-sm font-semibold text-gray-600">
+                        PUBLIC LEGAL</div>
+                    <div
+                        class="bg-white rounded-lg border border-gray-200 h-16 flex items-center justify-center text-sm font-semibold text-gray-600">
+                        QG</div>
+                    <div
+                        class="bg-white rounded-lg border border-gray-200 h-16 flex items-center justify-center text-sm font-semibold text-gray-600">
+                        a la calc</div>
+                    <div
+                        class="bg-white rounded-lg border border-gray-200 h-16 flex items-center justify-center text-sm font-semibold text-gray-600">
+                        c'boe</div>
+                    <div
+                        class="bg-white rounded-lg border border-gray-200 h-16 flex items-center justify-center text-sm font-semibold text-gray-600">
+                        Our Hope</div>
+                    <div
+                        class="bg-white rounded-lg border border-gray-200 h-16 flex items-center justify-center text-sm font-semibold text-gray-600">
+                        COWBERRY</div>
+                    <div
+                        class="bg-white rounded-lg border border-gray-200 h-16 flex items-center justify-center text-sm font-semibold text-gray-600">
+                        DZee</div>
+                    <div
+                        class="bg-white rounded-lg border border-gray-200 h-16 flex items-center justify-center text-sm font-semibold text-gray-600">
+                        ECOSAA</div>
+                    <div
+                        class="bg-white rounded-lg border border-gray-200 h-16 flex items-center justify-center text-sm font-semibold text-gray-600">
+                        premier</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-12">
+            <div class="container mx-auto px-4">
+                <h2 class="text-center text-2xl md:text-3xl font-bold text-brand-dark">Why Do Clients Love Working With
+                    Us?</h2>
+                <p class="max-w-4xl mx-auto mt-6 text-center text-gray-600">
+                    Our mission of being a recognized Software Development Company in India led us to global exposure
+                    and we couldn’t be more grateful. Our calibre is unmatched whether you talk about awesome designs,
+                    functional solutions, or high-performance applications.
+                </p>
+            </div>
+        </section>
+
+        <section class="py-16 bg-gray-50">
+            <div class="container mx-auto px-4">
+                <h2 class="text-center text-2xl md:text-3xl font-bold text-brand-dark mb-10">Hear It From Our Clients
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-white rounded-lg shadow p-6 relative">
+                        <div class="h-16 w-24 bg-gray-200 rounded mb-4"></div>
+                        <h3 class="text-brand-dark font-bold">Lou Ferris</h3>
+                        <p class="text-gray-500 text-sm mb-4">Orlando, USA</p>
+                        <i class="fas fa-quote-left text-3xl text-blue-100 absolute top-6 right-6"></i>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            The process was seamless from start to finish. Softices took the time to understand our
+                            unique needs and vision, and they translated that into stunning websites that perfectly
+                            represents our brand. They paid great attention to detail, ensuring that every element of
+                            the site was not only visually appealing but also highly functional and user‑friendly.
+                        </p>
+                        <div class="mt-6 flex items-center justify-between">
+                            <span class="text-gray-700 font-semibold">Upwork</span>
+                            <div class="flex items-center gap-1 text-yellow-400">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                    class="fas fa-star"></i><i class="fas fa-star-half-stroke"></i>
+                            </div>
+                            <span class="text-gray-700">4.5</span>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg shadow p-6 relative">
+                        <div class="h-16 w-24 bg-gray-200 rounded mb-4"></div>
+                        <h3 class="text-brand-dark font-bold">Mati Amin</h3>
+                        <p class="text-gray-500 text-sm mb-4">Boston, USA</p>
+                        <i class="fas fa-quote-left text-3xl text-blue-100 absolute top-6 right-6"></i>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            Softices delivered a remarkable nonprofit organization website for Afghan women’s schooling.
+                            Their commitment to the cause reflected in the intuitive design and seamless functionality.
+                            From conception to execution, their professionalism and expertise shone through. Highly
+                            recommend Softices for their exceptional website development services.
+                        </p>
+                        <div class="mt-6 flex items-center justify-between">
+                            <span class="text-gray-700 font-semibold">Clutch</span>
+                            <div class="flex items-center gap-1 text-yellow-400">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                    class="fas fa-star"></i><i class="fas fa-star-half-stroke"></i>
+                            </div>
+                            <span class="text-gray-700">4.5</span>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg shadow p-6 relative">
+                        <div class="h-16 w-24 bg-gray-200 rounded mb-4"></div>
+                        <h3 class="text-brand-dark font-bold">Paulinea Antonio</h3>
+                        <p class="text-gray-500 text-sm mb-4">Manila, Philippines</p>
+                        <i class="fas fa-quote-left text-3xl text-blue-100 absolute top-6 right-6"></i>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            Working with the Softices team has been a great pleasure. They are highly involved and
+                            consistently offer valuable recommendations for our project. Their front-end design, and
+                            project management team members also really collaborate well with our team, so that they
+                            make the project glow. Highly recommend working with them; their professionalism and
+                            expertise show every single time.
+                        </p>
+                        <div class="mt-6 flex items-center justify-between">
+                            <span class="text-gray-700 font-semibold">Freelancer</span>
+                            <div class="flex items-center gap-1 text-yellow-400">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                    class="fas fa-star"></i><i class="fas fa-star-half-stroke"></i>
+                            </div>
+                            <span class="text-gray-700">4.5</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+                    <div class="flex items-center justify-center gap-2">
+                        <span class="text-brand-blue font-bold">Upwork</span>
+                        <div class="flex items-center gap-1 text-yellow-400">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star-half-stroke"></i>
+                        </div>
+                        <span class="text-gray-700">4.5</span>
+                    </div>
+                    <div class="flex items-center justify-center gap-2">
+                        <span class="text-brand-blue font-bold">Clutch</span>
+                        <div class="flex items-center gap-1 text-yellow-400">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star-half-stroke"></i>
+                        </div>
+                        <span class="text-gray-700">4.5</span>
+                    </div>
+                    <div class="flex items-center justify-center gap-2">
+                        <span class="text-brand-blue font-bold">freelancer</span>
+                        <div class="flex items-center gap-1 text-yellow-400">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star-half-stroke"></i>
+                        </div>
+                        <span class="text-gray-700">4.5</span>
+                    </div>
+                    <div class="flex items-center justify-center gap-2">
+                        <span class="text-brand-blue font-bold">GLASSDOOR</span>
+                        <div class="flex items-center gap-1 text-yellow-400">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <span class="text-gray-700">5.0</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-16">
+            <div class="container mx-auto px-4">
+                <h2 class="text-center text-2xl md:text-3xl font-bold text-brand-dark mb-10">Our Tech Blogs & Insights
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-white rounded-lg overflow-hidden shadow">
+                        <div
+                            class="h-40 bg-gradient-to-r from-blue-900 via-blue-700 to-blue-500 flex items-center justify-center">
+                            <div class="text-white font-bold">Best Python Libraries for Neural Networks</div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-bold text-brand-dark mb-2">Best Python Libraries for Neural Network: A
+                                Practical Guide for AI Products</h3>
+                            <p class="text-gray-500 text-sm">January 23, 2026 • 15 Minutes Reading</p>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg overflow-hidden shadow">
+                        <div
+                            class="h-40 bg-gradient-to-r from-blue-200 via-blue-400 to-blue-600 flex items-center justify-center">
+                            <div class="text-brand-dark font-bold">Mobile App Retention</div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-bold text-brand-dark mb-2">Mobile App Retention: Strategies Companies Use to
+                                Build High‑Retention Apps</h3>
+                            <p class="text-gray-500 text-sm">January 27, 2026 • 13 Minutes Reading</p>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg overflow-hidden shadow">
+                        <div
+                            class="h-40 bg-gradient-to-r from-orange-200 via-orange-400 to-orange-600 flex items-center justify-center">
+                            <div class="text-brand-dark font-bold">Chatbots in 2026</div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-bold text-brand-dark mb-2">How Much Does It Cost to Make a Chatbot in 2026?
+                                Cost Breakdown for Businesses</h3>
+                            <p class="text-gray-500 text-sm">January 19, 2026 • 12 Minutes Reading</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-10 text-center">
+                    <a class="inline-block bg-brand-blue text-white px-6 py-3 rounded hover:bg-blue-700">More Blogs</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer class="bg-[#0f172a] text-gray-300">
+        <div class="max-w-7xl mx-auto px-6 py-14 grid grid-cols-1 md:grid-cols-4 gap-10">
+
+            <!-- Brand -->
+            <div>
+                <div class="flex items-center gap-2 mb-4">
+                    <div class="w-9 h-9 bg-blue-600 rounded-md shadow-lg"></div>
+                    <span class="text-2xl font-semibold text-white tracking-wide">Heryatech</span>
+                </div>
+                <p class="text-gray-400 text-sm leading-relaxed">
+                    Step-up progress by uniting people, business & technology
+                </p>
+            </div>
+
+            <!-- Company -->
+            <div>
+                <h4 class="font-semibold text-white mb-4">Company</h4>
+                <ul class="space-y-3 text-sm">
+                    <li><a href="contact-us.html" class="footer-link">Contact Us</a></li>
+                    <li><a href="about-us.html" class="footer-link">About Us</a></li>
+                    <li><a href="join-team.html" class="footer-link">Join Team</a></li>
+                    <li><a href="gallery.html" class="footer-link">Gallery</a></li>
+                    <li><a href="blogs.html" class="footer-link">Blogs</a></li>
+                </ul>
+            </div>
+
+            <!-- Legal -->
+            <div>
+                <h4 class="font-semibold text-white mb-4">Legal</h4>
+                <ul class="space-y-3 text-sm">
+                    <li><a class="footer-link">Privacy Policy</a></li>
+                    <li><a class="footer-link">Cookie Policy</a></li>
+                    <li><a class="footer-link">Terms of Use</a></li>
+                </ul>
+            </div>
+
+            <!-- Locations -->
+            <div>
+                <h4 class="font-semibold text-white mb-4">Locations</h4>
+                <ul class="space-y-4 text-sm">
+                    <li class="flex items-center gap-2 hover:text-blue-400 transition">
+                        🇮🇳 <span> India</span>
+                    </li>
+                    <li class="flex items-center gap-2 hover:text-blue-400 transition">
+                        🇺🇸 <span>United States</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Bottom Bar -->
+        <div class="border-t border-white/10">
+            <div class="max-w-7xl mx-auto px-6 py-5 flex flex-col md:flex-row items-center justify-between gap-4">
+
+                <p class="text-gray-400 text-sm">
+                    © <span id="year"></span> Heryatech Consultancy Private Limited
+                </p>
+
+                <!-- Social Icons -->
+                <div class="flex items-center gap-5 text-lg">
+                    <a class="social-icon"><i class="fab fa-whatsapp"></i></a>
+                    <a class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                    <a class="social-icon"><i class="fab fa-x-twitter"></i></a>
+                    <a class="social-icon"><i class="fab fa-youtube"></i></a>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+
+
+
+    <!-- <script src="script.js"></script> -->
+
+    <script>
+        const counters = document.querySelectorAll(".counter");
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const counter = entry.target;
+                    const target = +counter.getAttribute("data-target");
+                    let count = 0;
+
+                    const updateCounter = () => {
+                        const increment = target / 100;
+                        if (count < target) {
+                            count += increment;
+                            counter.innerText = Math.ceil(count);
+                            requestAnimationFrame(updateCounter);
+                        } else {
+                            counter.innerText = target;
+                        }
+                    };
+
+                    updateCounter();
+                    observer.unobserve(counter);
+                }
+            });
+        });
+
+        counters.forEach(counter => observer.observe(counter));
+
+
+        const toggleBtn = document.getElementById("themeToggle");
+
+        if (localStorage.getItem("theme") === "dark") {
+            document.documentElement.classList.add("dark");
+        }
+
+        if (toggleBtn) {
+            toggleBtn.addEventListener("click", () => {
+                document.documentElement.classList.toggle("dark");
+
+                if (document.documentElement.classList.contains("dark")) {
+                    localStorage.setItem("theme", "dark");
+                } else {
+                    localStorage.setItem("theme", "light");
+                }
+            });
+        }
+
+        // Set current year in footer
+        const yearSpan = document.getElementById('year');
+        if (yearSpan) {
+            yearSpan.textContent = new Date().getFullYear();
+        }
+
+        // Projects Slider Navigation
+        const projectsSlider = document.getElementById('projectsSlider');
+        const prevProjectBtn = document.getElementById('prevProject');
+        const nextProjectBtn = document.getElementById('nextProject');
+
+        if (projectsSlider && prevProjectBtn && nextProjectBtn) {
+            // Scroll amount based on typical card width + gap
+            const scrollAmount = 324; // 300px card + 24px gap
+
+            prevProjectBtn.addEventListener('click', () => {
+                projectsSlider.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+            });
+
+            nextProjectBtn.addEventListener('click', () => {
+                projectsSlider.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+            });
+        }
+
+
+    </script>
+
+</body>
+
+</html>

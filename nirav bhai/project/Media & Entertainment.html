@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media & Entertainment Software Development | Heryatech</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            dark: '#0a0514', /* a bit more purple-dark */
+                            card: '#140c24',
+                            primary: '#8b5cf6', /* Violet */
+                            accent: '#f43f5e', /* Rose */
+                            light: '#f1f5f9'
+                        }
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'blob': 'blob 7s infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                        blob: {
+                            '0%': { transform: 'translate(0px, 0px) scale(1)' },
+                            '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+                            '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+                            '100%': { transform: 'translate(0px, 0px) scale(1)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #0a0514;
+            color: #f8fafc;
+        }
+
+        .glass-panel {
+            background: rgba(20, 12, 36, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #f43f5e, #8b5cf6);
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            -webkit-background-clip: text;
+            background-size: 200% 200%;
+            animation: gradient-shift 5s ease infinite;
+        }
+
+        @keyframes gradient-shift {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .hero-bg {
+            background: radial-gradient(circle at top right, rgba(139, 92, 246, 0.15) 0%, #0a0514 60%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card {
+            background: linear-gradient(145deg, #140c24, #0a0514);
+        }
+
+        .feature-card:hover .icon-wrapper {
+            transform: scale(1.1) rotate(5deg);
+            background: rgba(139, 92, 246, 0.2);
+            border-color: rgba(244, 63, 94, 0.5);
+        }
+
+        .glow-effect {
+            position: relative;
+        }
+
+        .glow-effect::before {
+            content: '';
+            position: absolute;
+            inset: -2px;
+            background: linear-gradient(45deg, #8b5cf6, #f43f5e, #8b5cf6);
+            z-index: -1;
+            filter: blur(10px);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            border-radius: inherit;
+        }
+
+        .glow-effect:hover::before {
+            opacity: 1;
+        }
+
+        /* Grid background pattern */
+        .bg-grid {
+            background-size: 40px 40px;
+            background-image: linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+        }
+
+        .floating-play {
+            animation: pulse-slow 3s infinite;
+        }
+    </style>
+</head>
+
+<body class="font-sans antialiased overflow-x-hidden container-fluid">
+
+    <!-- Header (Premium Transparent) -->
+    <header
+        class="absolute top-0 left-0 w-full z-50 text-white border-b border-white/5 bg-transparent backdrop-blur-sm">
+        <div class="container mx-auto px-6 py-5 flex justify-between items-center">
+            <div class="flex items-center gap-3 cursor-pointer">
+                <img src="c:\Users\Admin\Pictures\logo.jpeg" alt="Heryatech"
+                    class="w-10 h-10 rounded-lg object-cover shadow-[0_0_15px_rgba(139,92,246,0.5)]">
+                <span class="text-2xl font-bold font-heading tracking-wide">Heryatech</span>
+            </div>
+
+            <nav class="hidden md:flex space-x-8 font-medium text-sm text-gray-300">
+                <a href="index.html" class="hover:text-white transition-colors">Home</a>
+                <a href="#" class="hover:text-white transition-colors">Services</a>
+                <a href="index.html" class="text-brand-accent transition-colors">Industries</a>
+                <a href="#" class="hover:text-white transition-colors">Company</a>
+            </nav>
+
+            <a href="Start a Project.html"
+                class="hidden md:flex bg-brand-primary/20 border border-brand-primary/50 text-brand-accent px-6 py-2.5 rounded-full hover:bg-brand-primary hover:text-white transition-all items-center gap-2 text-sm font-medium">
+                Start a Project <i class="fas fa-arrow-right text-xs"></i>
+            </a>
+
+            <button class="md:hidden text-white"><i class="fas fa-bars text-xl"></i></button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-bg min-h-screen flex items-center pt-32 pb-16 relative bg-grid">
+        <!-- Animated Background Blobs -->
+        <div
+            class="absolute top-10 left-0 w-[500px] h-[500px] bg-brand-primary/20 rounded-full filter blur-[100px] animate-blob">
+        </div>
+        <div
+            class="absolute top-40 right-10 w-[400px] h-[400px] bg-brand-accent/20 rounded-full filter blur-[100px] animate-blob animation-delay-2000">
+        </div>
+
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="space-y-8">
+                    <div
+                        class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-brand-primary/30 bg-brand-primary/10 backdrop-blur-sm text-sm text-brand-accent font-medium">
+                        <span
+                            class="w-2 h-2 rounded-full bg-brand-accent animate-pulse shadow-[0_0_8px_#f43f5e]"></span>
+                        Media & Entertainment
+                    </div>
+                    <h1 class="text-5xl md:text-7xl font-extrabold text-white leading-[1.1] font-heading">
+                        Redefining <br>
+                        the Future of <br>
+                        <span class="gradient-text">Entertainment.</span>
+                    </h1>
+                    <p class="text-lg md:text-xl text-gray-400 max-w-xl leading-relaxed">
+                        We build immersive streaming architectures, Next-Gen AR/VR platforms, and high-performance
+                        content delivery systems for top creators, broadcasters, and digital studios worldwide.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 pt-4">
+                        <a href="#solutions"
+                            class="bg-brand-primary text-white px-8 py-4 rounded-full font-semibold hover:bg-purple-600 transition-all text-center glow-effect shadow-[0_0_20px_rgba(139,92,246,0.3)]">
+                            Discover Solutions
+                        </a>
+                        <a href="contact-us.html"
+                            class="px-8 py-4 rounded-full font-semibold text-white border border-gray-600 hover:bg-white/5 transition-all text-center group">
+                            Speak to an Expert <i
+                                class="fas fa-arrow-right ml-2 opacity-50 group-hover:opacity-100 group-hover:translate-x-1 transition-all"></i>
+                        </a>
+                    </div>
+
+                    <div class="pt-10 mt-10 border-t border-white/10 grid grid-cols-3 gap-6">
+                        <div>
+                            <h4 class="text-3xl font-bold text-white font-heading">4K/8K<span
+                                    class="text-brand-accent">+</span></h4>
+                            <p class="text-gray-500 text-sm mt-1 font-medium">Ultra-HD Streaming</p>
+                        </div>
+                        <div>
+                            <h4 class="text-3xl font-bold text-white font-heading">10M<span
+                                    class="text-brand-accent">+</span></h4>
+                            <p class="text-gray-500 text-sm mt-1 font-medium">Concurrent Viewers</p>
+                        </div>
+                        <div>
+                            <h4 class="text-3xl font-bold text-white font-heading">
+                                < 1s<span class="text-brand-accent"></span>
+                            </h4>
+                            <p class="text-gray-500 text-sm mt-1 font-medium">Ultra-low Latency</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative hidden lg:block">
+                    <div class="relative w-full aspect-square animate-float flex justify-center items-center">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-tr from-brand-primary/30 to-brand-accent/30 rounded-full filter blur-3xl">
+                        </div>
+
+                        <img src="https://cdni.iconscout.com/illustration/premium/thumb/man-watching-movie-at-home-with-vr-device-illustration-download-in-svg-png-gif-file-formats--entertainment-metaverse-living-room-technology-pack-future-illustrations-5211029.png"
+                            class="relative z-10 w-[110%] object-contain drop-shadow-[0_20px_50px_rgba(0,0,0,0.8)]"
+                            alt="Media Streaming Ecosystem">
+
+                        <!-- Floating Data Cards showing dynamic design -->
+                        <div
+                            class="absolute top-12 -left-8 glass-panel py-3 px-5 rounded-xl flex items-center gap-4 z-20 hover:scale-105 transition-transform cursor-default">
+                            <div
+                                class="w-12 h-12 rounded-full bg-brand-accent/10 border border-brand-accent/20 flex items-center justify-center text-brand-accent floating-play">
+                                <i class="fas fa-play text-xl"></i>
+                            </div>
+                            <div>
+                                <p class="text-white text-sm font-bold tracking-wide">Live Broadcast</p>
+                                <p class="text-gray-400 text-xs mt-0.5">0.5s Latency</p>
+                            </div>
+                        </div>
+
+                        <div
+                            class="absolute bottom-24 -right-12 glass-panel py-3 px-5 rounded-xl flex items-center gap-4 z-20 hover:scale-105 transition-transform cursor-default">
+                            <div
+                                class="w-12 h-12 rounded-full bg-brand-primary/10 border border-brand-primary/20 flex items-center justify-center text-brand-primary text-xl">
+                                <i class="fas fa-vr-cardboard"></i>
+                            </div>
+                            <div>
+                                <p class="text-white text-sm font-bold tracking-wide">Immersive MR</p>
+                                <p class="text-gray-400 text-xs mt-0.5">Metaverse Ready</p>
+                            </div>
+                            <div class="ml-2 w-16 h-8">
+                                <!-- Sound wave mockup -->
+                                <svg viewBox="0 0 100 30"
+                                    class="w-full h-full stroke-brand-accent fill-none stroke-[3] stroke-linecap-round">
+                                    <path d="M10,15 L10,25 M30,15 L30,5 M50,15 L50,28 M70,15 L70,10 M90,15 L90,20">
+                                    </path>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Grid -->
+    <section id="solutions" class="py-32 relative bg-brand-dark container border-t border-white/5">
+        <div class="container mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-20">
+                <span
+                    class="text-brand-accent font-semibold tracking-wider uppercase text-sm flex items-center justify-center gap-2 mb-3">
+                    <span class="w-6 h-px bg-brand-accent"></span> Core Capabilities <span
+                        class="w-6 h-px bg-brand-accent"></span>
+                </span>
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-6 font-heading">Digital Entertainment Solutions
+                </h2>
+                <p class="text-gray-400 text-lg">Next-generation platforms, robust distribution networks, and immersive
+                    applications that captivate global audiences.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div
+                    class="feature-card rounded-2xl p-8 border border-white/5 hover:border-brand-primary/40 hover:-translate-y-2 transition-all duration-300 group shadow-lg">
+                    <div
+                        class="w-16 h-16 rounded-2xl bg-brand-dark border border-white/10 flex items-center justify-center mb-8 icon-wrapper transition-all duration-300 text-brand-accent text-3xl shadow-inner">
+                        <i class="fas fa-photo-film"></i>
+                    </div>
+                    <h3
+                        class="text-xl font-bold text-white mb-4 font-heading group-hover:text-brand-accent transition-colors">
+                        OTT & VOD Platforms</h3>
+                    <p class="text-gray-400 leading-relaxed text-sm">Custom end-to-end video streaming solutions
+                        supporting high scalability, DRM, user profiles, and seamless cross-platform delivery.</p>
+                </div>
+
+                <!-- Card 2 -->
+                <div
+                    class="feature-card rounded-2xl p-8 border border-white/5 hover:border-brand-primary/40 hover:-translate-y-2 transition-all duration-300 group shadow-lg">
+                    <div
+                        class="w-16 h-16 rounded-2xl bg-brand-dark border border-white/10 flex items-center justify-center mb-8 icon-wrapper transition-all duration-300 text-brand-accent text-3xl shadow-inner">
+                        <i class="fas fa-vr-cardboard"></i>
+                    </div>
+                    <h3
+                        class="text-xl font-bold text-white mb-4 font-heading group-hover:text-brand-accent transition-colors">
+                        AR/VR & Metaverse Apps</h3>
+                    <p class="text-gray-400 leading-relaxed text-sm">Groundbreaking virtual and augmented reality
+                        experiences built for engaging brand storytelling and interactive entertainment.</p>
+                </div>
+
+                <!-- Card 3 -->
+                <div
+                    class="feature-card rounded-2xl p-8 border border-white/5 hover:border-brand-primary/40 hover:-translate-y-2 transition-all duration-300 group shadow-lg">
+                    <div
+                        class="w-16 h-16 rounded-2xl bg-brand-dark border border-white/10 flex items-center justify-center mb-8 icon-wrapper transition-all duration-300 text-brand-accent text-3xl shadow-inner">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3
+                        class="text-xl font-bold text-white mb-4 font-heading group-hover:text-brand-accent transition-colors">
+                        Digital Asset Management</h3>
+                    <p class="text-gray-400 leading-relaxed text-sm">Enterprise-grade DAM systems that automate
+                        ingestion, transcoding, meta-tagging, and secure archiving of media libraries.</p>
+                </div>
+
+                <!-- Card 4 -->
+                <div
+                    class="feature-card rounded-2xl p-8 border border-white/5 hover:border-brand-primary/40 hover:-translate-y-2 transition-all duration-300 group shadow-lg">
+                    <div
+                        class="w-16 h-16 rounded-2xl bg-brand-dark border border-white/10 flex items-center justify-center mb-8 icon-wrapper transition-all duration-300 text-brand-accent text-3xl shadow-inner">
+                        <i class="fas fa-gamepad"></i>
+                    </div>
+                    <h3
+                        class="text-xl font-bold text-white mb-4 font-heading group-hover:text-brand-accent transition-colors">
+                        Gaming Ecosystems</h3>
+                    <p class="text-gray-400 leading-relaxed text-sm">Multiplayer architectures, backend services,
+                        cloud-gaming infrastructure, and hyper-casual mobile game development.</p>
+                </div>
+
+                <!-- Card 5 -->
+                <div
+                    class="feature-card rounded-2xl p-8 border border-white/5 hover:border-brand-primary/40 hover:-translate-y-2 transition-all duration-300 group shadow-lg">
+                    <div
+                        class="w-16 h-16 rounded-2xl bg-brand-dark border border-white/10 flex items-center justify-center mb-8 icon-wrapper transition-all duration-300 text-brand-accent text-3xl shadow-inner">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3
+                        class="text-xl font-bold text-white mb-4 font-heading group-hover:text-brand-accent transition-colors">
+                        Media Audience Analytics</h3>
+                    <p class="text-gray-400 leading-relaxed text-sm">AI-driven insight platforms to track user
+                        engagement, predict content trends, and maximize ad revenues with precision targeting.</p>
+                </div>
+
+                <!-- Card 6 -->
+                <div
+                    class="feature-card rounded-2xl p-8 border border-white/5 hover:border-brand-primary/40 hover:-translate-y-2 transition-all duration-300 group shadow-lg">
+                    <div
+                        class="w-16 h-16 rounded-2xl bg-brand-dark border border-white/10 flex items-center justify-center mb-8 icon-wrapper transition-all duration-300 text-brand-accent text-3xl shadow-inner">
+                        <i class="fas fa-music"></i>
+                    </div>
+                    <h3
+                        class="text-xl font-bold text-white mb-4 font-heading group-hover:text-brand-accent transition-colors">
+                        Audio & Podcasting Tech</h3>
+                    <p class="text-gray-400 leading-relaxed text-sm">High-fidelity audio streaming platforms equipped
+                        with dynamic ad insertion, playlist curation, and smart speaker integrations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Infrastructure Section -->
+    <section
+        class="py-32 bg-brand-card text-white relative overflow-hidden flex flex-col items-center border-y border-white/5">
+        <div
+            class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cyber-locks.png')] opacity-[0.03]">
+        </div>
+        <div
+            class="absolute right-0 top-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand-accent/10 rounded-full blur-[120px]">
+        </div>
+
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="order-1">
+                    <span class="text-brand-accent font-semibold tracking-wider text-sm mb-3 block">INFRASTRUCTURE &
+                        DELIVERY</span>
+                    <h2 class="text-4xl md:text-5xl font-bold mb-6 font-heading">Engineered for <br>Massive Scale</h2>
+                    <p class="text-gray-400 text-lg mb-10 leading-relaxed">
+                        When millions tune in seamlessly, robust architecture is working behind the scenes. We deploy
+                        highly resilient content delivery networks, real-time transcoding pipelines, and adaptive
+                        bitrate streaming.
+                    </p>
+
+                    <ul class="space-y-8">
+                        <li class="flex gap-5 items-start group">
+                            <div
+                                class="w-14 h-14 rounded-2xl bg-brand-dark border border-white/10 flex items-center justify-center flex-shrink-0 text-brand-accent group-hover:bg-brand-primary group-hover:text-white transition-colors duration-300 shadow-lg">
+                                <i class="fas fa-server text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold font-heading text-white">Cloud-Native Processing</h4>
+                                <p class="text-gray-400 text-sm mt-2 leading-relaxed">Leveraging AWS Media Services,
+                                    Azure Media, and scalable Kubernetes architectures to encode and render faster.</p>
+                            </div>
+                        </li>
+                        <li class="flex gap-5 items-start group">
+                            <div
+                                class="w-14 h-14 rounded-2xl bg-brand-dark border border-white/10 flex items-center justify-center flex-shrink-0 text-brand-accent group-hover:bg-brand-primary group-hover:text-white transition-colors duration-300 shadow-lg">
+                                <i class="fas fa-network-wired text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold font-heading text-white">Global CDN Integration</h4>
+                                <p class="text-gray-400 text-sm mt-2 leading-relaxed">Edge computing setups ensuring
+                                    zero buffering times, load balancing traffic effectively during global live events.
+                                </p>
+                            </div>
+                        </li>
+                        <li class="flex gap-5 items-start group">
+                            <div
+                                class="w-14 h-14 rounded-2xl bg-brand-dark border border-white/10 flex items-center justify-center flex-shrink-0 text-brand-accent group-hover:bg-brand-primary group-hover:text-white transition-colors duration-300 shadow-lg">
+                                <i class="fas fa-mobile-alt text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold font-heading text-white">Omnichannel Playback</h4>
+                                <p class="text-gray-400 text-sm mt-2 leading-relaxed">Smart TVs, gaming consoles, web,
+                                    and mobile environments — guaranteed native-like performance and UI consistency
+                                    everywhere.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="order-2 relative flex justify-center">
+                    <div class="w-full max-w-lg relative p-6">
+                        <!-- Code terminal mockup (Media Transcoding log) -->
+                        <div
+                            class="w-full bg-[#0a0514] rounded-xl border border-white/10 shadow-2xl overflow-hidden font-mono text-xs md:text-sm">
+                            <div class="flex items-center px-4 py-3 bg-white/5 border-b border-white/10 gap-2">
+                                <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                                <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                                <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                                <div class="ml-4 text-gray-400">media-engine_transcoder-01</div>
+                            </div>
+                            <div class="p-6 text-gray-300 space-y-3">
+                                <p class="text-brand-primary">><span class="text-gray-300 ml-2">Initializing ingest
+                                        stream (RTMP/SRT)...</span>
+                                </p>
+                                <p class="text-green-400">[CONNECTED] Input stream live: 4K Source @60fps.</p>
+                                <p class="text-brand-primary">><span class="text-gray-300 ml-2">Starting adaptive
+                                        bitrate encoding (H.265/HEVC)...</span></p>
+                                <div class="pl-4 border-l-2 border-white/10 space-y-1">
+                                    <p class="text-gray-500">generating 1080p profile... <span
+                                            class="text-green-400 ml-2">DONE [4.5 Mbps]</span></p>
+                                    <p class="text-gray-500">generating 720p profile... <span
+                                            class="text-green-400 ml-2">DONE [2.1 Mbps]</span></p>
+                                    <p class="text-gray-500">generating 480p profile... <span
+                                            class="text-green-400 ml-2">DONE [1.0 Mbps]</span></p>
+                                </div>
+                                <p class="text-brand-primary">><span class="text-gray-300 ml-2">Packaging segments for
+                                        HLS & DASH...</span></p>
+                                <p class="text-green-400 font-bold mt-4">[SUCCESS] Stream pushed to CDN Edge nodes in
+                                    120ms.</p>
+                                <p class="text-brand-accent animate-pulse">_</p>
+                            </div>
+                        </div>
+
+                        <!-- Decorative overlay card -->
+                        <div
+                            class="absolute -bottom-6 -left-6 glass-panel py-4 px-6 rounded-xl flex items-center gap-4 border border-white/10 z-20">
+                            <div
+                                class="w-10 h-10 rounded-full bg-brand-primary/20 flex items-center justify-center text-brand-primary text-xl">
+                                <i class="fas fa-broadcast-tower"></i>
+                            </div>
+                            <p class="text-white text-sm font-bold">Live Streaming Ready</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Call To Action -->
+    <section class="py-32 bg-brand-dark relative overflow-hidden bg-grid">
+        <div class="absolute inset-0 bg-gradient-to-t from-brand-primary/10 to-transparent opacity-50"></div>
+        <div class="container mx-auto px-6 relative z-10 text-center">
+            <h2 class="text-5xl md:text-6xl font-extrabold text-white mb-8 font-heading">Ready to Captivate <br><span
+                    class="gradient-text">Your Audience?</span></h2>
+            <p class="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto mb-12">Partner with our media tech experts to
+                build and scale your next big entertainment platform with flawless execution and breathtaking user
+                experiences.</p>
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-6">
+                <a href="contact-us.html"
+                    class="bg-brand-primary text-white px-10 py-5 rounded-full font-bold hover:bg-purple-600 transition-all glow-effect shadow-[0_0_20px_rgba(139,92,246,0.4)] text-center w-full sm:w-auto text-lg">
+                    Start Your Project
+                </a>
+                <a href="#"
+                    class="text-white hover:text-brand-accent font-semibold transition-colors flex items-center gap-2 text-lg">
+                    View Success Stories <i class="fas fa-arrow-right text-sm"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#05020a] text-gray-400 py-16 border-t border-white/5">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <div class="lg:col-span-1">
+                    <div class="flex items-center gap-3 mb-6">
+                        <img src="c:\Users\Admin\Pictures\logo.jpeg" alt="Heryatech"
+                            class="w-8 h-8 rounded-md object-cover">
+                        <span class="text-xl font-bold text-white tracking-wide font-heading">Heryatech</span>
+                    </div>
+                    <p class="text-sm leading-relaxed mb-6">Empowering global media and entertainment entities with
+                        scalable architectures, AR/VR ecosystems, and high-performance development.</p>
+                    <div class="flex gap-4">
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-brand-primary hover:text-white hover:border-brand-primary transition-all"><i
+                                class="fab fa-linkedin-in text-sm"></i></a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-brand-primary hover:text-white hover:border-brand-primary transition-all"><i
+                                class="fab fa-twitter text-sm"></i></a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-brand-primary hover:text-white hover:border-brand-primary transition-all"><i
+                                class="fab fa-instagram text-sm"></i></a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold mb-6 font-heading tracking-wide uppercase text-sm">Media Solutions
+                    </h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="#" class="hover:text-brand-accent transition-colors">OTT Streaming Apps</a></li>
+                        <li><a href="#" class="hover:text-brand-accent transition-colors">Video on Demand (VOD)</a></li>
+                        <li><a href="#" class="hover:text-brand-accent transition-colors">Gaming Backends</a></li>
+                        <li><a href="#" class="hover:text-brand-accent transition-colors">AR/VR Experiences</a></li>
+                        <li><a href="#" class="hover:text-brand-accent transition-colors">Content Licensing Portals</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold mb-6 font-heading tracking-wide uppercase text-sm">Company</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="about-us.html" class="hover:text-brand-accent transition-colors">About
+                                Heryatech</a></li>
+                        <li><a href="#" class="hover:text-brand-accent transition-colors">Careers & Culture</a></li>
+                        <li><a href="blogs.html" class="hover:text-brand-accent transition-colors">Engineering Blog</a>
+                        </li>
+                        <li><a href="contact-us.html" class="hover:text-brand-accent transition-colors">Contact
+                                Support</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold mb-6 font-heading tracking-wide uppercase text-sm">Get in Touch</h4>
+                    <ul class="space-y-4 text-sm">
+                        <li class="flex gap-3 items-start"><i
+                                class="fas fa-map-marker-alt mt-1 text-brand-accent"></i><span
+                                class="leading-relaxed">Silicon Avenue, Tech District, San Jose, CA 95131</span></li>
+                        <li class="flex gap-3"><i class="fas fa-envelope mt-1 text-brand-accent"></i><a
+                                href="mailto:contact@heryatech.com"
+                                class="hover:text-white transition-colors">contact@heryatech.com</a>
+                        </li>
+                        <li class="flex gap-3"><i class="fas fa-phone mt-1 text-brand-accent"></i><a
+                                href="tel:+15550219900" class="hover:text-white transition-colors">+1 (555) 021-9900</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div
+                class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-medium">
+                <p>&copy; 2026 Heryatech Systems. All Rights Reserved.</p>
+                <div class="flex gap-6">
+                    <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-white transition-colors">Cookie Policy</a>
+                    <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

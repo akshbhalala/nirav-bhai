@@ -1,0 +1,715 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heryatech</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+      <!-- FontAwesome for Icons -->
+    
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            dark: '#1a2b4b',
+                            blue: '#254ba0',
+                            lightBlue: '#f0f4ff',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+   <style>
+        /* Background Map Styles */
+        .map-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://www.transparenttextures.com/patterns/cubes.png');
+            opacity: 0.05;
+            z-index: 0;
+        }
+     /* Dropdown Styles */
+        .dropdown {
+            position: relative;
+        }
+        .dropdown-menu {
+            width: auto;
+            height: auto;
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            z-index: 50;
+            min-width: 200px;
+        }
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+        .dropdown-menu a {
+            display: block;
+            padding: 0.5rem 1rem;
+            color: #374151;
+            text-decoration: none;
+            transition: background 0.2s;
+        }
+        .dropdown-menu a:hover {
+            background: #f3f4f6;
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-800 relative min-h-screen overflow-x-hidden bg-white">
+
+    <!-- ===== PAGE LOADER ===== -->
+<div id="preloader">
+  <div class="loader-content">
+    <div class="spinner"></div>
+    <h2 class="loading-text">Loading...</h2>
+  </div>
+</div>
+
+
+    <!-- Background Map -->
+    <div class="map-bg"></div>
+
+    <!-- Header -->
+    <header class="container mx-auto px-6 py-6 flex justify-between items-center relative z-50">
+        <!-- Logo -->
+        <div class="flex items-center gap-2 cursor-pointer">
+            <div class="w-8 h-8 bg-brand-dark rounded transform rotate-45 flex items-center justify-center shadow-lg text-white relative z-10 mt-1 mb-2">
+                <div class="w-4 h-4 bg-white"></div>
+            </div>
+            <span class="text-2xl font-bold text-brand-dark">Heryatech</span>
+        </div>
+
+        <!-- Navigation -->
+         <nav class="hidden md:flex space-x-8 text-brand-dark font-medium text-sm">
+            <div class="dropdown">
+                <a href="#" class="hover:text-brand-blue transition flex items-center gap-1">
+                    Services <i class="fas fa-chevron-down text-xs"></i>
+                </a>
+                <div class="dropdown-menu">
+                    <a href="web-dev.html">Web Development</a>
+                    <a href="mobile-dev.html">Mobile App Development</a>
+                    <a href="cloud-devops.html">Cloud & DevOps Services</a>
+                    <a href="ui-ux.html">UI/UX & Graphics Design</a>
+                    <a href="ar-dev.html">Augmented Reality Development</a>
+                    <a href="game-dev.html">Game Development</a>
+                    <a href="digital-marketing.html">Digital Marketing</a>
+                    <a href="seo.html">SEO</a>
+                    <a href="q-testing.html">Quality Analysis (Testing)</a>
+                    <a href="erp.html">ERP Consultation & Support</a>
+                </div>
+            </div>
+            <a href="#" class="hover:text-brand-blue transition">Industries</a>
+            <a href="#" class="hover:text-brand-blue transition">Technologies</a>
+            <a href="#" class="hover:text-brand-blue transition">Products</a>
+            <a href="#" class="hover:text-brand-blue transition">Company</a>
+        </nav>
+
+        <!-- CTA Button -->
+        <a href="#" class="bg-brand-dark text-white px-6 py-2.5 rounded shadow-lg hover:bg-blue-900 transition flex items-center gap-2 text-sm font-medium">
+            Start a Project
+            <i class="fas fa-rocket text-xs"></i>
+        </a>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-6 pt-12 pb-24 relative z-10 mt-2 mb-10">
+        
+        <!-- Hero Section -->
+        <div class="grid md:grid-cols-2 gap-12 items-center mb-24">
+            <!-- Hero Text -->
+            <div class="space-y-6 reveale-left">
+                <h1 class=" md:text-2xl lg:text-3xl font-bold  text-brand-dark leading-tight">
+                    UI/UX Design </h1>
+                    <br>
+                   <h2 class="text-sm md:text-2xl lg:text-3xl font-bold  text-brand-dark leading-tight mt-4"> 
+                    Services Company</h2>
+                   
+                     <div>
+                        <p>We craft user-friendly and visually appealing designs that make your app or website easy to use and hard to forget. Our UI/UX design services focus on your users and your business goals, bringing clarity, usability, and beauty to every screen.</p>
+                     </div>
+                
+            </div>
+
+            <!-- Hero Image -->
+            <div class="relative flex justify-center md:justify-end">
+                <!-- 3D Mobile Game Illustration Placeholder -->
+                <div class="relative w-full max-w-md">
+                   <!-- Recreating the vibe with an image -->    
+                   <img src="c:\Users\Admin\Pictures\ui_ux_banner.png" alt="UI/UX Design Services" class="w-full h-full  mt-10  mb-10  drop-shadow-xl reveal-right">
+                </div>
+            </div>
+
+         <div class="mb-10 mt-10">
+             <div class="grid grid-cols-2 md:grid-cols-3 gap-8 text-center">
+                <div class="stat-item  reveal">
+                    <div class="flex justify-center items-baseline gap-1 text-brand-blue font-bold">
+                        <h3 class="text-6xl counter">75</h3>
+                        <span class="text-6xl">+</span>
+                    </div>
+                    <p class="text-brand-dark font-bold mt-1">Team Size</p>
+                   
+                </div>
+                <div class="stat-item reveal">
+                    <div class="flex justify-center items-baseline gap-1 text-brand-blue font-bold">
+                        <h3 class="text-6xl counter">10</h3>
+                        <span class="text-6xl">+</span>
+                    </div>
+                    <p class="text-brand-dark font-bold mt-1">Years of Experience</p>
+                   
+                </div>
+                <div class="stat-item reveal">
+                    <div class="flex justify-center items-baseline gap-1 text-brand-blue font-bold">
+                        <h3 class="text-6xl counter">100%</h3>
+                       
+                    </div>
+                    <p class="text-brand-dark font-bold mt-1">Satisfaction Rate</p>
+                    
+                </div>
+
+
+              </div>
+
+         </div>
+
+
+
+     </div>
+              
+
+          
+
+       
+
+
+        
+
+
+
+           <!-- UI UX Design Section -->
+        <div class="mt-32 mb-16">
+            <!-- Header -->
+            <div class="text-center mb-16 max-w-4xl mx-auto">
+                <h2 class="text-4xl font-bold text-brand-dark mb-4 inline-block relative pb-2 border-b-4 border-brand-blue">UI UX Design Services We Offer</h2>
+                <p class="text-gray-600 mt-6 px-4">We offer a full range of UI/UX design services to help you deliver seamless, engaging, and meaningful digital experiences.</p>
+            </div>
+
+            <!-- Cloud & DevOps Grid -->
+            <div class="max-w-6xl mx-auto px-4 mt-10 mb-10">
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 gap-y-18 gap-x-8 text-center">
+
+                    <!--row 1-->
+                    <div class="group cursor-pointer object-cover rounded-lg shadow-lg w-100 h-100 p-5 bg-gray-50 card-hover reveal">
+                        
+                    <h1 class="text-blue-800 text-sm font-bold text-left">User Research & Strategy</h1>
+                    <p class="text-black text-sm mt-2 font-light text-justify">Before we design, we listen. Through user interviews, surveys, and competitor analysis, we understand what your audience truly needs so your product solves real problems.</p>
+
+                </div>
+                     
+
+                     <!--row 2-->
+
+                    <div class="group cursor-pointer object-cover rounded-lg shadow-lg w-100 h-100 p-5 bg-gray-50 card-hover reveal">
+                       
+                    <h1 class="text-blue-800 text-sm font-bold text-left">Wireframing & Prototyping</h1>
+                    <p class="text-black text-sm mt-2 font-light text-justify">We map out user flows with clean wireframes and interactive prototypes, testing early to ensure the final design feels just right.</p>
+            </div>
+
+              <!--row 3-->
+                  <div class="group cursor-pointer object-cover rounded-lg shadow-lg w-100 h-100 p-5 bg-gray-50 card-hover reveal">
+                        
+                    <h1 class="text-blue-800 text-sm font-bold">UI Design (Visual Design)</h1>
+                    <p class="text-black text-sm mt-2 font-light">First impressions matter. We craft visually stunning interfaces that reflect your brand while prioritizing clarity, accessibility, and engagement.</p>
+                  </div> 
+
+
+                  <!--row 4-->
+                     <div class="group cursor-pointer object-cover rounded-lg shadow-lg mt-10 mb-10 w-full h-auto p-5 bg-gray-50 card-hover reveal">
+                       
+                        <h1 class="text-blue-800 text-sm font-bold text-left">UX Design (Interaction Design)</h1>
+                        <p class="text-black text-sm font-light text-justify">Smooth, logical, and delightful. Every click, swipe, or tap is designed to feel effortless. We optimize navigation so users never have to think too hard.
+
+                        </p>
+                            
+
+                    </div>     
+                     <!--row 5-->
+
+                      <div class="group cursor-pointer object-cover rounded-lg shadow-lg mt-10 mb-10 w-full h-auto p-5 bg-gray-50 card-hover reveal">
+                        
+                        <h1 class="text-blue-800 text-sm font-bold text-left">Mobile & Responsive Design</h1>
+                        <p class="text-black text-sm font-light text-justify">Your product should work flawlessly everywhere. We design adaptive experiences for mobile, tablet, and desktop, ensuring consistency across devices.</p>
+
+                      </div>
+
+                      <!--row 6-->
+                      <div class="group cursor-pointer object-cover rounded-lg shadow-lg mt-10 mb-10 w-full h-auto p-5 bg-gray-50 card-hover reveal">
+                        
+                         <h1 class="text-blue-800 text-sm font-bold text-left">Mobile App Design</h1>
+                         <p class="text-black text-sm font-light text-justify">We design mobile apps that feel natural on both iOS and Android, with a focus on ease of use and performance.</p>
+                      </div>
+
+                       <!--row 7-->
+                      <div class="group cursor-pointer object-cover rounded-lg shadow-lg mt-10 mb-10 w-full h-auto p-5 bg-gray-50 card-hover reveal">
+                       
+                         <h1 class="text-blue-800 text-sm font-bold text-left">Web App Design</h1>
+                         <p class="text-black text-sm font-light text-justify">Intuitive, responsive, and functional designs that help users achieve their goals effortlessly on your web platforms.</p>
+                      </div>
+
+                       <!--row 8-->
+                      <div class="group cursor-pointer object-cover rounded-lg shadow-lg mt-10 mb-10 w-full h-auto p-5 bg-gray-50 card-hover reveal">
+                      
+                         <h1 class="text-blue-800 text-sm font-bold text-left">Design Systems & Style Guides</h1>
+                         <p class="text-black text-sm font-light text-justify">Need scalable design consistency? We build reusable design systems and guidelines to keep your brand cohesive as you grow.</p>
+                      </div>
+
+                       <!--row 9-->
+                      <div class="group cursor-pointer object-cover rounded-lg shadow-lg mt-10 mb-10 w-full h-auto p-5 bg-gray-50 card-hover reveal">
+                       
+                         <h1 class="text-blue-800 text-sm font-bold text-left">Usability Testing & Optimization</h1>
+                         <p class="text-black text-sm font-light text-justify">Launch is just the beginning. We test with real users, gather feedback, and refine the experience to boost satisfaction and conversions.
+
+</p>
+                      </div>
+                </div>  
+                
+            </div>
+        </div>
+    
+
+        <!--  Important for Your Business -->
+        <div class="mt-32 mb-16 text-justify">
+            <!-- Header -->
+            <div class="text-center mb-16 max-w-4xl mx-auto">
+                <h2 class="text-2xl font-bold text-brand-dark mb-4 inline-block relative pb-2 border-b-4 border-brand-blue">Why Great UI/UX Design Matters More Than You Think</h2>
+                <p class=" text-sm text-gray-600 w-full h-16 mt-4 px-2">Thoughtful UI/UX design can transform how users interact with your product, increase conversions, and build long-term trust with your audience.</p>
+            </div>
+
+            <!-- Cloud & DevOps Services Grid -->
+            <div class="max-w-6xl mx-auto px-4">
+                <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 gap-y-18 gap-x-8 text-center">
+
+
+                <!--row 1-->
+                    <div class="group cursor-pointer  w-100 h-100  reveal">
+                            <div class="mb-3 mt-5 text-brand-blue group-hover:scale-110 transition-transform duration-300">
+                                
+                            </div>
+                    <h1 class="text-blue-800 text-xl font-bold text-left">Better User Retention</h1>
+                    <p class="text-black text-sm mt-2 font-light text-justify">A smooth, intuitive experience keeps users coming back instead of bouncing away..</p>
+
+                </div>
+
+                <!--row 2--> 
+                <div class="group cursor-pointer  w-100 h-100 reveal">
+                        <div class="mb-3 mt-5 text-brand-blue group-hover:scale-110 transition-transform duration-300">
+                           
+                        </div>
+                    <h1 class="text-blue-800 text-xl font-bold text-left">Stronger Brand Perception</h1>
+                    <p class="text-black text-sm mt-2 font-light text-justify">A polished interface creates a lasting impression and builds trust in your product and company.</p>
+
+                </div>
+
+                <!--row 3-->
+                <div  class="group cursor-pointer  w-100 h-100 reveal">
+                    <div class="mb-3 mt-5 text-brand-blue group-hover:scale-110 transition-transform duration-300">
+
+                         
+                    </div>
+                    <h1 class="text-blue-800 text-xl font-bold text-left">Higher Conversion Rates
+
+                    </h1>
+                    <p class="text-black text-sm mt-2 font-light text-justify">Clear navigation and smart design help guide users toward the actions that matter most to your business.   </p>
+
+                </div>
+
+                  <!--row 4-->
+                <div  class="group cursor-pointer  w-100 h-100 reveal">
+                    <div class="mb-3 mt-5 text-brand-blue group-hover:scale-110 transition-transform duration-300">
+
+                         
+                    </div>
+                    <h1 class="text-blue-800 text-xl font-bold text-left">Increased Customer Satisfaction
+
+                    </h1>
+                    <p class="text-black text-sm mt-2 font-light text-justify">When users find your product easy to use, they’re more likely to stick around, and spread the word.   </p>
+
+                </div>
+
+                  <!--row 5-->
+                <div  class="group cursor-pointer  w-100 h-100  reveal">
+                    <div class="mb-3 mt-5 text-brand-blue group-hover:scale-110 transition-transform duration-300">
+
+                         
+                    </div>
+                    <h1 class="text-blue-800 text-xl font-bold text-left">Reduced Development Costs
+
+                    </h1>
+                    <p class="text-black text-sm mt-2 font-light text-justify">Spotting UX issues early through prototyping and testing saves time, money, and rework later.
+
+                    </p>
+
+                </div>
+
+                  <!--row 6-->
+                <div  class="group cursor-pointer  w-100 h-100 reveal">
+                    <div class="mb-3 mt-5 text-brand-blue group-hover:scale-110 transition-transform duration-300">
+
+                         
+                    </div>
+                    <h1 class="text-blue-800 text-xl font-bold text-left">Competitive Edge
+
+                    </h1>
+                    <p class="text-black text-sm mt-2 font-light text-justify">In crowded markets, good design helps you stand out and deliver more value than your competitors.   </p>
+
+                  </div>
+
+               </div>
+            </div>
+     </div>
+
+
+       <section class="py-16 ">
+            <div class="container mx-auto px-4">
+                <h2 class="text-center text-2xl md:text-3xl font-bold text-brand-dark mb-10">Key Insights From Our Cloud Experts</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-white rounded-lg overflow-hidden shadow card-hover reveal">
+                        <div class="h-40 bg-gradient-to-r from-blue-900 via-blue-700 to-blue-500 flex items-center justify-center">
+                            <div class="text-white font-bold">
+                                <img src="c:\Users\Admin\Pictures\Software-Deployment-In-IT.webp" alt="what is software deployment" class="w-63 h-25 object-cover">
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-bold text-brand-dark  mt-2mb-2">What is Software Deployment? Meaning,Process, and Examples</h3>
+                            <p class="text-gray-500 text-sm">January 23, 2026 • 15 Minutes Reading</p>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg overflow-hidden shadow card-hover reveal">
+                        <div class="h-40 bg-gradient-to-r from-blue-200 via-blue-400 to-blue-600 flex items-center justify-center">
+                            <div class="text-brand-dark font-bold">
+                                <img src="c:\Users\Admin\Pictures\devops-concept.webp" alt="devops concept" class="w-63 h-25 object-cover">
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-bold text-brand-dark mt-2 mb-2">Top DevOps Challenges and Solution for succesfull Implementation</h3>
+                            <p class="text-gray-500 text-sm">January 30, 2026 • 10 Minutes Reading</p>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg overflow-hidden shadow card-hover reveal">
+                        <div class="h-40 bg-gradient-to-r from-orange-200 via-orange-400 to-orange-600 flex items-center justify-center">
+                            <div class="text-brand-dark font-bold">
+                                <img src="c:\Users\Admin\Pictures\What-is-Desktop-Application-Development.webp" alt="What is Desktop Application Development" class="w-63 h-25 object-cover">
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-bold text-brand-dark mt-2 mb-2">Is Desktop Application Devlopment Still Relevant in a Cloud-First World?</h3>
+                            <p class="text-gray-500 text-sm">January 9, 2026 • 8 Minutes Reading</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-10 text-center">
+                    <a class="inline-block bg-brand-blue text-white px-6 py-3 rounded hover:bg-blue-700">More Blogs</a>
+                </div>
+            </div>
+        </section>
+
+
+         <section class="py-20 bg-blue-50 overflow-hidden reveal">
+            <div class="container mx-auto px-4 p-4">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                    <!-- Left Content -->
+                    <div class="lg:col-span-4">
+                        <h2 class="text-4xl font-bold text-brand-dark mb-4">
+                            Successfully Delivered <br>
+                            <span class="text-brand-blue">UI/UX Design Projects</span>
+                            <div class="h-1 w-20 bg-brand-blue mt-2"></div>
+                        </h2>
+                        <p class="text-gray-600 mb-8 leading-relaxed">
+                           At our core, we design exceptional user experiences and interfaces that captivate and engage. Our expert team transforms complex requirements into intuitive, visually stunning solutions. Experience the best in seamless and innovative design with us.
+                        </p>
+                        <h3 class="text-xl font-bold text-brand-blue mb-4">Discuss your Idea with us.</h3>
+                        <button class="bg-brand-blue text-white px-8 py-3 rounded glow-btn">
+
+                            Start a Project🚀
+                        </button>
+                    </div>
+
+                    <!-- Right Slider -->
+                    <div class="lg:col-span-8 relative">
+                        <!-- Navigation Buttons -->
+                        <div class="absolute -bottom-16 left-0 flex gap-4 z-10">
+                            <button id="prevProject" class="w-10 h-10 rounded-full border border-brand-blue text-brand-blue flex items-center justify-center hover:bg-brand-blue hover:text-white transition-colors">
+                                <i class="fas fa-arrow-left"></i>
+                            </button>
+                            <button id="nextProject" class="w-10 h-10 rounded-full border border-brand-blue text-brand-blue flex items-center justify-center hover:bg-brand-blue hover:text-white transition-colors">
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+
+                        <!-- Slider Container -->
+                        <div class="overflow-x-auto pb-8 hide-scrollbar" id="projectsSlider">
+                            <div class="flex gap-6 w-100 h-auto">
+                                <!-- Project Card 1: Cowberry -->
+                                <div class="w-[300px] md:w-[400px] flex-shrink-0 group">
+                                    <div class="bg-white rounded-lg overflow-hidden shadow-lg transition-transform transform group-hover:-translate-y-2 duration-300">
+                                        <div class="h-64 bg-green-50 overflow-hidden relative">
+                                            <!-- Mockup Representation -->
+                                            <div class="absolute inset-4 bg-white shadow-md rounded border border-gray-100 flex flex-col">
+                                                 <div class="h-8 bg-gray-50 border-b flex items-center px-2 space-x-1">
+                                                     <div class="w-2 h-2 rounded-full bg-red-400"></div>
+                                                     <div class="w-2 h-2 rounded-full bg-yellow-400"></div>
+                                                     <div class="w-2 h-2 rounded-full bg-green-400"></div>
+                                                 </div>
+                                                 <div class="flex-1 p-4 flex items-center justify-center bg-green-100">
+                                                     <div class="text-center">
+                                                         <i class="fas fa-leaf text-4xl text-green-600 mb-2"></i>
+                                                         <h5 class="font-bold text-green-800">Fresh Fruits</h5>
+                                                         <button class="mt-2 px-3 py-1 bg-green-600 text-white text-xs rounded">Shop Now</button>
+                                                     </div>
+                                                 </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h4 class="mt-4 text-xl font-bold text-brand-dark flex items-center gap-2">
+                                        <span class="w-2 h-2 rounded-full bg-green-500"></span> Cowberry
+                                    </h4>
+                                </div>
+
+                                <!-- Project Card 2: Ecosaa -->
+                                <div class="w-[300px] md:w-[400px] flex-shrink-0 group">
+                                    <div class="bg-white rounded-lg overflow-hidden shadow-lg transition-transform transform group-hover:-translate-y-2 duration-300">
+                                        <div class="h-64 bg-orange-50 overflow-hidden relative">
+                                            <!-- Mockup Representation -->
+                                            <div class="absolute inset-4 bg-white shadow-md rounded border border-gray-100 flex flex-col">
+                                                 <div class="h-8 bg-gray-50 border-b flex items-center px-2 space-x-1">
+                                                     <div class="w-2 h-2 rounded-full bg-red-400"></div>
+                                                     <div class="w-2 h-2 rounded-full bg-yellow-400"></div>
+                                                     <div class="w-2 h-2 rounded-full bg-green-400"></div>
+                                                 </div>
+                                                 <div class="flex-1 p-4 flex items-center justify-center bg-orange-100">
+                                                     <div class="text-center">
+                                                         <h5 class="font-serif text-2xl text-orange-800 mb-1">The beauty of</h5>
+                                                         <h5 class="font-serif text-2xl text-orange-800 mb-2">your body</h5>
+                                                         <div class="w-8 h-8 rounded-full bg-orange-200 mx-auto"></div>
+                                                     </div>
+                                                 </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h4 class="mt-4 text-xl font-bold text-brand-dark flex items-center gap-2">
+                                        <span class="w-2 h-2 rounded-full bg-orange-500"></span> Ecosaa
+                                    </h4>
+                                </div>
+
+                                <!-- Project Card 3: Fintech -->
+                                <div class="w-[300px] md:w-[400px] flex-shrink-0 group">
+                                    <div class="bg-white rounded-lg overflow-hidden shadow-lg transition-transform transform group-hover:-translate-y-2 duration-300">
+                                        <div class="h-64 bg-blue-50 overflow-hidden relative">
+                                            <!-- Mockup Representation -->
+                                            <div class="absolute inset-4 bg-white shadow-md rounded border border-gray-100 flex flex-col">
+                                                 <div class="h-8 bg-gray-50 border-b flex items-center px-2 space-x-1">
+                                                     <div class="w-2 h-2 rounded-full bg-red-400"></div>
+                                                     <div class="w-2 h-2 rounded-full bg-yellow-400"></div>
+                                                     <div class="w-2 h-2 rounded-full bg-green-400"></div>
+                                                 </div>
+                                                 <div class="flex-1 p-4 flex items-center justify-center bg-blue-100">
+                                                     <div class="text-center">
+                                                         <i class="fas fa-wallet text-4xl text-blue-600 mb-2"></i>
+                                                         <h5 class="font-bold text-blue-800">Digital Wallet</h5>
+                                                     </div>
+                                                 </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h4 class="mt-4 text-xl font-bold text-brand-dark flex items-center gap-2">
+                                        <span class="w-2 h-2 rounded-full bg-blue-500"></span> PayFast
+                                    </h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+
+           <!-- FOOTER -->
+<footer class="bg-[#0f172a] text-gray-300 reveal">
+  <div class="max-w-7xl mx-auto px-6 py-14 grid grid-cols-1 md:grid-cols-4 gap-10">
+
+    <!-- Brand -->
+    <div>
+      <div class="flex items-center gap-2 mb-4">
+        <div class="w-9 h-9 bg-blue-600 rounded-md shadow-lg"></div>
+        <span class="text-2xl font-semibold text-white tracking-wide">Heryatech</span>
+      </div>
+      <p class="text-gray-400 text-sm leading-relaxed">
+        Step-up progress by uniting people, business & technology
+      </p>
+    </div>
+
+    <!-- Company -->
+    <div>
+      <h4 class="font-semibold text-white mb-4">Company</h4>
+      <ul class="space-y-3 text-sm">
+        <li><a class="footer-link">Contact Us</a></li>
+        <li><a class="footer-link">About Us</a></li>
+        <li><a class="footer-link">Join Team</a></li>
+        <li><a class="footer-link">Gallery</a></li>
+        <li><a class="footer-link">Blogs</a></li>
+      </ul>
+    </div>
+     
+    <!-- Legal -->
+    <div>
+      <h4 class="font-semibold text-white mb-4">Legal</h4>
+      <ul class="space-y-3 text-sm">
+        <li><a class="footer-link">Privacy Policy</a></li>
+        <li><a class="footer-link">Cookie Policy</a></li>
+        <li><a class="footer-link">Terms of Use</a></li>
+      </ul>
+    </div>
+
+    <!-- Locations -->
+    <div>
+      <h4 class="font-semibold text-white mb-4">Locations</h4>
+      <ul class="space-y-4 text-sm">
+        <li class="flex items-center gap-2 hover:text-blue-400 transition">
+          🇮🇳 <span> India</span>
+        </li>
+        <li class="flex items-center gap-2 hover:text-blue-400 transition">
+          🇺🇸 <span>United States</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Bottom Bar -->
+  <div class="border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-6 py-5 flex flex-col md:flex-row items-center justify-between gap-4">
+
+      <p class="text-gray-400 text-sm">
+        © <span id="year"></span> Heryatech Consultancy Private Limited
+      </p>
+
+      <!-- Social Icons -->
+      <div class="flex items-center gap-5 text-lg">
+        <a class="social-icon"><i class="fab fa-whatsapp"></i></a>
+        <a class="social-icon"><i class="fab fa-facebook-f"></i></a>
+        <a class="social-icon"><i class="fab fa-instagram"></i></a>
+        <a class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+        <a class="social-icon"><i class="fab fa-x-twitter"></i></a>
+        <a class="social-icon"><i class="fab fa-youtube"></i></a>
+      </div>
+
+    </div>
+  </div>
+</footer>
+
+
+<script>
+
+/* ========================= */
+/* SCROLL REVEAL */
+/* ========================= */
+function revealOnScroll() {
+    const reveals = document.querySelectorAll(".reveal, .reveal-left, .reveal-right");
+
+    reveals.forEach((el) => {
+        const windowHeight = window.innerHeight;
+        const elementTop = el.getBoundingClientRect().top;
+        const revealPoint = 100;
+
+        if (elementTop < windowHeight - revealPoint) {
+            el.classList.add("active");
+        }
+    });
+}
+
+window.addEventListener("scroll", revealOnScroll);
+window.addEventListener("load", revealOnScroll);
+
+
+/* ========================= */
+/* COUNTER ANIMATION */
+/* ========================= */
+const counters = document.querySelectorAll(".counter");
+
+counters.forEach(counter => {
+    const target = parseInt(counter.innerText);
+    let count = 0;
+
+    const updateCounter = () => {
+        const increment = target / 100;
+
+        if (count < target) {
+            count += increment;
+            counter.innerText = Math.ceil(count);
+            setTimeout(updateCounter, 20);
+        } else {
+            counter.innerText = target;
+        }
+    };
+
+    updateCounter();
+});
+
+
+/* ========================= */
+/* SLIDER BUTTONS */
+/* ========================= */
+const slider = document.getElementById("projectsSlider");
+const nextBtn = document.getElementById("nextProject");
+const prevBtn = document.getElementById("prevProject");
+
+if(nextBtn){
+    nextBtn.addEventListener("click", () => {
+        slider.scrollBy({ left: 350, behavior: "smooth" });
+    });
+
+    prevBtn.addEventListener("click", () => {
+        slider.scrollBy({ left: -350, behavior: "smooth" });
+    });
+}
+
+
+/* ========================= */
+/* FOOTER YEAR */
+/* ========================= */
+document.getElementById("year").textContent = new Date().getFullYear();
+
+/* ========================= */
+/* PRELOADER */
+window.addEventListener("load", function () {
+  const loader = document.getElementById("preloader");
+  setTimeout(() => {
+    loader.classList.add("hide");
+  }, 1000);
+});
+
+
+
+</script>
+
+</body>
+</html>        

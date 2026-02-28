@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Android App Development Company | Heryatech</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            heading: ['Outfit', 'sans-serif'],
+            mono: ['ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', "Liberation Mono", "Courier New", 'monospace'],
+          },
+          colors: {
+            brand: {
+              dark: '#070b0e', /* Deep Android Night */
+              card: '#0d161c', /* Elevated card */
+              primary: '#3DDC84', /* Android Green */
+              accent: '#4285F4',  /* Google Blue */
+              light: '#f8fafc'
+            }
+          },
+          animation: {
+            'float': 'float 6s ease-in-out infinite',
+            'blob': 'blob 7s infinite',
+            'spin-slow': 'spin 8s linear infinite',
+            'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0)' },
+              '50%': { transform: 'translateY(-20px)' },
+            },
+            blob: {
+              '0%': { transform: 'translate(0px, 0px) scale(1)' },
+              '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+              '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+              '100%': { transform: 'translate(0px, 0px) scale(1)' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      background-color: #070b0e;
+      color: #f8fafc;
+    }
+
+    .glass-panel {
+      width: 100%;
+      height: 100%;
+      background: rgba(13, 22, 28, 0.6);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
+    }
+
+    .gradient-text {
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, #3DDC84, #4285F4);
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      -webkit-background-clip: text;
+      background-size: 200% 200%;
+      animation: gradient-shift 5s ease infinite;
+    }
+
+    @keyframes gradient-shift {
+      0% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
+
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    .hero-bg {
+      background: radial-gradient(circle at top right, rgba(61, 220, 132, 0.1) 0%, #070b0e 60%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .feature-card {
+      background: linear-gradient(145deg, #0d161c, #070b0e);
+    }
+
+    .feature-card:hover .icon-wrapper {
+      transform: scale(1.1) rotate(5deg);
+      background: rgba(61, 220, 132, 0.2);
+      border-color: rgba(61, 220, 132, 0.5);
+    }
+
+    .glow-effect {
+      position: relative;
+    }
+
+    .glow-effect::before {
+      content: '';
+      position: absolute;
+      inset: -2px;
+      background: linear-gradient(45deg, #3DDC84, #4285F4, #3DDC84);
+      z-index: -1;
+      filter: blur(10px);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      border-radius: inherit;
+    }
+
+    .glow-effect:hover::before {
+      opacity: 1;
+    }
+
+    /* Grid background pattern */
+    .bg-grid {
+      background-size: 40px 40px;
+      background-image: linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    }
+
+    #services {
+      width: 100%;
+      height: 100%;
+      padding: 100px 0;
+      background: linear-gradient(145deg, #0d161c, #070b0e);
+      color: #fff;
+      overflow: hidden;
+      position: relative;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      z-index: 1;
+    }
+  </style>
+</head>
+
+<body class="font-sans antialiased overflow-x-hidden container-fluid">
+
+  <!-- Header (Premium Transparent) -->
+  <header
+    class="absolute top-0 left-0 w-full z-50 text-white border-b border-white/5 bg-transparent backdrop-blur-md bg-black/30">
+    <div class="container mx-auto px-6 py-5 flex justify-between items-center">
+      <div class="flex items-center gap-3 cursor-pointer">
+        <img src="c:\Users\Admin\Pictures\logo.jpeg" alt="Heryatech"
+          class="w-10 h-10 rounded-xl object-cover shadow-[0_0_15px_rgba(61,220,132,0.4)]">
+        <span class="text-2xl font-bold font-heading tracking-wide">Heryatech</span>
+      </div>
+
+      <nav class="hidden md:flex space-x-8 font-medium text-sm text-gray-300">
+        <a href="index.html" class="hover:text-white transition-colors">Home</a>
+        <a href="#" class="hover:text-white transition-colors">Services</a>
+        <a href="index.html" class="text-brand-primary transition-colors">Technologies</a>
+        <a href="#" class="hover:text-white transition-colors">Company</a>
+      </nav>
+
+      <a href="Start a Project.html"
+        class="hidden md:flex bg-brand-primary/20 border border-brand-primary/50 text-white px-6 py-2.5 rounded-full hover:bg-brand-primary hover:text-black transition-all items-center gap-2 text-sm font-medium">
+        Start a Project <i class="fas fa-arrow-right text-xs"></i>
+      </a>
+
+      <button class="md:hidden text-white"><i class="fas fa-bars text-xl"></i></button>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-bg min-h-screen flex items-center pt-32 pb-16 relative bg-grid">
+    <!-- Animated Background Blobs -->
+    <div
+      class="absolute top-10 left-0 w-[500px] h-[500px] bg-brand-primary/10 rounded-full filter blur-[120px] animate-blob">
+    </div>
+    <div
+      class="absolute bottom-10 right-10 w-[400px] h-[400px] bg-brand-accent/20 rounded-full filter blur-[120px] animate-blob animation-delay-2000">
+    </div>
+
+    <div class="container mx-auto px-6 relative z-10">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <div class="space-y-8">
+          <div
+            class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-brand-primary/30 bg-brand-primary/5 backdrop-blur-md text-sm text-brand-primary font-medium">
+            <i class="fab fa-android text-lg"></i>
+            Native Android App Development
+          </div>
+          <h1 class="text-5xl md:text-7xl font-extrabold text-white leading-[1.1] font-heading tracking-tight">
+            Powering <br>
+            The Global <br>
+            <span class="gradient-text">Mobile Ecosystem.</span>
+          </h1>
+          <p class="text-lg md:text-xl text-gray-400 max-w-xl leading-relaxed font-light">
+            We engineer secure, scalable, and high-performance Android applications using Kotlin and modern Jetpack
+            libraries, tailored flawlessly for millions of devices worldwide.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 pt-4">
+            <a href="#services"
+              class="bg-[#3DDC84] text-black px-8 py-4 rounded-full font-bold hover:bg-green-400 transition-all text-center shadow-[0_0_20px_rgba(61,220,132,0.3)]">
+              Hire Android Developers
+            </a>
+            <a href="contact-us.html"
+              class="px-8 py-4 rounded-full font-semibold text-white border border-gray-700 hover:bg-white/10 transition-all text-center group">
+              Explore Projects <i
+                class="fas fa-arrow-right ml-2 opacity-50 group-hover:opacity-100 group-hover:translate-x-1 transition-all"></i>
+            </a>
+          </div>
+
+          <div class="pt-10 mt-10 border-t border-white/10 grid grid-cols-3 gap-6">
+            <div>
+              <h4 class="text-3xl font-bold text-white font-heading">Kotlin<span class="text-brand-primary">1st</span>
+              </h4>
+              <p class="text-gray-500 text-sm mt-1 font-medium text-xs uppercase tracking-wider">Modern Core</p>
+            </div>
+            <div>
+              <h4 class="text-3xl font-bold text-white font-heading">2.5B<span class="text-brand-primary">+</span></h4>
+              <p class="text-gray-500 text-sm mt-1 font-medium text-xs uppercase tracking-wider">Active Devices</p>
+            </div>
+            <div>
+              <h4 class="text-3xl font-bold text-white font-heading">Material<span class="text-brand-primary">3</span>
+              </h4>
+              <p class="text-gray-500 text-sm mt-1 font-medium text-xs uppercase tracking-wider">Design System</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="relative hidden lg:block">
+          <div class="relative w-full aspect-square flex justify-center items-center">
+            <div
+              class="absolute inset-0 bg-gradient-to-tr from-brand-primary/10 to-brand-accent/10 rounded-full filter blur-[100px] animate-pulse-slow">
+            </div>
+
+            <!-- Android Device Floating Mockup -->
+            <div class="relative z-10 w-full h-[500px] flex items-center justify-center">
+
+              <!-- Phone Mockup Frame (Pixel aesthetic) -->
+              <div
+                class="relative w-[240px] h-[490px] bg-[#121212] border-[4px] border-[#2d2d2d] rounded-[2.5rem] shadow-2xl z-20 overflow-hidden animate-float ring-4 ring-black/50"
+                style="animation-delay: 1s;">
+                <!-- Camera Hole -->
+                <div
+                  class="absolute top-3 left-1/2 -translate-x-1/2 w-3 h-3 bg-black rounded-full z-30 shadow-[inset_0_-1px_2px_rgba(255,255,255,0.2)]">
+                </div>
+
+                <!-- App Screen Mockup -->
+                <div class="w-full h-full bg-[#121212] text-white flex flex-col pt-10 pb-6 px-4">
+                  <div class="flex justify-between items-center mb-6">
+                    <div class="w-10 h-10 rounded-full bg-gray-800 flex justify-center items-center">
+                      <i class="fas fa-user text-gray-400"></i>
+                    </div>
+                    <div class="text-white font-semibold text-lg tracking-tight">Dashboard</div>
+                    <div
+                      class="w-10 h-10 rounded-full bg-brand-primary/10 flex justify-center items-center text-brand-primary">
+                      <i class="fas fa-bell"></i>
+                    </div>
+                  </div>
+
+                  <!-- Material UI Card representation -->
+                  <div
+                    class="w-full p-5 bg-[#1E1E1E] rounded-3xl shadow-lg relative overflow-hidden flex flex-col mb-6 transition-transform hover:scale-105 duration-300">
+                    <div class="text-gray-400 text-sm font-medium mb-1">Total Revenue</div>
+                    <div class="text-[#3DDC84] text-3xl font-bold mb-4">$84,290</div>
+                    <div
+                      class="block w-full h-16 bg-gradient-to-t from-brand-primary/20 to-transparent rounded-lg relative overflow-hidden">
+                      <svg class="absolute bottom-0 w-full h-full" preserveAspectRatio="none" viewBox="0 0 100 100">
+                        <path d="M0 100 L0 80 Q25 60 50 80 T100 60 L100 100 Z" fill="#3DDC84" opacity="0.5" />
+                      </svg>
+                    </div>
+                  </div>
+
+                  <div class="text-white font-bold text-lg mb-4">Analytics</div>
+
+                  <div class="grid grid-cols-2 gap-4">
+                    <div class="bg-[#1e1e1e] p-4 rounded-2xl flex flex-col items-center justify-center text-center">
+                      <div
+                        class="w-10 h-10 rounded-full bg-blue-500/20 text-blue-400 flex items-center justify-center mb-2">
+                        <i class="fas fa-users"></i>
+                      </div>
+                      <div class="font-bold text-lg">12.4k</div>
+                      <div class="text-xs text-gray-500">Users</div>
+                    </div>
+                    <div class="bg-[#1e1e1e] p-4 rounded-2xl flex flex-col items-center justify-center text-center">
+                      <div
+                        class="w-10 h-10 rounded-full bg-purple-500/20 text-purple-400 flex items-center justify-center mb-2">
+                        <i class="fas fa-chart-line"></i>
+                      </div>
+                      <div class="font-bold text-lg">+24%</div>
+                      <div class="text-xs text-gray-500">Growth</div>
+                    </div>
+                    <div class="bg-[#1e1e1e] p-4 rounded-2xl flex flex-col items-center justify-center text-center">
+                      <div
+                        class="w-10 h-10 rounded-full bg-orange-500/20 text-orange-400 flex items-center justify-center mb-2">
+                        <i class="fas fa-shopping-cart"></i>
+                      </div>
+                      <div class="font-bold text-lg">3,892</div>
+                      <div class="text-xs text-gray-500">Orders</div>
+                    </div>
+                    <div class="bg-[#1e1e1e] p-4 rounded-2xl flex flex-col items-center justify-center text-center">
+                      <div
+                        class="w-10 h-10 rounded-full bg-green-500/20 text-green-400 flex items-center justify-center mb-2">
+                        <i class="fas fa-star"></i>
+                      </div>
+                      <div class="font-bold text-lg">4.9/5</div>
+                      <div class="text-xs text-gray-500">Rating</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Floating Elements -->
+              <div
+                class="absolute top-20 right-4 w-auto h-auto px-4 py-2 border-0 bg-[#1e1e1e]/80 backdrop-blur-xl rounded-xl flex items-center gap-3 z-30 transform hover:scale-105 transition-transform duration-300 shadow-xl border border-white/5">
+                <div class="text-[#7F52FF] font-bold text-xl"><i class="fas fa-code"></i></div>
+                <div class="font-mono text-xs text-gray-300">
+                  <span class="text-[#CC7832]">val</span> <span class="text-[#9876AA]">androidApp</span> = <span
+                    class="text-[#A9B7C6]">true</span>
+                </div>
+              </div>
+
+              <div
+                class="absolute bottom-28 -left-6 w-auto h-auto px-5 py-3 border-0 bg-[#1e1e1e]/80 backdrop-blur-xl rounded-xl flex items-center gap-3 z-30 transform hover:scale-105 transition-transform duration-300 shadow-xl border border-white/5">
+                <div class="w-8 h-8 rounded-full bg-green-500/20 flex items-center justify-center text-brand-primary">
+                  <i class="fab fa-google-play"></i>
+                </div>
+                <span class="text-sm font-bold ml-1 text-white tracking-wide">Play Protect</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technical Expertise Grid -->
+ <section id="services" class="w-full py-32 relative bg-[#0a1014] border-t border-white/5 overflow-hidden">
+  
+  <div class="max-w-7xl mx-auto px-6">
+
+    <!-- Section Header -->
+    <div class="text-center max-w-3xl mx-auto mb-20">
+      <span
+        class="text-brand-primary font-semibold tracking-wider uppercase text-xs flex items-center justify-center gap-3 mb-4">
+        <span class="w-8 h-px bg-brand-primary"></span>
+        Why Android Native?
+        <span class="w-8 h-px bg-brand-primary"></span>
+      </span>
+
+      <h2 class="text-4xl md:text-5xl font-bold text-white mb-6 font-heading tracking-tight">
+        Our Android Capabilities
+      </h2>
+
+      <p class="text-gray-400 text-lg font-light leading-relaxed">
+        We architect versatile, powerful, and hardware-optimized Android applications utilizing Google’s official Android SDK,
+        Kotlin, and modern Jetpack architecture components.
+      </p>
+    </div>
+
+    <!-- Grid -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+      <!-- Card 1 -->
+      <div class="group bg-[#0e151a] rounded-2xl p-8 border border-white/5 hover:border-brand-primary/40 hover:-translate-y-2 transition-all duration-300 shadow-xl text-center">
+
+        <div class="w-16 h-16 rounded-2xl bg-[#070b0e] border border-white/10 flex items-center justify-center mb-6 mx-auto text-brand-primary text-3xl shadow-[0_0_20px_rgba(61,220,132,0.15)] group-hover:scale-110 transition">
+          <i class="fas fa-mobile"></i>
+        </div>
+
+        <h3 class="text-xl font-bold text-white mb-4 group-hover:text-brand-primary transition">
+          Custom App Development
+        </h3>
+
+        <p class="text-gray-400 text-sm leading-relaxed">
+          From startups to enterprise systems, we build highly customized Android apps optimized across screen sizes,
+          resolutions, and OS versions.
+        </p>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="group bg-[#0e151a] rounded-2xl p-8 border border-white/5 hover:border-brand-primary/40 hover:-translate-y-2 transition-all duration-300 shadow-xl text-center">
+
+        <div class="w-16 h-16 rounded-2xl bg-[#070b0e] border border-white/10 flex items-center justify-center mb-6 mx-auto text-brand-primary text-3xl shadow-[0_0_20px_rgba(61,220,132,0.15)] group-hover:scale-110 transition">
+          <i class="fas fa-palette"></i>
+        </div>
+
+        <h3 class="text-xl font-bold text-white mb-4 group-hover:text-brand-primary transition">
+          Material Design 3
+        </h3>
+
+        <p class="text-gray-400 text-sm leading-relaxed">
+          Crafting expressive and accessible interfaces aligned with Google's latest Material Design system
+          for premium Android experiences.
+        </p>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="group bg-[#0e151a] rounded-2xl p-8 border border-white/5 hover:border-brand-primary/40 hover:-translate-y-2 transition-all duration-300 shadow-xl text-center">
+
+        <div class="w-16 h-16 rounded-2xl bg-[#070b0e] border border-white/10 flex items-center justify-center mb-6 mx-auto text-brand-primary text-3xl shadow-[0_0_20px_rgba(61,220,132,0.15)] group-hover:scale-110 transition">
+          <i class="fas fa-microchip"></i>
+        </div>
+
+        <h3 class="text-xl font-bold text-white mb-4 group-hover:text-brand-primary transition">
+          Android IoT & Wearables
+        </h3>
+
+        <p class="text-gray-400 text-sm leading-relaxed">
+          Seamless development for WearOS, Android Auto, and embedded IoT systems powered by Android OS.
+        </p>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="group bg-[#0e151a] rounded-2xl p-8 border border-white/5 hover:border-brand-primary/40 hover:-translate-y-2 transition-all duration-300 shadow-xl text-center">
+
+        <div class="w-16 h-16 rounded-2xl bg-[#070b0e] border border-white/10 flex items-center justify-center mb-6 mx-auto text-brand-primary text-3xl shadow-[0_0_20px_rgba(61,220,132,0.15)] group-hover:scale-110 transition">
+          <i class="fas fa-sync-alt"></i>
+        </div>
+
+        <h3 class="text-xl font-bold text-white mb-4 group-hover:text-brand-primary transition">
+          Java to Kotlin Migration
+        </h3>
+
+        <p class="text-gray-400 text-sm leading-relaxed">
+          Upgrade legacy Java apps into modern, concise, and stable Kotlin architecture for improved performance and safety.
+        </p>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="group bg-[#0e151a] rounded-2xl p-8 border border-white/5 hover:border-brand-primary/40 hover:-translate-y-2 transition-all duration-300 shadow-xl text-center">
+
+        <div class="w-16 h-16 rounded-2xl bg-[#070b0e] border border-white/10 flex items-center justify-center mb-6 mx-auto text-brand-primary text-3xl shadow-[0_0_20px_rgba(61,220,132,0.15)] group-hover:scale-110 transition">
+          <i class="fas fa-server"></i>
+        </div>
+
+        <h3 class="text-xl font-bold text-white mb-4 group-hover:text-brand-primary transition">
+          Backend & API Integration
+        </h3>
+
+        <p class="text-gray-400 text-sm leading-relaxed">
+          Secure integrations with REST APIs, GraphQL, Firebase, and AWS for real-time and data-intensive apps.
+        </p>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="group bg-[#0e151a] rounded-2xl p-8 border border-white/5 hover:border-brand-primary/40 hover:-translate-y-2 transition-all duration-300 shadow-xl text-center">
+
+        <div class="w-16 h-16 rounded-2xl bg-[#070b0e] border border-white/10 flex items-center justify-center mb-6 mx-auto text-brand-primary text-3xl shadow-[0_0_20px_rgba(61,220,132,0.15)] group-hover:scale-110 transition">
+          <i class="fab fa-google-play"></i>
+        </div>
+
+        <h3 class="text-xl font-bold text-white mb-4 group-hover:text-brand-primary transition">
+          Play Store Deployment
+        </h3>
+
+        <p class="text-gray-400 text-sm leading-relaxed">
+          End-to-end publishing, ASO optimization, and Google Play compliance management.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+  <!-- Technical Depth Section -->
+  <section
+    class="py-32 bg-[#0d161c] text-white relative overflow-hidden flex flex-col items-center border-y border-white/5">
+    <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-[0.05]">
+    </div>
+    <div
+      class="absolute left-0 top-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand-primary/10 rounded-full blur-[150px]">
+    </div>
+
+    <div class="container mx-auto px-6 relative z-10">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+
+        <div class="order-2 lg:order-1 relative flex justify-center">
+          <div class="w-full max-w-lg relative p-6">
+            <!-- Android Studio / Kotlin Code Editor Mockup -->
+            <div
+              class="w-full bg-[#2b2b2b] rounded-xl border border-white/10 shadow-2xl overflow-hidden font-mono text-xs md:text-sm">
+              <div class="flex items-center justify-between px-4 py-3 bg-[#3c3f41] border-b border-[#242424]">
+                <div class="flex gap-2">
+                  <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                  <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                  <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                </div>
+                <div class="text-gray-300 text-xs flex items-center gap-2"><i
+                    class="fab fa-android text-brand-primary"></i> MainActivity.kt — Android Studio</div>
+                <div></div>
+              </div>
+              <div class="p-6 text-[#A9B7C6] space-y-1 bg-[#2b2b2b]">
+                <div class="flex"><span class="text-gray-500 w-8 inline-block select-none">1</span><span
+                    class="text-[#CC7832]">package</span> com.heryatech.app</div>
+                <div class="flex"><span class="text-gray-500 w-8 inline-block select-none">2</span></div>
+                <div class="flex"><span class="text-gray-500 w-8 inline-block select-none">3</span><span
+                    class="text-[#CC7832]">import</span> android.os.Bundle</div>
+                <div class="flex"><span class="text-gray-500 w-8 inline-block select-none">4</span><span
+                    class="text-[#CC7832]">import</span> androidx.activity.ComponentActivity</div>
+                <div class="flex"><span class="text-gray-500 w-8 inline-block select-none">5</span><span
+                    class="text-[#CC7832]">import</span> androidx.activity.compose.setContent</div>
+                <div class="flex"><span class="text-gray-500 w-8 inline-block select-none">6</span><span
+                    class="text-[#CC7832]">import</span> androidx.compose.material3.*</div>
+                <div class="flex"><span class="text-gray-500 w-8 inline-block select-none">7</span></div>
+                <div class="flex"><span class="text-gray-500 w-8 inline-block select-none">8</span><span
+                    class="text-[#CC7832]">class</span> <span class="text-[#FFC66D]">MainActivity</span> : <span
+                    class="text-[#A9B7C6]">ComponentActivity</span>() {</div>
+                <div class="flex"><span class="text-gray-500 w-8 inline-block select-none">9</span><span
+                    class="ml-4 text-[#BBB529]">@Override</span></div>
+                <div class="flex"><span class="text-gray-500 w-8 inline-block select-none">10</span><span
+                    class="ml-4 text-[#CC7832]">override fun</span> <span
+                    class="text-[#FFC66D]">onCreate</span>(savedInstanceState: Bundle?) {</div>
+                <div class="flex"><span class="text-gray-500 w-8 inline-block select-none">11</span><span
+                    class="ml-8 text-[#CC7832]">super</span>.onCreate(savedInstanceState)</div>
+                <div class="flex"><span class="text-gray-500 w-8 inline-block select-none">12</span><span
+                    class="ml-8 text-[#FFC66D]">setContent</span> {</div>
+                <div class="flex"><span class="text-gray-500 w-8 inline-block select-none">13</span><span
+                    class="ml-12 text-[#FFC66D]">MaterialTheme</span> {</div>
+                <div class="flex"><span class="text-gray-500 w-8 inline-block select-none">14</span><span
+                    class="ml-16 text-[#FFC66D]">Surface</span>(</div>
+                <div class="flex"><span class="text-gray-500 w-8 inline-block select-none">15</span><span
+                    class="ml-20">color = MaterialTheme.colorScheme.background</span></div>
+                <div class="flex"><span class="text-gray-500 w-8 inline-block select-none">16</span><span
+                    class="ml-16">) {</span></div>
+                <div class="flex"><span class="text-gray-500 w-8 inline-block select-none">17</span><span
+                    class="ml-20 text-[#FFC66D]">Greeting</span>(<span class="text-[#6A8759]">"Premium Android
+                    UI"</span>)</div>
+                <div class="flex"><span class="text-gray-500 w-8 inline-block select-none">18</span><span
+                    class="ml-16">}</span></div>
+                <div class="flex"><span class="text-gray-500 w-8 inline-block select-none">19</span><span
+                    class="ml-12">}</span></div>
+                <div class="flex"><span class="text-gray-500 w-8 inline-block select-none">20</span><span
+                    class="ml-8 text-[#A9B7C6]">}</span></div>
+                <div class="flex"><span class="text-gray-500 w-8 inline-block select-none">21</span><span
+                    class="ml-4 text-[#A9B7C6]">}</span></div>
+                <div class="flex"><span class="text-gray-500 w-8 inline-block select-none">22</span><span
+                    class="ml-0 text-[#A9B7C6]">}</span></div>
+              </div>
+            </div>
+
+            <!-- Decorative overlay badge -->
+            <div
+              class="absolute -bottom-6 -right-4 w-auto h-auto py-3 px-5 border-0 bg-[#2b2b2b] rounded-xl flex items-center gap-3 border border-white/10 z-20 shadow-xl">
+              <div
+                class="w-10 h-10 rounded-full bg-blue-500/20 flex items-center justify-center text-blue-400 text-xl font-bold">
+                <i class="fas fa-layer-group"></i>
+              </div>
+              <p class="text-white text-sm font-bold tracking-tight">Jetpack Compose</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="order-1 lg:order-2">
+          <span class="text-brand-primary font-semibold tracking-wider text-xs mb-3 block uppercase">Engineering
+            Excellence</span>
+          <h2 class="text-4xl md:text-5xl font-bold mb-6 font-heading tracking-tight">The Modern <br>Android Stack</h2>
+          <p class="text-gray-400 text-lg mb-10 leading-relaxed font-light">
+            We build highly scalable and maintainable Android applications using the official recommended architectures.
+            Leveraging Kotlin Coroutines, Jetpack Compose, and robust MVVM design patterns.
+          </p>
+
+          <ul class="space-y-8">
+            <li class="flex gap-5 items-start group">
+              <div
+                class="w-14 h-14 rounded-2xl bg-[#070b0e] border border-white/5 flex items-center justify-center flex-shrink-0 text-brand-primary group-hover:bg-brand-primary group-hover:text-black transition-colors duration-300 shadow-lg">
+                <i class="fas fa-project-diagram text-xl"></i>
+              </div>
+              <div>
+                <h4 class="text-xl font-bold font-heading text-white tracking-tight">MVVM + Clean Architecture</h4>
+                <p class="text-gray-400 text-sm mt-2 leading-relaxed font-light">Separating concerns rigorously using
+                  Model-View-ViewModel, Flow, and Repository patterns to make code highly testable and crash-free.</p>
+              </div>
+            </li>
+            <li class="flex gap-5 items-start group">
+              <div
+                class="w-14 h-14 rounded-2xl bg-[#070b0e] border border-white/5 flex items-center justify-center flex-shrink-0 text-brand-primary group-hover:bg-brand-primary group-hover:text-black transition-colors duration-300 shadow-lg">
+                <i class="fas fa-bolt text-xl"></i>
+              </div>
+              <div>
+                <h4 class="text-xl font-bold font-heading text-white tracking-tight">Kotlin Coroutines & Flow</h4>
+                <p class="text-gray-400 text-sm mt-2 leading-relaxed font-light">Handling asynchronous programming
+                  natively. Ensuring non-blocking UI thread execution for complex database and network operations.</p>
+              </div>
+            </li>
+            <li class="flex gap-5 items-start group">
+              <div
+                class="w-14 h-14 rounded-2xl bg-[#070b0e] border border-white/5 flex items-center justify-center flex-shrink-0 text-brand-primary group-hover:bg-brand-primary group-hover:text-black transition-colors duration-300 shadow-lg">
+                <i class="fas fa-shield-alt text-xl"></i>
+              </div>
+              <div>
+                <h4 class="text-xl font-bold font-heading text-white tracking-tight">Play Protect & Security</h4>
+                <p class="text-gray-400 text-sm mt-2 leading-relaxed font-light">Implementing ProGuard/R8 obfuscation,
+                  EncryptedSharedPreferences, and SafetyNet to safeguard source code and user privacy.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Call To Action -->
+  <section class="py-32 bg-[#070b0e] relative overflow-hidden bg-grid">
+    <div class="absolute inset-0 bg-gradient-to-t from-brand-primary/10 to-transparent opacity-30"></div>
+    <div class="container mx-auto px-6 relative z-10 text-center">
+      <h2 class="text-5xl md:text-6xl font-extrabold text-white mb-8 font-heading tracking-tight">Expand Your Reach to
+        <br>Billions on <span class="gradient-text">Android</span>
+      </h2>
+      <p class="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto mb-12 font-light">Partner with our Native Android
+        engineering team to build powerful, user-centric applications that dominate the Play Store charts.</p>
+      <div class="flex flex-col sm:flex-row justify-center items-center gap-6">
+        <a href="contact-us.html"
+          class="bg-brand-primary text-[#070b0e] px-10 py-5 rounded-full font-bold hover:bg-green-400 transition-all glow-effect shadow-[0_0_20px_rgba(61,220,132,0.4)] text-center w-full sm:w-auto text-lg">
+          Schedule a Consultation
+        </a>
+        <a href="#"
+          class="text-white hover:text-brand-primary font-semibold transition-colors flex items-center gap-2 text-lg">
+          Explore Case Studies <i class="fas fa-arrow-right text-sm"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-[#040608] text-gray-400 py-16 border-t border-white/5">
+    <div class="container mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+        <div class="lg:col-span-1">
+          <div class="flex items-center gap-3 mb-6">
+            <img src="c:\Users\Admin\Pictures\logo.jpeg" alt="Heryatech" class="w-8 h-8 rounded-md object-cover">
+            <span class="text-xl font-bold text-white tracking-wide font-heading">Heryatech</span>
+          </div>
+          <p class="text-sm leading-relaxed mb-6 font-light">Delivering unparalleled mobile excellence via native
+            Android architectures, building unified solutions across the entire digital ecosystem.</p>
+          <div class="flex gap-4">
+            <a href="#"
+              class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-brand-primary hover:text-[#040608] transition-all"><i
+                class="fab fa-linkedin-in text-sm"></i></a>
+            <a href="#"
+              class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-brand-primary hover:text-[#040608] transition-all"><i
+                class="fab fa-twitter text-sm"></i></a>
+            <a href="#"
+              class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-brand-primary hover:text-[#040608] transition-all"><i
+                class="fab fa-instagram text-sm"></i></a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="text-white font-bold mb-6 font-heading tracking-wide uppercase text-xs">Mobile Expertise</h4>
+          <ul class="space-y-3 text-sm font-light">
+            <li><a href="React Native.html" class="hover:text-brand-primary transition-colors">React Native Dev</a></li>
+            <li><a href="Flutter.html" class="hover:text-brand-primary transition-colors">Flutter Development</a></li>
+            <li><a href="ios.html" class="hover:text-brand-primary transition-colors">Native iOS</a></li>
+            <li><a href="#" class="hover:text-brand-primary transition-colors">Native Android (Kotlin)</a></li>
+            <li><a href="#" class="hover:text-brand-primary transition-colors">App Maintenance</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-white font-bold mb-6 font-heading tracking-wide uppercase text-xs">Company</h4>
+          <ul class="space-y-3 text-sm font-light">
+            <li><a href="about-us.html" class="hover:text-brand-primary transition-colors">About Heryatech</a></li>
+            <li><a href="#" class="hover:text-brand-primary transition-colors">Careers & Culture</a></li>
+            <li><a href="blogs.html" class="hover:text-brand-primary transition-colors">Engineering Blog</a></li>
+            <li><a href="contact-us.html" class="hover:text-brand-primary transition-colors">Contact Support</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-white font-bold mb-6 font-heading tracking-wide uppercase text-xs">Get in Touch</h4>
+          <ul class="space-y-4 text-sm font-light">
+            <li class="flex gap-3 items-start"><i class="fas fa-map-marker-alt mt-1 text-brand-primary"></i><span
+                class="leading-relaxed">Silicon Avenue, Tech District, San Jose, CA 95131</span></li>
+            <li class="flex gap-3"><i class="fas fa-envelope mt-1 text-brand-primary"></i><a
+                href="mailto:build@heryatech.com" class="hover:text-white transition-colors">build@heryatech.com</a>
+            </li>
+            <li class="flex gap-3"><i class="fas fa-phone mt-1 text-brand-primary"></i><a href="tel:+15550219900"
+                class="hover:text-white transition-colors">+1 (555) 021-9900</a></li>
+          </ul>
+        </div>
+      </div>
+      <div
+        class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-light text-gray-500">
+        <p>&copy; 2026 Heryatech Systems. All Rights Reserved.</p>
+        <div class="flex gap-6">
+          <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+          <a href="#" class="hover:text-white transition-colors">Cookie Policy</a>
+          <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

@@ -1,0 +1,121 @@
+@import 'tailwindcss';
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+
+.map-bg {
+    /*background-image: url('https://upload.wikimedia.org/wikipedia/commons/8/80/World_map_-_low_resolution.svg');
+    background-repeat:repeat;
+    background-position: center top;
+    background-size: cover;*/
+    
+    opacity: 0.05;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Custom styles for the 360 diagram lines */
+.diagram-container {
+    position: relative;
+}
+
+.connector-line {
+    position: absolute;
+    z-index: -1;
+    stroke: #e5e7eb;
+    fill: none;
+    stroke-width: 1.5;
+}
+
+.icon-box {
+    transition: transform 0.3s ease;
+}
+.icon-box:hover {
+    transform: translateY(-5px);
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0px); }
+}
+.animate-float {
+    animation: float 4s ease-in-out infinite;
+}
+
+/* Timeline Styles */
+.diamond-shape {
+    transform: rotate(45deg);
+    transition: all 0.3s ease;
+}
+.diamond-inner {
+    transform: rotate(-45deg);
+}
+.timeline-number {
+    -webkit-text-stroke: 1px #cbd5e1; /* slate-300 */
+    color: transparent;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.dashed-line-horizontal {
+    border-top: 2px dashed #cbd5e1;
+    width: 100%;
+    height: 1px;
+}
+
+.dashed-line-vertical {
+    border-left: 2px dashed #cbd5e1;
+    width: 1px;
+    height: 100%;
+}
+.dropdown
+{
+    width: 100%;
+    height: auto;
+    position: relative;
+    display: block;
+}
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    z-index: 50;
+}
+.dropdown-menu a {
+    display: block;
+    padding: 0.5rem 1rem;
+    color: #374151;
+    font-weight: 500;
+}
+@media (min-width: 768px) {
+    .timeline-number {
+        font-size: 6rem; /* Adjust size for md and above */
+    }
+}   
+@media (max-width: 767px) {
+    .timeline-number {
+        font-size: 4rem; /* Adjust size for sm screens */
+    }
+}
+@media (max-width: 640px) {
+    .diamond-shape {
+        width: 40px;
+        height: 40px;
+    }
+}
+@media (min-width: 641px) {
+    .diamond-shape {
+        width: 60px;
+        height: 60px;
+    }
+}

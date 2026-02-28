@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Government & Public Sector Software Development | Heryatech</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            dark: '#030f1a', /* Very dark navy */
+                            card: '#0a192f',
+                            primary: '#0e7490', /* Cyan/Teal */
+                            accent: '#fbbf24', /* Amber/Gold */
+                            light: '#f1f5f9'
+                        }
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'blob': 'blob 7s infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                        blob: {
+                            '0%': { transform: 'translate(0px, 0px) scale(1)' },
+                            '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+                            '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+                            '100%': { transform: 'translate(0px, 0px) scale(1)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #030f1a;
+            color: #f8fafc;
+        }
+
+        .glass-panel {
+            background: rgba(10, 25, 47, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #06b6d4, #3b82f6);
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            -webkit-background-clip: text;
+            background-size: 200% 200%;
+            animation: gradient-shift 5s ease infinite;
+        }
+
+        @keyframes gradient-shift {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .hero-bg {
+            background: radial-gradient(circle at top right, rgba(14, 116, 144, 0.2) 0%, #030f1a 60%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card {
+            background: linear-gradient(145deg, #0a192f, #030f1a);
+        }
+
+        .feature-card:hover .icon-wrapper {
+            transform: scale(1.1) rotate(5deg);
+            background: rgba(14, 116, 144, 0.3);
+            border-color: rgba(6, 182, 212, 0.5);
+        }
+
+        .glow-effect {
+            position: relative;
+        }
+
+        .glow-effect::before {
+            content: '';
+            position: absolute;
+            inset: -2px;
+            background: linear-gradient(45deg, #0e7490, #3b82f6, #0e7490);
+            z-index: -1;
+            filter: blur(10px);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            border-radius: inherit;
+        }
+
+        .glow-effect:hover::before {
+            opacity: 1;
+        }
+
+        /* Grid background pattern */
+        .bg-grid {
+            background-size: 40px 40px;
+            background-image: linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+        }
+    </style>
+</head>
+
+<body class="font-sans antialiased overflow-x-hidden container-fluid">
+
+    <!-- Header (Premium Transparent) -->
+    <header
+        class="absolute top-0 left-0 w-full z-50 text-white border-b border-white/5 bg-transparent backdrop-blur-sm">
+        <div class="container mx-auto px-6 py-5 flex justify-between items-center">
+            <div class="flex items-center gap-3 cursor-pointer">
+                <img src="c:\Users\Admin\Pictures\logo.jpeg" alt="Heryatech"
+                    class="w-10 h-10 rounded-lg object-cover shadow-[0_0_15px_rgba(14,116,144,0.5)]">
+                <span class="text-2xl font-bold font-heading tracking-wide">Heryatech</span>
+            </div>
+
+            <nav class="hidden md:flex space-x-8 font-medium text-sm text-gray-300">
+                <a href="index.html" class="hover:text-white transition-colors">Home</a>
+                <a href="#" class="hover:text-white transition-colors">Services</a>
+                <a href="index.html" class="text-brand-accent transition-colors">Industries</a>
+                <a href="#" class="hover:text-white transition-colors">Company</a>
+            </nav>
+
+            <a href="Start a Project.html"
+                class="hidden md:flex bg-brand-primary/20 border border-brand-primary/50 text-brand-accent px-6 py-2.5 rounded-full hover:bg-brand-primary hover:text-white transition-all items-center gap-2 text-sm font-medium">
+                Start a Project <i class="fas fa-arrow-right text-xs"></i>
+            </a>
+
+            <button class="md:hidden text-white"><i class="fas fa-bars text-xl"></i></button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-bg min-h-screen flex items-center pt-32 pb-16 relative bg-grid">
+        <!-- Animated Background Blobs -->
+        <div
+            class="absolute top-10 left-0 w-[500px] h-[500px] bg-cyan-600/10 rounded-full filter blur-[100px] animate-blob">
+        </div>
+        <div
+            class="absolute bottom-10 right-10 w-[400px] h-[400px] bg-blue-600/10 rounded-full filter blur-[100px] animate-blob animation-delay-2000">
+        </div>
+
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="space-y-8">
+                    <div
+                        class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-brand-primary/30 bg-brand-primary/10 backdrop-blur-sm text-sm text-brand-accent font-medium">
+                        <span
+                            class="w-2 h-2 rounded-full bg-brand-accent animate-pulse shadow-[0_0_8px_#fbbf24]"></span>
+                        Government & Public Sector
+                    </div>
+                    <h1 class="text-5xl md:text-7xl font-extrabold text-white leading-[1.1] font-heading">
+                        Digitizing <br>
+                        Public Services <br>
+                        <span class="gradient-text">for the Future.</span>
+                    </h1>
+                    <p class="text-lg md:text-xl text-gray-400 max-w-xl leading-relaxed">
+                        We deliver highly secure, mission-critical technology solutions for defense, civilian agencies,
+                        and local governments, aimed at enhancing civic engagement and operational transparency.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 pt-4">
+                        <a href="#solutions"
+                            class="bg-brand-primary text-white px-8 py-4 rounded-full font-semibold hover:bg-cyan-600 transition-all text-center glow-effect shadow-[0_0_20px_rgba(14,116,144,0.3)]">
+                            View Capabilities
+                        </a>
+                        <a href="contact-us.html"
+                            class="px-8 py-4 rounded-full font-semibold text-white border border-gray-600 hover:bg-white/5 transition-all text-center group">
+                            Consult an Expert <i
+                                class="fas fa-arrow-right ml-2 opacity-50 group-hover:opacity-100 group-hover:translate-x-1 transition-all"></i>
+                        </a>
+                    </div>
+
+                    <div class="pt-10 mt-10 border-t border-white/10 grid grid-cols-3 gap-6">
+                        <div>
+                            <h4 class="text-3xl font-bold text-white font-heading">Fed<span
+                                    class="text-brand-accent">RAMP</span></h4>
+                            <p class="text-gray-500 text-sm mt-1 font-medium">Compliant Clouds</p>
+                        </div>
+                        <div>
+                            <h4 class="text-3xl font-bold text-white font-heading">24/7<span
+                                    class="text-brand-accent"></span></h4>
+                            <p class="text-gray-500 text-sm mt-1 font-medium">Threat Monitoring</p>
+                        </div>
+                        <div>
+                            <h4 class="text-3xl font-bold text-white font-heading">100<span
+                                    class="text-brand-accent">%</span></h4>
+                            <p class="text-gray-500 text-sm mt-1 font-medium">Audit Traceability</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative hidden lg:block">
+                    <div class="relative w-full aspect-square animate-float flex justify-center items-center">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-tr from-brand-primary/30 to-blue-600/20 rounded-full filter blur-3xl">
+                        </div>
+
+                        <img src="https://cdni.iconscout.com/illustration/premium/thumb/government-building-illustration-download-in-svg-png-gif-file-formats--city-hall-municipal-architecture-financial-court-buildings-pack-illustrations-5259970.png"
+                            class="relative z-10 w-[90%] object-contain drop-shadow-[0_20px_50px_rgba(0,0,0,0.8)]"
+                            alt="Government Digital Infrastructure">
+
+                        <!-- Floating Data Cards showing dynamic design -->
+                        <div
+                            class="absolute top-16 -left-4 glass-panel py-3 px-5 rounded-xl flex items-center gap-4 z-20 hover:scale-105 transition-transform cursor-default">
+                            <div
+                                class="w-12 h-12 rounded-full bg-green-500/10 border border-green-500/20 flex items-center justify-center text-green-400">
+                                <i class="fas fa-shield-halved text-xl"></i>
+                            </div>
+                            <div>
+                                <p class="text-white text-sm font-bold tracking-wide">Zero-Trust</p>
+                                <p class="text-gray-400 text-xs mt-0.5">Architecture Active</p>
+                            </div>
+                        </div>
+
+                        <div
+                            class="absolute bottom-28 -right-8 glass-panel py-3 px-5 rounded-xl flex items-center gap-4 z-20 hover:scale-105 transition-transform cursor-default">
+                            <div
+                                class="w-12 h-12 rounded-full bg-brand-primary/10 border border-brand-primary/20 flex items-center justify-center text-brand-primary text-xl">
+                                <i class="fas fa-file-signature"></i>
+                            </div>
+                            <div>
+                                <p class="text-white text-sm font-bold tracking-wide">Civic Portal</p>
+                                <p class="text-gray-400 text-xs mt-0.5">Uptime: 99.99%</p>
+                            </div>
+                            <div class="ml-2 w-16 h-8">
+                                <!-- Bar chart mockup -->
+                                <svg viewBox="0 0 100 30" class="w-full h-full fill-brand-primary">
+                                    <rect x="0" y="10" width="10" height="20" rx="2"></rect>
+                                    <rect x="20" y="5" width="10" height="25" rx="2"></rect>
+                                    <rect x="40" y="15" width="10" height="15" rx="2"></rect>
+                                    <rect x="60" y="8" width="10" height="22" rx="2"></rect>
+                                    <rect x="80" y="2" width="10" height="28" rx="2"></rect>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Grid -->
+    <section id="solutions" class="py-32 relative bg-brand-dark container border-t border-white/5">
+        <div class="container mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-20">
+                <span
+                    class="text-brand-accent font-semibold tracking-wider uppercase text-sm flex items-center justify-center gap-2 mb-3">
+                    <span class="w-6 h-px bg-brand-accent"></span> GovTech Integration <span
+                        class="w-6 h-px bg-brand-accent"></span>
+                </span>
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-6 font-heading">Modernizing Public
+                    Infrastructure</h2>
+                <p class="text-gray-400 text-lg">We streamline bureaucratic processes, enable remote public services,
+                    and fortify national digital infrastructure against emerging threats.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div
+                    class="feature-card rounded-2xl p-8 border border-white/5 hover:border-brand-primary/40 hover:-translate-y-2 transition-all duration-300 group shadow-lg">
+                    <div
+                        class="w-16 h-16 rounded-2xl bg-brand-dark border border-white/10 flex items-center justify-center mb-8 icon-wrapper transition-all duration-300 text-brand-primary text-3xl shadow-inner">
+                        <i class="fas fa-landmark"></i>
+                    </div>
+                    <h3
+                        class="text-xl font-bold text-white mb-4 font-heading group-hover:text-brand-accent transition-colors">
+                        e-Government Portals</h3>
+                    <p class="text-gray-400 leading-relaxed text-sm">Unified, accessible platforms for citizen services,
+                        tax filing, permit applications, and civic data transparently delivered online.</p>
+                </div>
+
+                <!-- Card 2 -->
+                <div
+                    class="feature-card rounded-2xl p-8 border border-white/5 hover:border-brand-primary/40 hover:-translate-y-2 transition-all duration-300 group shadow-lg">
+                    <div
+                        class="w-16 h-16 rounded-2xl bg-brand-dark border border-white/10 flex items-center justify-center mb-8 icon-wrapper transition-all duration-300 text-brand-primary text-3xl shadow-inner">
+                        <i class="fas fa-city"></i>
+                    </div>
+                    <h3
+                        class="text-xl font-bold text-white mb-4 font-heading group-hover:text-brand-accent transition-colors">
+                        Smart City Solutions</h3>
+                    <p class="text-gray-400 leading-relaxed text-sm">IoT data ingestion engines for monitoring traffic,
+                        energy usage, and utilities, providing actionable intelligence for resource optimization.</p>
+                </div>
+
+                <!-- Card 3 -->
+                <div
+                    class="feature-card rounded-2xl p-8 border border-white/5 hover:border-brand-primary/40 hover:-translate-y-2 transition-all duration-300 group shadow-lg">
+                    <div
+                        class="w-16 h-16 rounded-2xl bg-brand-dark border border-white/10 flex items-center justify-center mb-8 icon-wrapper transition-all duration-300 text-brand-primary text-3xl shadow-inner">
+                        <i class="fas fa-user-shield"></i>
+                    </div>
+                    <h3
+                        class="text-xl font-bold text-white mb-4 font-heading group-hover:text-brand-accent transition-colors">
+                        Public Safety & Justice</h3>
+                    <p class="text-gray-400 leading-relaxed text-sm">Case management systems, dispatch networks, and
+                        evidence database migrations tailored for law enforcement and judicial systems.</p>
+                </div>
+
+                <!-- Card 4 -->
+                <div
+                    class="feature-card rounded-2xl p-8 border border-white/5 hover:border-brand-primary/40 hover:-translate-y-2 transition-all duration-300 group shadow-lg">
+                    <div
+                        class="w-16 h-16 rounded-2xl bg-brand-dark border border-white/10 flex items-center justify-center mb-8 icon-wrapper transition-all duration-300 text-brand-primary text-3xl shadow-inner">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <h3
+                        class="text-xl font-bold text-white mb-4 font-heading group-hover:text-brand-accent transition-colors">
+                        GovCloud & Secure Hosting</h3>
+                    <p class="text-gray-400 leading-relaxed text-sm">Migration to highly secure, FedRAMP-certified cloud
+                        environments ensuring data sovereignty and resilient disaster recovery strategies.</p>
+                </div>
+
+                <!-- Card 5 -->
+                <div
+                    class="feature-card rounded-2xl p-8 border border-white/5 hover:border-brand-primary/40 hover:-translate-y-2 transition-all duration-300 group shadow-lg">
+                    <div
+                        class="w-16 h-16 rounded-2xl bg-brand-dark border border-white/10 flex items-center justify-center mb-8 icon-wrapper transition-all duration-300 text-brand-primary text-3xl shadow-inner">
+                        <i class="fas fa-truck-fast"></i>
+                    </div>
+                    <h3
+                        class="text-xl font-bold text-white mb-4 font-heading group-hover:text-brand-accent transition-colors">
+                        Defense Logistics</h3>
+                    <p class="text-gray-400 leading-relaxed text-sm">Enterprise Resource Planning (ERP) integrations
+                        securing supply chains, fleet tracking, and managing complex defense procurement.</p>
+                </div>
+
+                <!-- Card 6 -->
+                <div
+                    class="feature-card rounded-2xl p-8 border border-white/5 hover:border-brand-primary/40 hover:-translate-y-2 transition-all duration-300 group shadow-lg">
+                    <div
+                        class="w-16 h-16 rounded-2xl bg-brand-dark border border-white/10 flex items-center justify-center mb-8 icon-wrapper transition-all duration-300 text-brand-primary text-3xl shadow-inner">
+                        <i class="fas fa-hands-holding-circle"></i>
+                    </div>
+                    <h3
+                        class="text-xl font-bold text-white mb-4 font-heading group-hover:text-brand-accent transition-colors">
+                        Welfare & Benefits Systems</h3>
+                    <p class="text-gray-400 leading-relaxed text-sm">Scalable processing engines designed to handle
+                        immense application loads, accurately distributing healthcare, childcare, and social services.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Security Focus Section -->
+    <section
+        class="py-32 bg-brand-card text-white relative overflow-hidden flex flex-col items-center border-y border-white/5">
+        <div
+            class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cyber-locks.png')] opacity-[0.03]">
+        </div>
+        <div
+            class="absolute left-0 top-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand-primary/10 rounded-full blur-[120px]">
+        </div>
+
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="order-2 lg:order-1 relative flex justify-center">
+                    <div class="w-full max-w-lg relative p-6">
+                        <!-- Code terminal mockup (Gov security check) -->
+                        <div
+                            class="w-full bg-[#030f1a] rounded-xl border border-white/10 shadow-2xl overflow-hidden font-mono text-xs md:text-sm">
+                            <div class="flex items-center px-4 py-3 bg-white/5 border-b border-white/10 gap-2">
+                                <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                                <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                                <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                                <div class="ml-4 text-gray-400">auth@gov-cloud-node-4 ~ root</div>
+                            </div>
+                            <div class="p-6 text-gray-300 space-y-3">
+                                <p class="text-brand-primary">><span class="text-gray-300 ml-2">Initiating PIV/CAC
+                                        authentication...</span>
+                                </p>
+                                <p class="text-green-400">[VALID] Smart card credentials verified.</p>
+                                <p class="text-brand-primary">><span class="text-gray-300 ml-2">Validating FIPS 140-2
+                                        encryption status...</span></p>
+                                <div class="pl-4 border-l-2 border-white/10 space-y-1">
+                                    <p class="text-gray-500">module: data_at_rest <span
+                                            class="text-green-400 ml-2">COMPLIANT</span></p>
+                                    <p class="text-gray-500">module: data_in_transit <span
+                                            class="text-green-400 ml-2">COMPLIANT</span></p>
+                                </div>
+                                <p class="text-brand-primary">><span class="text-gray-300 ml-2">Running clearance level
+                                        authorization...</span></p>
+                                <p class="text-green-400 font-bold mt-4">[GRANTED] Access level: TS/SCI. Encrypted
+                                    tunnel open.</p>
+                                <p class="text-brand-accent animate-pulse">_</p>
+                            </div>
+                        </div>
+
+                        <!-- Decorative overlay card -->
+                        <div
+                            class="absolute -bottom-6 -right-6 glass-panel py-4 px-6 rounded-xl flex items-center gap-4 border border-white/10 z-20">
+                            <div
+                                class="w-10 h-10 rounded-full bg-brand-primary/20 flex items-center justify-center text-brand-primary text-xl">
+                                <i class="fas fa-fingerprint"></i>
+                            </div>
+                            <p class="text-white text-sm font-bold">FIPS Compliant Core</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="order-1 lg:order-2">
+                    <span class="text-brand-accent font-semibold tracking-wider text-sm mb-3 block">SECURITY
+                        FIRST</span>
+                    <h2 class="text-4xl md:text-5xl font-bold mb-6 font-heading">Protecting the Nation's <br>Digital
+                        Assets</h2>
+                    <p class="text-gray-400 text-lg mb-10 leading-relaxed">
+                        Public sector technology demands an uncompromising approach to cybersecurity. We construct
+                        software fortresses equipped with zero-trust principles, impenetrable identity frameworks, and
+                        continuous threat intelligence.
+                    </p>
+
+                    <ul class="space-y-8">
+                        <li class="flex gap-5 items-start group">
+                            <div
+                                class="w-14 h-14 rounded-2xl bg-brand-dark border border-white/10 flex items-center justify-center flex-shrink-0 text-brand-primary group-hover:bg-brand-primary group-hover:text-white transition-colors duration-300 shadow-lg">
+                                <i class="fas fa-vial-circle-check text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold font-heading text-white">Continuous Penetration Testing
+                                </h4>
+                                <p class="text-gray-400 text-sm mt-2 leading-relaxed">Rigorous, automated Red Team
+                                    testing deployed throughout the SDLC to preemptively identify and neutralize
+                                    vulnerabilities before launch.</p>
+                            </div>
+                        </li>
+                        <li class="flex gap-5 items-start group">
+                            <div
+                                class="w-14 h-14 rounded-2xl bg-brand-dark border border-white/10 flex items-center justify-center flex-shrink-0 text-brand-primary group-hover:bg-brand-primary group-hover:text-white transition-colors duration-300 shadow-lg">
+                                <i class="fas fa-passport text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold font-heading text-white">CAC & PIV Integrations</h4>
+                                <p class="text-gray-400 text-sm mt-2 leading-relaxed">Native support for federal
+                                    standard two-factor authentication cards, managing highly restricted permissions
+                                    flawlessly.</p>
+                            </div>
+                        </li>
+                        <li class="flex gap-5 items-start group">
+                            <div
+                                class="w-14 h-14 rounded-2xl bg-brand-dark border border-white/10 flex items-center justify-center flex-shrink-0 text-brand-primary group-hover:bg-brand-primary group-hover:text-white transition-colors duration-300 shadow-lg">
+                                <i class="fas fa-book-open-reader text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold font-heading text-white">Strict Compliance Frameworks</h4>
+                                <p class="text-gray-400 text-sm mt-2 leading-relaxed">Built from day one to adhere to
+                                    NIST 800-53, HIPAA, FISMA, and FedRAMP security mandates.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Call To Action -->
+    <section class="py-32 bg-brand-dark relative overflow-hidden bg-grid">
+        <div class="absolute inset-0 bg-gradient-to-t from-brand-primary/10 to-transparent opacity-50"></div>
+        <div class="container mx-auto px-6 relative z-10 text-center">
+            <h2 class="text-5xl md:text-6xl font-extrabold text-white mb-8 font-heading">Ready to Innovate <br><span
+                    class="gradient-text">for the Public Good?</span></h2>
+            <p class="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto mb-12">Partner with Heryatech to design robust,
+                cost-effective digital solutions that serve citizens better and protect critical governmental data.</p>
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-6">
+                <a href="contact-us.html"
+                    class="bg-brand-primary text-white px-10 py-5 rounded-full font-bold hover:bg-cyan-600 transition-all glow-effect shadow-[0_0_20px_rgba(14,116,144,0.4)] text-center w-full sm:w-auto text-lg">
+                    Connect With Our Experts
+                </a>
+                <a href="#"
+                    class="text-white hover:text-brand-accent font-semibold transition-colors flex items-center gap-2 text-lg">
+                    Read Whitepapers <i class="fas fa-arrow-right text-sm"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#020912] text-gray-400 py-16 border-t border-white/5">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <div class="lg:col-span-1">
+                    <div class="flex items-center gap-3 mb-6">
+                        <img src="c:\Users\Admin\Pictures\logo.jpeg" alt="Heryatech"
+                            class="w-8 h-8 rounded-md object-cover">
+                        <span class="text-xl font-bold text-white tracking-wide font-heading">Heryatech</span>
+                    </div>
+                    <p class="text-sm leading-relaxed mb-6">Empowering the public sector with highly resilient,
+                        compliant software systems designed for national security and civic advancement.</p>
+                    <div class="flex gap-4">
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-brand-primary hover:text-white hover:border-brand-primary transition-all"><i
+                                class="fab fa-linkedin-in text-sm"></i></a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-brand-primary hover:text-white hover:border-brand-primary transition-all"><i
+                                class="fab fa-twitter text-sm"></i></a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-brand-primary hover:text-white hover:border-brand-primary transition-all"><i
+                                class="fab fa-instagram text-sm"></i></a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold mb-6 font-heading tracking-wide uppercase text-sm">Gov Solutions
+                    </h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="#" class="hover:text-brand-accent transition-colors">Civilian Agency Tech</a></li>
+                        <li><a href="#" class="hover:text-brand-accent transition-colors">Defense Integration</a></li>
+                        <li><a href="#" class="hover:text-brand-accent transition-colors">Public Safety Networks</a>
+                        </li>
+                        <li><a href="#" class="hover:text-brand-accent transition-colors">FedRAMP Cloud Migration</a>
+                        </li>
+                        <li><a href="#" class="hover:text-brand-accent transition-colors">Smart City Projects</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold mb-6 font-heading tracking-wide uppercase text-sm">Company</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="about-us.html" class="hover:text-brand-accent transition-colors">About
+                                Heryatech</a></li>
+                        <li><a href="#" class="hover:text-brand-accent transition-colors">Careers & Culture</a></li>
+                        <li><a href="blogs.html" class="hover:text-brand-accent transition-colors">Engineering Blog</a>
+                        </li>
+                        <li><a href="contact-us.html" class="hover:text-brand-accent transition-colors">Contact
+                                Support</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold mb-6 font-heading tracking-wide uppercase text-sm">Get in Touch</h4>
+                    <ul class="space-y-4 text-sm">
+                        <li class="flex gap-3 items-start"><i
+                                class="fas fa-map-marker-alt mt-1 text-brand-accent"></i><span
+                                class="leading-relaxed">Silicon Avenue, Tech District, San Jose, CA 95131</span></li>
+                        <li class="flex gap-3"><i class="fas fa-envelope mt-1 text-brand-accent"></i><a
+                                href="mailto:gov@heryatech.com"
+                                class="hover:text-white transition-colors">gov@heryatech.com</a>
+                        </li>
+                        <li class="flex gap-3"><i class="fas fa-phone mt-1 text-brand-accent"></i><a
+                                href="tel:+15550219900" class="hover:text-white transition-colors">+1 (555) 021-9900</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div
+                class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-medium">
+                <p>&copy; 2026 Heryatech Systems. All Rights Reserved.</p>
+                <div class="flex gap-6">
+                    <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-white transition-colors">Cookie Policy</a>
+                    <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

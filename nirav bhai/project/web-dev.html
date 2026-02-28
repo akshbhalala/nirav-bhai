@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heryatech</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+     <!-- FontAwesome for Icons -->
+    
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            dark: '#1a2b4b',
+                            blue: '#254ba0',
+                            lightBlue: '#f0f4ff',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+   <style>
+        /* Background Map Styles */
+        .map-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://www.transparenttextures.com/patterns/cubes.png');
+            opacity: 0.05;
+            z-index: 0;
+        }
+     /* Dropdown Styles */
+        .dropdown {
+            position: relative;
+        }
+        .dropdown-menu {
+            width: auto;
+            height: auto;
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            z-index: 50;
+            min-width: 200px;
+        }
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+        .dropdown-menu a {
+            display: block;
+            padding: 0.5rem 1rem;
+            color: #374151;
+            text-decoration: none;
+            transition: background 0.2s;
+        }
+        .dropdown-menu a:hover {
+            background: #f3f4f6;
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-800 relative min-h-screen overflow-x-hidden bg-white">
+
+    
+
+    <!-- Background Map -->
+    <div class="map-bg"></div>
+
+    <!-- Header -->
+    <header class="container mx-auto px-6 py-6 flex justify-between items-center relative z-50">
+        <!-- Logo -->
+        <div class="flex items-center gap-2 cursor-pointer">
+            <div class="w-8 h-8 bg-brand-dark rounded transform rotate-45 flex items-center justify-center">
+                <div class="w-4 h-4 bg-white"></div>
+            </div>
+            <span class="text-2xl font-bold text-brand-dark">Heryatech</span>
+        </div>
+
+        <!-- Navigation -->
+         <nav class="hidden md:flex space-x-8 text-brand-dark font-medium text-sm">
+            <div class="dropdown">
+                <a href="#" class="hover:text-brand-blue transition flex items-center gap-1">
+                    Services <i class="fas fa-chevron-down text-xs"></i>
+                </a>
+                <div class="dropdown-menu">
+                    <a href="web-dev.html">Web Development</a>
+                    <a href="mobile-dev.html">Mobile App Development</a>
+                    <a href="cloud-devops.html">Cloud & DevOps Services</a>
+                    <a href="ui-ux.html">UI/UX & Graphics Design</a>
+                    <a href="ar-dev.html">Augmented Reality Development</a>
+                    <a href="game-dev.html">Game Development</a>
+                    <a href="digital-marketing.html">Digital Marketing</a>
+                    <a href="seo.html">SEO</a>
+                    <a href="q-testing.html">Quality Analysis (Testing)</a>
+                    <a href="erp.html">ERP Consultation & Support</a>
+                </div>
+            </div>
+            <a href="#" class="hover:text-brand-blue transition">Industries</a>
+            <a href="#" class="hover:text-brand-blue transition">Technologies</a>
+            <a href="#" class="hover:text-brand-blue transition">Products</a>
+            <a href="#" class="hover:text-brand-blue transition">Company</a>
+        </nav>
+
+        <!-- CTA Button -->
+        <a href="#" class="bg-brand-dark text-white px-6 py-2.5 rounded shadow-lg hover:bg-blue-900 transition flex items-center gap-2 text-sm font-medium">
+            Start a Project
+            <i class="fas fa-rocket text-xs"></i>
+        </a>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-6 pt-12 pb-24">
+        
+        <!-- Hero Section -->
+        <div class="grid md:grid-cols-2 gap-12 items-center mb-24">
+            <!-- Hero Text -->
+            <div class="space-y-6 fade-left">
+                <h2 class="text-sm md:text-2xl lg:text-3xl font-bold  text-brand-dark leading-tight">
+                    Custom Web </h2>
+                   <h2 class="text-sm md:text-2xl lg:text-3xl font-bold  text-brand-dark leading-tight"> 
+                     Development Company</h2>
+                   
+                     <div>
+                        <p>We bring our web development expertise to build everything from web apps and portals to ecommerce sites and beyond. Every solution we create is designed to reflect your brand, connect with your audience, and drive your business forward.</p>
+                     </div>
+                
+            </div>
+
+            <!-- Hero Image -->
+            <div class="relative flex justify-center md:justify-end">
+                <!-- 3D Mobile Game Illustration Placeholder -->
+                <div class="relative w-full max-w-md">
+                   <!-- Recreating the vibe with an image -->    
+                  <img src="c:\Users\Admin\Downloads\web_development_banner.png" alt="web development" class="w-full h-auto mt-10 drop-shadow-xl float-animation fade-right">
+
+                </div>
+            </div>
+
+         <div class="mb-24 mt-10">
+             <div class="grid grid-cols-2 md:grid-cols-3 gap-8 text-center">
+                <div class="stat-item fade-up">
+                    <div class="flex justify-center items-baseline gap-1 text-brand-blue font-bold">
+                        <h3 class="text-6xl counter">75</h3>
+                        <span class="text-6xl">+</span>
+                    </div>
+                    <p class="text-brand-dark font-bold mt-1">Team Size</p>
+                   
+                </div>
+                <div class="stat-item fade-up">
+                    <div class="flex justify-center items-baseline gap-1 text-brand-blue font-bold">
+                        <h3 class="text-6xl counter">10</h3>
+                        <span class="text-6xl">+</span>
+                    </div>
+                    <p class="text-brand-dark font-bold mt-1">Years of Experience</p>
+                   
+                </div>
+                <div class="stat-item fade-up">
+                    <div class="flex justify-center items-baseline gap-1 text-brand-blue font-bold">
+                        <h3 class="text-6xl counter">100%</h3>
+                       
+                    </div>
+                    <p class="text-brand-dark font-bold mt-1">Satisfaction Rate</p>
+                    
+                </div>
+
+
+              </div>
+
+         </div>
+
+
+
+     </div>
+
+          <!-- Industries We Serve Section -->
+        <div class="mt-32 mb-16 fade-up">
+            <!-- Header -->
+            <div class="text-center mb-16 max-w-4xl mx-auto">
+                <h2 class="text-4xl font-bold text-brand-dark mb-4 inline-block relative pb-2 border-b-4 border-brand-blue">Industries We Develop Web Solutions For</h2>
+                <p class="text-gray-600 mt-6 px-4">We build custom web solutions for a wide range of industries. If your industry isn’t listed below, no worries. Our team is always ready to understand your needs and build something tailored just for you.</p>
+            </div>
+
+            <!-- Industries Grid -->
+            <div class="max-w-6xl mx-auto px-4">
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-y-12 gap-x-8 text-center">
+                    
+                    <!-- Row 1 -->
+                    <div class="group cursor-pointer">
+                        <div class="mb-3 text-brand-blue group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-plane text-4xl"></i>
+                        </div>
+                        <p class="text-gray-600 font-medium">Travel</p>
+                    </div>
+
+                    <div class="group cursor-pointer">
+                        <div class="mb-3 text-brand-blue group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-table-tennis-paddle-ball text-4xl"></i>
+                        </div>
+                        <p class="text-gray-600 font-medium">Sports</p>
+                    </div>
+
+                    <div class="group cursor-pointer">
+                        <div class="mb-3 text-brand-blue group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-piggy-bank text-4xl"></i>
+                        </div>
+                        <p class="text-gray-600 font-medium">Fintech</p>
+                    </div>
+
+                    <div class="group cursor-pointer">
+                        <div class="mb-3 text-brand-blue group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-dumbbell text-4xl"></i>
+                        </div>
+                        <p class="text-gray-600 font-medium">Fitness</p>
+                    </div>
+
+                    <div class="group cursor-pointer">
+                        <div class="mb-3 text-brand-blue group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-graduation-cap text-4xl"></i>
+                        </div>
+                        <p class="text-gray-600 font-medium">Education</p>
+                    </div>
+
+                    <!-- Row 2 -->
+                    <div class="group cursor-pointer">
+                        <div class="mb-3 text-brand-blue group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-warehouse text-4xl"></i>
+                        </div>
+                        <p class="text-gray-600 font-medium">Real Estate</p>
+                    </div>
+
+                    <div class="group cursor-pointer">
+                        <div class="mb-3 text-brand-blue group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-store text-4xl"></i>
+                        </div>
+                        <p class="text-gray-600 font-medium">Ecommerce</p>
+                    </div>
+
+                    <div class="group cursor-pointer">
+                        <div class="mb-3 text-brand-blue group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-briefcase-medical text-4xl"></i>
+                        </div>
+                        <p class="text-gray-600 font-medium">Healthcare</p>
+                    </div>
+
+                    <div class="group cursor-pointer">
+                        <div class="mb-3 text-brand-blue group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-seedling text-4xl"></i>
+                        </div>
+                        <p class="text-gray-600 font-medium">Agriculture</p>
+                    </div>
+
+                    <div class="group cursor-pointer">
+                        <div class="mb-3 text-brand-blue group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-microphone-lines text-4xl"></i>
+                        </div>
+                        <p class="text-gray-600 font-medium">Media & <br> Entertainment</p>
+                    </div>
+
+                    <!-- Row 3 -->
+                    <div class="group cursor-pointer">
+                        <div class="mb-3 text-brand-blue group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-dolly text-4xl"></i>
+                        </div>
+                        <p class="text-gray-600 font-medium">Logistics</p>
+                    </div>
+
+                    <div class="group cursor-pointer">
+                        <div class="mb-3 text-brand-blue group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-utensils text-4xl"></i>
+                        </div>
+                        <p class="text-gray-600 font-medium">Restaurant</p>
+                    </div>
+
+                    <div class="group cursor-pointer">
+                        <div class="mb-3 text-brand-blue group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-car text-4xl"></i>
+                        </div>
+                        <p class="text-gray-600 font-medium">Automotive</p>
+                    </div>
+
+                    <div class="group cursor-pointer">
+                        <div class="mb-3 text-brand-blue group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-building-columns text-4xl"></i>
+                        </div>
+                        <p class="text-gray-600 font-medium">Banking</p>
+                    </div>
+
+                    <div class="group cursor-pointer">
+                        <div class="mb-3 text-brand-blue group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-file-shield text-4xl"></i>
+                        </div>
+                        <p class="text-gray-600 font-medium">Insurance</p>
+                    </div>
+
+                    <!-- Row 4 (Centered 3 items) -->
+                    <div class="col-span-2 sm:col-span-1 md:col-start-2 group cursor-pointer">
+                        <div class="mb-3 text-brand-blue group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-solar-panel text-4xl"></i>
+                        </div>
+                        <p class="text-gray-600 font-medium">Renewable <br> Energy</p>
+                    </div>
+
+                    <div class="col-span-2 sm:col-span-1 group cursor-pointer">
+                        <div class="mb-3 text-brand-blue group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-gem text-4xl"></i>
+                        </div>
+                        <p class="text-gray-600 font-medium">Jewellery & <br> Diamond</p>
+                    </div>
+
+                    <div class="col-span-2 sm:col-span-1 group cursor-pointer">
+                        <div class="mb-3 text-brand-blue group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-landmark-dome text-4xl"></i>
+                        </div>
+                        <p class="text-gray-600 font-medium">Government & <br> Public Sector</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+         <!-- How Do We Work Section -->
+        <div class="mt-32 mb-24">
+            <!-- Header -->
+            <div class="text-center mb-16 max-w-4xl mx-auto">
+                <h2 class="text-4xl font-bold text-brand-dark mb-4 inline-block relative pb-2 border-b-4 border-brand-blue">Our Trusted Web Development Process</h2>
+                <p class="text-gray-600 mt-6">We keep things transparent, collaborative, and goal-oriented, so you’re always in the loop as we turn your idea into a powerful web solution.</p>
+            </div>
+
+            <!-- Timeline Items -->
+            <div class="max-w-5xl mx-auto relative space-y-12">
+                
+                <!-- Item 1 -->
+                <div class="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] gap-4 items-center fade-up">
+                    <div class="hidden md:flex justify-end pr-8">
+                         <span class="text-8xl font-bold timeline-number opacity-30">1</span>
+                    </div>
+                    <div class="flex flex-col items-center relative z-10">
+                         <div class="w-16 h-16 bg-brand-dark diamond-shape flex items-center justify-center shadow-lg text-white">
+                             <div class="diamond-inner">
+                                 <i class="fas fa-clipboard-list text-2xl"></i>
+                             </div>
+                         </div>
+                    </div>
+                    <div class="pl-0 md:pl-8 text-center md:text-left relative">
+                         <div class="hidden md:block absolute left-0 top-1/2 -translate-y-1/2 w-8 border-t-2 border-dashed border-blue-200 -ml-8"></div>
+                         <h3 class="text-xl font-bold text-brand-blue mb-2">Discovery & Consultation</h3>
+                         <p class="text-gray-600 text-sm">We begin by understanding your business goals, target users, and technical needs. This helps us recommend the right approach and set clear expectations from day one..</p>
+                         <div class="md:hidden mt-2 text-6xl font-bold timeline-number opacity-20 mx-auto w-max">1</div>
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] gap-4 items-center fade-up">
+                    <div class="pr-0 md:pr-8 text-center md:text-right relative order-2 md:order-1">
+                         <div class="hidden md:block absolute right-0 top-1/2 -translate-y-1/2 w-8 border-t-2 border-dashed border-blue-200 -mr-8"></div>
+                         <h3 class="text-xl font-bold text-brand-blue mb-2">Planning & Strategy</h3>
+                         <p class="text-gray-600 text-sm">Once we have the full picture, we define the project scope, create a roadmap, choose the tech stack, and align timelines, so you know exactly what to expect and when..</p>
+                         <div class="md:hidden mt-2 text-6xl font-bold timeline-number opacity-20 mx-auto w-max">2</div>
+                    </div>
+                    <div class="flex flex-col items-center relative z-10 order-1 md:order-2">
+                         <div class="w-16 h-16 bg-brand-dark diamond-shape flex items-center justify-center shadow-lg text-white">
+                             <div class="diamond-inner">
+                                 <i class="fas fa-bezier-curve text-2xl"></i>
+                             </div>
+                         </div>
+                    </div>
+                    <div class="hidden md:flex justify-start pl-8 order-3">
+                         <span class="text-8xl font-bold timeline-number opacity-30">2</span>
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] gap-4 items-center fade-up">
+                    <div class="hidden md:flex justify-end pr-8">
+                         <span class="text-8xl font-bold timeline-number opacity-30">3</span>
+                    </div>
+                    <div class="flex flex-col items-center relative z-10">
+                         <div class="w-16 h-16 bg-brand-dark diamond-shape flex items-center justify-center shadow-lg text-white">
+                             <div class="diamond-inner">
+                                 <i class="fas fa-laptop-code text-2xl"></i>
+                             </div>
+                         </div>
+                    </div>
+                    <div class="pl-0 md:pl-8 text-center md:text-left relative">
+                         <div class="hidden md:block absolute left-0 top-1/2 -translate-y-1/2 w-8 border-t-2 border-dashed border-blue-200 -ml-8"></div>
+                         <h3 class="text-xl font-bold text-brand-blue mb-2">Web Design & Prototyping</h3>
+                         <p class="text-gray-600 text-sm">Our UI/UX designers bring your vision to life with intuitive, user-friendly designs. We share interactive prototypes early, so you can review and suggest changes before web development starts.</p>
+                         <div class="md:hidden mt-2 text-6xl font-bold timeline-number opacity-20 mx-auto w-max">3</div>
+                    </div>
+                </div>
+
+                <!-- Item 4 -->
+                <div class="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] gap-4 items-center fade-up">
+                    <div class="pr-0 md:pr-8 text-center md:text-right relative order-2 md:order-1">
+                         <div class="hidden md:block absolute right-0 top-1/2 -translate-y-1/2 w-8 border-t-2 border-dashed border-blue-200 -mr-8"></div>
+                         <h3 class="text-xl font-bold text-brand-blue mb-2">Web Development</h3>
+                         <p class="text-gray-600 text-sm">Our developers build your website or web app using clean, scalable code. We work in agile sprints, meaning you get frequent updates and testable versions along the way.</p>
+                         <div class="md:hidden mt-2 text-6xl font-bold timeline-number opacity-20 mx-auto w-max">4</div>
+                    </div>
+                    <div class="flex flex-col items-center relative z-10 order-1 md:order-2">
+                         <div class="w-16 h-16 bg-brand-dark diamond-shape flex items-center justify-center shadow-lg text-white">
+                             <div class="diamond-inner">
+                                 <i class="fas fa-check-circle text-2xl"></i>
+                             </div>
+                         </div>
+                    </div>
+                    <div class="hidden md:flex justify-start pl-8 order-3">
+                         <span class="text-8xl font-bold timeline-number opacity-30">4</span>
+                    </div>
+                </div>
+
+                <!-- Item 5 -->
+                <div class="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] gap-4 items-center fade-up">
+                    <div class="hidden md:flex justify-end pr-8">
+                         <span class="text-8xl font-bold timeline-number opacity-30">5</span>
+                    </div>
+                    <div class="flex flex-col items-center relative z-10">
+                         <div class="w-16 h-16 bg-brand-dark diamond-shape flex items-center justify-center shadow-lg text-white">
+                             <div class="diamond-inner">
+                                 <i class="fas fa-rocket text-2xl"></i>
+                             </div>
+                         </div>
+                    </div>
+                    <div class="pl-0 md:pl-8 text-center md:text-left relative">
+                         <div class="hidden md:block absolute left-0 top-1/2 -translate-y-1/2 w-8 border-t-2 border-dashed border-blue-200 -ml-8"></div>
+                         <h3 class="text-xl font-bold text-brand-blue mb-2">Testing & Quality Assurance</h3>
+                         <p class="text-gray-600 text-sm">Before launch, we run thorough tests across devices, browsers, and use cases, fixing bugs, optimizing performance, and ensuring everything works smoothly.</p>
+                         <div class="md:hidden mt-2 text-6xl font-bold timeline-number opacity-20 mx-auto w-max">5</div>
+                    </div>
+                </div>
+
+                <!-- Item 6 -->
+                <div class="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] gap-4 items-center fade-up">
+                    <div class="pr-0 md:pr-8 text-center md:text-right relative order-2 md:order-1">
+                         <div class="hidden md:block absolute right-0 top-1/2 -translate-y-1/2 w-8 border-t-2 border-dashed border-blue-200 -mr-8"></div>
+                         <h3 class="text-xl font-bold text-brand-blue mb-2">Launch & Ongoing Support</h3>
+                         <p class="text-gray-600 text-sm">We deploy your web solution securely and ensure a smooth go-live experience. Post-launch, we offer maintenance, support, and improvements as your business grows.</p>
+                         <div class="md:hidden mt-2 text-6xl font-bold timeline-number opacity-20 mx-auto w-max">6</div>
+                    </div>
+                    <div class="flex flex-col items-center relative z-10 order-1 md:order-2">
+                         <div class="w-16 h-16 bg-brand-dark diamond-shape flex items-center justify-center shadow-lg text-white">
+                             <div class="diamond-inner">
+                                 <i class="fas fa-tools text-2xl"></i>
+                             </div>
+                         </div>
+                    </div>
+                    <div class="hidden md:flex justify-start pl-8 order-3">
+                         <span class="text-8xl font-bold timeline-number opacity-30">6</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+    </main>
+
+
+           <!-- FOOTER -->
+<footer class="bg-[#0f172a] text-gray-300 relative z-10 fade-up">
+  <div class="max-w-7xl mx-auto px-6 py-14 grid grid-cols-1 md:grid-cols-4 gap-10">
+
+    <!-- Brand -->
+    <div>
+      <div class="flex items-center gap-2 mb-4">
+        <div class="w-9 h-9 bg-blue-600 rounded-md shadow-lg"></div>
+        <span class="text-2xl font-semibold text-white tracking-wide">Heryatech</span>
+      </div>
+      <p class="text-gray-400 text-sm leading-relaxed">
+        Step-up progress by uniting people, business & technology
+      </p>
+    </div>
+
+    <!-- Company -->
+    <div>
+      <h4 class="font-semibold text-white mb-4">Company</h4>
+      <ul class="space-y-3 text-sm">
+        <li><a class="footer-link">Contact Us</a></li>
+        <li><a class="footer-link">About Us</a></li>
+        <li><a class="footer-link">Join Team</a></li>
+        <li><a class="footer-link">Gallery</a></li>
+        <li><a class="footer-link">Blogs</a></li>
+      </ul>
+    </div>
+
+    <!-- Legal -->
+    <div>
+      <h4 class="font-semibold text-white mb-4">Legal</h4>
+      <ul class="space-y-3 text-sm">
+        <li><a class="footer-link">Privacy Policy</a></li>
+        <li><a class="footer-link">Cookie Policy</a></li>
+        <li><a class="footer-link">Terms of Use</a></li>
+      </ul>
+    </div>
+
+    <!-- Locations -->
+    <div>
+      <h4 class="font-semibold text-white mb-4">Locations</h4>
+      <ul class="space-y-4 text-sm">
+        <li class="flex items-center gap-2 hover:text-blue-400 transition">
+          🇮🇳 <span> India</span>
+        </li>
+        <li class="flex items-center gap-2 hover:text-blue-400 transition">
+          🇺🇸 <span>United States</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Bottom Bar -->
+  <div class="border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-6 py-5 flex flex-col md:flex-row items-center justify-between gap-4">
+
+      <p class="text-gray-400 text-sm">
+        © <span id="year"></span> Heryatech Consultancy Private Limited
+      </p>
+
+      <!-- Social Icons -->
+      <div class="flex items-center gap-5 text-lg">
+        <a class="social-icon"><i class="fab fa-whatsapp"></i></a>
+        <a class="social-icon"><i class="fab fa-facebook-f"></i></a>
+        <a class="social-icon"><i class="fab fa-instagram"></i></a>
+        <a class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+        <a class="social-icon"><i class="fab fa-x-twitter"></i></a>
+        <a class="social-icon"><i class="fab fa-youtube"></i></a>
+      </div>
+
+    </div>
+  </div>
+</footer>
+
+
+<script>
+
+// =============================
+// SCROLL REVEAL
+// =============================
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+        }
+    });
+}, { threshold: 0.15 });
+
+document.querySelectorAll(".fade-up, .fade-left, .fade-right")
+.forEach(el => observer.observe(el));
+
+
+// =============================
+// COUNTER ANIMATION
+// =============================
+const counters = document.querySelectorAll(".counter");
+
+counters.forEach(counter => {
+    const target = counter.innerText.replace('%','');
+    let count = 0;
+    const updateCounter = () => {
+        const increment = target / 100;
+        if (count < target) {
+            count += increment;
+            counter.innerText = Math.ceil(count);
+            setTimeout(updateCounter, 20);
+        } else {
+            counter.innerText = target;
+        }
+    };
+    updateCounter();
+});
+
+
+// =============================
+// FOOTER YEAR AUTO UPDATE
+// =============================
+document.getElementById("year").textContent = new Date().getFullYear();
+
+</script>
+
+</body>
+</html>
+               
