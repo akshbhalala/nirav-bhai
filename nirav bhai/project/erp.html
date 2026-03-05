@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ERP Consultation & Support | Heryatech</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+body { font-family: 'Inter', sans-serif; }
+</style>
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+<!-- Header -->
+<!-- Modern Header -->
+<header class="fixed w-full top-0 left-0 z-50 backdrop-blur-lg bg-white/80 shadow-sm">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+
+    <!-- Logo -->
+    <a href="index.html" class="text-2xl font-extrabold text-blue-900 tracking-wide">
+      Heryatech
+    </a>
+
+    <!-- Desktop Menu -->
+    <nav class="hidden md:flex items-center space-x-8 font-medium">
+      <a href="index.html" class="relative group">
+        <span class="hover:text-blue-600 transition">Home</span>
+        <span class="absolute left-0 -bottom-1 w-0 h-0.5 bg-blue-600 transition-all group-hover:w-full"></span>
+      </a>
+
+      <a href="services.html" class="relative group">
+        <span class="hover:text-blue-600 transition">Services</span>
+        <span class="absolute left-0 -bottom-1 w-0 h-0.5 bg-blue-600 transition-all group-hover:w-full"></span>
+      </a>
+
+      <a href="contact.html" class="relative group">
+        <span class="hover:text-blue-600 transition">Contact</span>
+        <span class="absolute left-0 -bottom-1 w-0 h-0.5 bg-blue-600 transition-all group-hover:w-full"></span>
+      </a>
+
+      <!-- CTA Button -->
+      <a href="contact.html" class="bg-blue-900 text-white px-5 py-2 rounded-full hover:bg-blue-700 transition">
+        Get started
+      </a>
+    </nav>
+
+    <!-- Mobile Button -->
+    <button id="menu-btn" class="md:hidden text-blue-900 focus:outline-none">
+      ☰
+    </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden md:hidden bg-white shadow-md">
+    <div class="flex flex-col px-6 py-4 space-y-4 font-medium">
+      <a href="index.html" class="hover:text-blue-600">Home</a>
+      <a href="services.html" class="hover:text-blue-600">Services</a>
+      <a href="contact.html" class="hover:text-blue-600">Contact</a>
+      <a href="contact.html" class="bg-blue-900 text-white text-center py-2 rounded-full hover:bg-blue-700 transition">
+        Get started
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- Script -->
+<script>
+  const btn = document.getElementById('menu-btn');
+  const menu = document.getElementById('mobile-menu');
+
+  btn.addEventListener('click', () => {
+    menu.classList.toggle('hidden');
+  });
+</script>
+
+<!-- Hero Section -->
+<section class="relative bg-gradient-to-br from-indigo-800 via-blue-800 to-indigo-900 text-white py-24 overflow-hidden">
+
+  <!-- Background Blur Effect -->
+  <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
+
+  <div class="relative max-w-6xl mx-auto px-6 text-center">
+
+    <!-- Small Badge -->
+    <span class="inline-block bg-white/20 backdrop-blur-md text-sm px-4 py-2 rounded-full mb-6 border border-white/30">
+      🚀 Business Growth Solution
+    </span>
+
+    <!-- Heading -->
+    <h2 class="text-4xl md:text-6xl font-extrabold leading-tight mb-6">
+      Smart ERP Consultation <br class="hidden md:block"/> & Dedicated Support
+    </h2>
+
+    <!-- Description -->
+    <p class="text-lg md:text-xl text-gray-200 max-w-3xl mx-auto mb-10">
+      Optimize workflows, automate processes, and gain real-time insights with tailored ERP implementation designed for your business growth.
+    </p>
+
+    <!-- Buttons -->
+    <div class="flex flex-col sm:flex-row justify-center gap-4">
+      <a href="#contact" class="bg-white text-blue-900 px-8 py-3 rounded-full font-semibold hover:bg-gray-200 transition shadow-lg">
+        Get Free Consultation
+      </a>
+
+      <a href="#services" class="border border-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-blue-900 transition">
+        Explore Services
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- Services Section -->
+<section class="py-24 bg-gradient-to-b from-gray-50 to-white">
+  <div class="max-w-7xl mx-auto px-6">
+
+    <!-- Section Heading -->
+    <div class="text-center mb-16">
+      <span class="text-blue-700 font-semibold uppercase tracking-wider text-sm">
+        What We Offer
+      </span>
+      <h3 class="text-4xl md:text-5xl font-bold text-gray-900 mt-4">
+        Our ERP Services
+      </h3>
+      <p class="text-gray-600 mt-4 max-w-2xl mx-auto">
+        Comprehensive ERP solutions designed to optimize operations, increase efficiency, and accelerate business growth.
+      </p>
+    </div>
+
+    <!-- Services Grid -->
+    <div class="grid md:grid-cols-3 gap-10">
+
+      <!-- Card -->
+      <div class="group bg-white p-8 rounded-3xl shadow-md hover:shadow-2xl hover:-translate-y-3 transition duration-300 border border-gray-100">
+        <div class="w-14 h-14 flex items-center justify-center bg-blue-100 text-blue-700 rounded-xl mb-6 text-2xl">
+          ⚙️
+        </div>
+        <h4 class="text-xl font-semibold text-gray-900 mb-4">ERP Implementation</h4>
+        <p class="text-gray-600 leading-relaxed">
+          End-to-end ERP deployment including planning, system design, data migration, and smooth rollout.
+        </p>
+      </div>
+
+      <div class="group bg-white p-8 rounded-3xl shadow-md hover:shadow-2xl hover:-translate-y-3 transition duration-300 border border-gray-100">
+        <div class="w-14 h-14 flex items-center justify-center bg-indigo-100 text-indigo-700 rounded-xl mb-6 text-2xl">
+          🛠️
+        </div>
+        <h4 class="text-xl font-semibold text-gray-900 mb-4">ERP Customization</h4>
+        <p class="text-gray-600 leading-relaxed">
+          Custom modules, dashboards, and workflows built to align perfectly with your business processes.
+        </p>
+      </div>
+
+      <div class="group bg-white p-8 rounded-3xl shadow-md hover:shadow-2xl hover:-translate-y-3 transition duration-300 border border-gray-100">
+        <div class="w-14 h-14 flex items-center justify-center bg-purple-100 text-purple-700 rounded-xl mb-6 text-2xl">
+          🔧
+        </div>
+        <h4 class="text-xl font-semibold text-gray-900 mb-4">ERP Support & Maintenance</h4>
+        <p class="text-gray-600 leading-relaxed">
+          Continuous monitoring, updates, performance tuning, and dedicated technical assistance.
+        </p>
+      </div>
+
+      <div class="group bg-white p-8 rounded-3xl shadow-md hover:shadow-2xl hover:-translate-y-3 transition duration-300 border border-gray-100">
+        <div class="w-14 h-14 flex items-center justify-center bg-green-100 text-green-700 rounded-xl mb-6 text-2xl">
+          ☁️
+        </div>
+        <h4 class="text-xl font-semibold text-gray-900 mb-4">Cloud ERP Solutions</h4>
+        <p class="text-gray-600 leading-relaxed">
+          Secure, scalable cloud ERP systems for remote teams and multi-location enterprises.
+        </p>
+      </div>
+
+      <div class="group bg-white p-8 rounded-3xl shadow-md hover:shadow-2xl hover:-translate-y-3 transition duration-300 border border-gray-100">
+        <div class="w-14 h-14 flex items-center justify-center bg-yellow-100 text-yellow-700 rounded-xl mb-6 text-2xl">
+          🔗
+        </div>
+        <h4 class="text-xl font-semibold text-gray-900 mb-4">ERP Integration</h4>
+        <p class="text-gray-600 leading-relaxed">
+          Seamless integration with CRM systems, accounting tools, payment gateways, and third-party apps.
+        </p>
+      </div>
+
+      <div class="group bg-white p-8 rounded-3xl shadow-md hover:shadow-2xl hover:-translate-y-3 transition duration-300 border border-gray-100">
+        <div class="w-14 h-14 flex items-center justify-center bg-red-100 text-red-700 rounded-xl mb-6 text-2xl">
+          🎓
+        </div>
+        <h4 class="text-xl font-semibold text-gray-900 mb-4">Training & Consultation</h4>
+        <p class="text-gray-600 leading-relaxed">
+          Expert training sessions and strategic consulting to ensure maximum ROI from your ERP investment.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+<!-- Why Choose Us -->
+<section class="relative py-24 bg-gradient-to-br from-indigo-900 via-blue-900 to-indigo-800 text-white overflow-hidden">
+
+  <!-- Background Glow -->
+  <div class="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
+
+  <div class="relative max-w-7xl mx-auto px-6 text-center">
+
+    <!-- Heading -->
+    <span class="text-indigo-300 uppercase tracking-wider text-sm font-semibold">
+      Why Choose Us
+    </span>
+    <h3 class="text-4xl md:text-5xl font-bold mt-4 mb-14">
+      Why Choose Heryatech?
+    </h3>
+
+    <!-- Stats Grid -->
+    <div class="grid md:grid-cols-4 gap-8">
+
+      <!-- Card 1 -->
+      <div class="bg-white/10 backdrop-blur-lg p-8 rounded-3xl border border-white/20 hover:-translate-y-3 hover:bg-white/20 transition duration-300">
+        <div class="text-4xl mb-4">🏆</div>
+        <h4 class="text-3xl font-bold text-white">10+ Years</h4>
+        <p class="text-indigo-200 mt-2">Industry Experience</p>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="bg-white/10 backdrop-blur-lg p-8 rounded-3xl border border-white/20 hover:-translate-y-3 hover:bg-white/20 transition duration-300">
+        <div class="text-4xl mb-4">📊</div>
+        <h4 class="text-3xl font-bold text-white">100+ Projects</h4>
+        <p class="text-indigo-200 mt-2">Successful ERP Deployments</p>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="bg-white/10 backdrop-blur-lg p-8 rounded-3xl border border-white/20 hover:-translate-y-3 hover:bg-white/20 transition duration-300">
+        <div class="text-4xl mb-4">⏰</div>
+        <h4 class="text-3xl font-bold text-white">24/7 Support</h4>
+        <p class="text-indigo-200 mt-2">Reliable Assistance</p>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="bg-white/10 backdrop-blur-lg p-8 rounded-3xl border border-white/20 hover:-translate-y-3 hover:bg-white/20 transition duration-300">
+        <div class="text-4xl mb-4">🧩</div>
+        <h4 class="text-3xl font-bold text-white">Custom Solutions</h4>
+        <p class="text-indigo-200 mt-2">Built for Your Business</p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="relative py-24 bg-gradient-to-r from-indigo-800 via-blue-800 to-indigo-900 text-white overflow-hidden">
+
+  <!-- Subtle Background Pattern -->
+  <div class="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
+
+  <div class="relative max-w-5xl mx-auto px-6">
+
+    <!-- Glass Card -->
+    <div class="bg-white/10 backdrop-blur-xl border border-white/20 rounded-3xl p-12 text-center shadow-2xl">
+
+      <!-- Heading -->
+      <h3 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+        Ready to Transform Your ERP System?
+      </h3>
+
+      <!-- Description -->
+      <p class="text-indigo-200 text-lg md:text-xl mb-10 max-w-2xl mx-auto">
+        Let our ERP specialists analyze your current workflow and provide a tailored strategy to improve efficiency, productivity, and business growth.
+      </p>
+
+      <!-- Buttons -->
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <a href="contact-us.html"
+           class="bg-white text-indigo-900 px-8 py-3 rounded-full font-semibold hover:bg-gray-200 transition shadow-lg">
+          Get Free Consultation
+        </a>
+
+        <a href="tel:+911234567890"
+           class="border border-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-indigo-900 transition">
+          Call Now
+        </a>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-gray-900 text-gray-300 pt-20 pb-10">
+
+  <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-10">
+
+    <!-- Company Info -->
+    <div>
+      <h4 class="text-2xl font-bold text-white mb-4">Heryatech</h4>
+      <p class="text-gray-400 leading-relaxed">
+        Empowering businesses with smart ERP solutions, digital transformation, and reliable technology support.
+      </p>
+    </div>
+
+    <!-- Quick Links -->
+    <div>
+      <h5 class="text-white font-semibold mb-4">Quick Links</h5>
+      <ul class="space-y-3">
+        <li><a href="index.html" class="hover:text-white transition">Home</a></li>
+        <li><a href="services.html" class="hover:text-white transition">Services</a></li>
+        <li><a href="contact-us.html" class="hover:text-white transition">Contact</a></li>
+        <li><a href="about-us.html" class="hover:text-white transition">About Us</a></li>
+      </ul>
+    </div>  
+
+    <!-- Services -->
+    <div>
+      <h5 class="text-white font-semibold mb-4">Our Services</h5>
+      <ul class="space-y-3">
+        <li><a href="#" class="hover:text-white transition">ERP Implementation</a></li>
+        <li><a href="#" class="hover:text-white transition">ERP Customization</a></li>
+        <li><a href="#" class="hover:text-white transition">Cloud ERP Solutions</a></li>
+        <li><a href="#" class="hover:text-white transition">Support & Maintenance</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact Info -->
+    <div>
+      <h5 class="text-white font-semibold mb-4">Contact Info</h5>
+      <ul class="space-y-3 text-gray-400">
+        <li>📍 Surat, Gujarat, India</li>
+        <li>📞 +91 12345 67890</li>
+        <li>✉️ info@heryatech.com</li>
+      </ul>
+
+      <!-- Social Icons -->
+      <div class="flex space-x-4 mt-6">
+        <a href="#" class="bg-gray-800 p-3 rounded-full hover:bg-indigo-700 transition">🌐</a>
+        <a href="#" class="bg-gray-800 p-3 rounded-full hover:bg-indigo-700 transition">💼</a>
+        <a href="#" class="bg-gray-800 p-3 rounded-full hover:bg-indigo-700 transition">📘</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Bottom Bar -->
+  <div class="border-t border-gray-800 mt-16 pt-6 text-center text-gray-500 text-sm">
+    © 2026 Heryatech. All Rights Reserved.
+  </div>
+
+</footer>
+
+</body>
+</html>

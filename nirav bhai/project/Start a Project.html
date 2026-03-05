@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Start a Project | Heryatech</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            dark: '#0f172a',
+                            primary: '#6366f1',
+                            secondary: '#8b5cf6',
+                            accent: '#d946ef',
+                            surface: '#f8fafc',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @keyframes float {
+            0% { transform: translateY(0px) rotate(0deg); opacity: 0.2; }
+            50% { transform: translateY(-20px) rotate(5deg); opacity: 0.5; }
+            100% { transform: translateY(0px) rotate(0deg); opacity: 0.2; }
+        }
+        .particle {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            pointer-events: none;
+            animation: float 8s infinite ease-in-out;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+        }
+        .form-focus-glow:focus {
+            box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.15);
+        }
+        select {
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2364748b'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 1rem center;
+            background-size: 1.25em;
+        }
+    </style>
+</head>
+<body class="bg-brand-surface text-slate-900 selection:bg-brand-primary selection:text-white">
+
+    <!-- HEADER -->
+    <header class="sticky top-0 z-50 bg-white/70 backdrop-blur-xl border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-8">
+                <a href="index.html" class="flex items-center gap-3 group">
+                    <div class="w-10 h-10 bg-gradient-to-br from-brand-primary to-brand-secondary rounded-xl flex items-center justify-center text-white shadow-lg shadow-brand-primary/20 transform group-hover:rotate-6 transition-transform">
+                        <i class="fa-solid fa-layer-group"></i>
+                    </div>
+                    <span class="text-2xl font-extrabold tracking-tight text-brand-dark">Heryatech<span class="text-brand-primary">.</span></span>
+                </a>
+                
+                                
+            </div>
+
+            <nav class="hidden md:flex items-center gap-8">
+                <a href="index.html" class="text-sm font-semibold text-slate-600 hover:text-brand-primary transition-colors flex items-center gap-2">
+                    <i class="fa-solid fa-house text-xs opacity-50"></i> Home
+                </a>
+                <a href="about-us.html" class="text-sm font-semibold text-slate-600 hover:text-brand-primary transition-colors">About</a>
+                <a href="services.html" class="text-sm font-semibold text-slate-600 hover:text-brand-primary transition-colors">Services</a>
+                <a href="contact-us.html" class="px-5 py-2.5 bg-brand-dark text-white text-sm font-bold rounded-xl hover:bg-brand-primary transition-all shadow-md active:scale-95">Let's Talk
+                  <i class="fa-solid fa-arrow-right text-xs"></i>
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="relative bg-brand-dark py-24 lg:py-32 overflow-hidden">
+        <!-- Animated Particles -->
+        <div class="particle w-4 h-4 top-1/4 left-1/4" style="animation-delay: 0s;"></div>
+        <div class="particle w-2 h-2 top-1/2 left-1/3" style="animation-delay: 2s;"></div>
+        <div class="particle w-6 h-6 bottom-1/4 right-1/4" style="animation-delay: 4s;"></div>
+        
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(99,102,241,0.15),transparent_50%)]"></div>
+
+        <div class="container mx-auto px-6 relative z-10 text-center">
+            <div class="inline-flex items-center gap-2 bg-white/5 border border-white/10 px-4 py-2 rounded-full text-xs font-bold text-brand-primary uppercase tracking-widest mb-8">
+                <span class="relative flex h-2 w-2">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-primary opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-brand-primary"></span>
+                </span>
+                Collaboration Hub
+            </div>
+            
+            <h1 class="text-5xl lg:text-7xl font-extrabold text-white leading-tight mb-8">
+                Let’s build something <br/>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary via-brand-secondary to-brand-accent">Extraordinary.</span>
+            </h1>
+            
+            <p class="text-xl text-slate-400 max-w-3xl mx-auto leading-relaxed mb-12">
+                Turn your ambitious ideas into market-leading digital products. From deep-tech engineering to world-class design, we're your growth partner.
+            </p>
+
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="#form-start" class="px-10 py-5 bg-brand-primary text-white font-bold rounded-2xl shadow-2xl shadow-brand-primary/40 hover:bg-brand-secondary hover:-translate-y-1 transition-all">
+                    Start a Project
+                </a>
+                <a href="index.html" class="px-10 py-5 bg-white/5 border border-white/10 text-white font-bold rounded-2xl hover:bg-white/10 transition-all flex items-center gap-3">
+                    <i class="fa-solid fa-house text-sm opacity-60"></i> Return Home
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTENT SECTION -->
+    <section id="form-start" class="py-24 lg:py-32 bg-brand-surface relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col lg:flex-row gap-20">
+            
+            <!-- LEFT: BENEFITS -->
+            <div class="lg:w-1/2">
+                <h2 class="text-4xl font-extrabold text-brand-dark mb-10 leading-snug">
+                    Why the world's most <br/> 
+                    <span class="text-brand-primary">ambitious brands</span> choose us.
+                </h2>
+
+                <div class="grid gap-6">
+                    <!-- Feature -->
+                    <div class="group flex gap-6 p-6 bg-white rounded-3xl border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300">
+                        <div class="w-14 h-14 shrink-0 bg-blue-50 text-brand-primary rounded-2xl flex items-center justify-center text-xl group-hover:bg-brand-primary group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-fingerprint"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-bold text-brand-dark mb-1">Bespoke Solutions</h4>
+                            <p class="text-slate-500 text-sm leading-relaxed">No templates. No shortcuts. Every line of code and every pixel is crafted specifically for your business goals.</p>
+                        </div>
+                    </div>
+
+                    <!-- Feature -->
+                    <div class="group flex gap-6 p-6 bg-white rounded-3xl border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300">
+                        <div class="w-14 h-14 shrink-0 bg-indigo-50 text-brand-primary rounded-2xl flex items-center justify-center text-xl group-hover:bg-brand-primary group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-code-merge"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-bold text-brand-dark mb-1">Agile Velocity</h4>
+                            <p class="text-slate-500 text-sm leading-relaxed">We ship fast without breaking things. Our sprints are designed for transparency and rapid market entry.</p>
+                        </div>
+                    </div>
+
+                    <!-- Feature -->
+                    <div class="group flex gap-6 p-6 bg-white rounded-3xl border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300">
+                        <div class="w-14 h-14 shrink-0 bg-purple-50 text-brand-primary rounded-2xl flex items-center justify-center text-xl group-hover:bg-brand-primary group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-chart-line"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-bold text-brand-dark mb-1">Built to Scale</h4>
+                            <p class="text-slate-500 text-sm leading-relaxed">Future-proof architecture that grows with you, from your first 1,000 users to your first 1,000,000.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Assistance Card -->
+                <div class="mt-12 p-8 bg-brand-dark rounded-[2.5rem] text-white relative overflow-hidden group">
+                    <div class="absolute -right-10 -bottom-10 w-40 h-40 bg-brand-primary/20 rounded-full blur-3xl group-hover:scale-150 transition-transform duration-700"></div>
+                    <div class="relative z-10">
+                        <p class="text-brand-primary font-bold text-xs uppercase tracking-widest mb-3">Direct Support</p>
+                        <h4 class="text-xl font-bold mb-4">Prefer a direct conversation?</h4>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center">
+                                <i class="fa-solid fa-phone-volume"></i>
+                            </div>
+                            <div>
+                                <p class="text-slate-400 text-xs">Call us anytime</p>
+                                <p class="text-lg font-bold">+91 98765 43210</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RIGHT: PROJECT FORM -->
+            <div class="lg:w-1/2 relative">
+                <div class="absolute -top-10 -right-10 w-64 h-64 bg-brand-primary/5 rounded-full blur-3xl"></div>
+                
+                <div class="relative glass-panel rounded-[3rem] p-8 md:p-12 shadow-2xl shadow-indigo-200/50">
+                    <div class="mb-10">
+                        <h3 class="text-3xl font-extrabold text-brand-dark mb-2">Project Brief</h3>
+                        <p class="text-slate-500">Tell us what you're dreaming of, and we'll help make it real.</p>
+                    </div>
+
+                    <form id="projectForm" class="space-y-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div class="space-y-2">
+                                <label class="text-xs font-bold text-slate-400 uppercase tracking-wider ml-1">Full Name</label>
+                                <input type="text" 
+                                    class="w-full bg-white/50 border border-slate-200 rounded-2xl p-4 text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-primary/20 focus:border-brand-primary transition-all form-focus-glow">
+                            </div>
+                            <div class="space-y-2">
+                                <label class="text-xs font-bold text-slate-400 uppercase tracking-wider ml-1">Work Email</label>
+                                <input type="email" 
+                                    class="w-full bg-white/50 border border-slate-200 rounded-2xl p-4 text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-primary/20 focus:border-brand-primary transition-all form-focus-glow">
+                            </div>
+                        </div>
+
+                        <div class="space-y-2">
+                            <label class="text-xs font-bold text-slate-400 uppercase tracking-wider ml-1">Company / Startup Name</label>
+                            <input type="text" 
+                                class="w-full bg-white/50 border border-slate-200 rounded-2xl p-4 text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-primary/20 focus:border-brand-primary transition-all form-focus-glow">
+                        </div>
+
+                        <div class="space-y-2">
+                            <label class="text-xs font-bold text-slate-400 uppercase tracking-wider ml-1">Nature of Project</label>
+                            <select class="w-full bg-white/50 border border-slate-200 rounded-2xl p-4 text-slate-900 focus:outline-none focus:ring-2 focus:ring-brand-primary/20 focus:border-brand-primary transition-all cursor-pointer">
+                                <option>SaaS Development</option>
+                                <option>Mobile App (iOS/Android)</option>
+                                <option>E-commerce Platform</option>
+                                <option>AI/ML Integration</option>
+                                <option>UI/UX Design Audit</option>
+                                <option>Custom ERP Solution</option>
+                            </select>
+                        </div>
+
+                        <div class="space-y-2">
+                            <label class="text-xs font-bold text-slate-400 uppercase tracking-wider ml-1">Project Details</label>
+                            <textarea rows="4" 
+                                class="w-full bg-white/50 border border-slate-200 rounded-2xl p-4 text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-primary/20 focus:border-brand-primary transition-all form-focus-glow"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full py-5 bg-brand-dark text-white font-extrabold rounded-2xl shadow-xl hover:bg-brand-primary hover:-translate-y-1 transition-all active:scale-95 flex items-center justify-center gap-3">
+                            Submit Inquiry
+                            <i class="fa-solid fa-paper-plane text-sm"></i>
+                        </button>
+                        
+                        <p class="text-center text-xs text-slate-400">
+                            By submitting, you agree to our <a href="#" class="underline">Privacy Policy</a>.
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-brand-dark text-slate-400">
+        <div class="max-w-7xl mx-auto px-6 pt-20 pb-10">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-16 mb-20">
+                <div class="col-span-1 md:col-span-1">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-8 h-8 bg-brand-primary rounded-lg flex items-center justify-center text-white">
+                            <i class="fa-solid fa-layer-group text-xs"></i>
+                        </div>
+                        <span class="text-xl font-bold text-white tracking-tight">Heryatech.</span>
+                    </div>
+                    <p class="text-sm leading-relaxed mb-8">
+                        Uniting people, business, and technology to build the digital infrastructure of tomorrow.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-brand-primary hover:text-white transition-all"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-brand-primary hover:text-white transition-all"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-brand-primary hover:text-white transition-all"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold mb-6">Company</h4>
+                    <ul class="space-y-4 text-sm">
+                        <li><a href="index.html" class="hover:text-brand-primary transition-colors">Home</a></li>
+                        <li><a href="about-us.html" class="hover:text-brand-primary transition-colors">Our Story</a></li>
+                        <li><a href="join-team.html" class="hover:text-brand-primary transition-colors">Careers</a></li>
+                        <li><a href="blogs.html" class="hover:text-brand-primary transition-colors">Insights</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold mb-6">Services</h4>
+                    <ul class="space-y-4 text-sm">
+                        <li><a href="#" class="hover:text-brand-primary transition-colors">Custom Software</a></li>
+                        <li><a href="#" class="hover:text-brand-primary transition-colors">Cloud Migration</a></li>
+                        <li><a href="#" class="hover:text-brand-primary transition-colors">Product Design</a></li>
+                        <li><a href="#" class="hover:text-brand-primary transition-colors">Digital Strategy</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold mb-6">Global Presence</h4>
+                    <div class="space-y-4 text-sm">
+                        <p class="flex items-center gap-3"><span class="text-lg">🇮🇳</span> India (HQ)</p>
+                        <p class="flex items-center gap-3"><span class="text-lg">🇺🇸</span> United States</p>
+                        <p class="mt-6 text-xs text-slate-500 italic">24/7 Global Delivery Center</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6 text-xs font-medium tracking-wider uppercase">
+                <p>© 2026 Heryatech Consultancy Pvt Ltd.</p>
+                <div class="flex gap-8">
+                    <a href="#" class="hover:text-white">Privacy</a>
+                    <a href="#" class="hover:text-white">Cookies</a>
+                    <a href="#" class="hover:text-white">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth form handling simulation
+        document.getElementById('projectForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const btn = this.querySelector('button');
+            const originalText = btn.innerHTML;
+            
+            btn.innerHTML = '<i class="fa-solid fa-circle-notch animate-spin"></i> Processing...';
+            btn.disabled = true;
+
+            setTimeout(() => {
+                this.innerHTML = `
+                    <div class="py-12 text-center animate-in fade-in zoom-in duration-500">
+                        <div class="w-20 h-20 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center text-3xl mx-auto mb-6 shadow-xl shadow-emerald-100/50">
+                            <i class="fa-solid fa-check"></i>
+                        </div>
+                        <h3 class="text-2xl font-extrabold text-brand-dark mb-3">Request Sent!</h3>
+                        <p class="text-slate-500 mb-8 px-4">Our project leads are reviewing your brief. Expect to hear from us within 24 business hours.</p>
+                        <div class="flex flex-col gap-4 max-w-xs mx-auto">
+                            <a href="index.html" class="px-6 py-3 bg-brand-dark text-white rounded-xl font-bold hover:bg-brand-primary transition-all">Back to Home</a>
+                            <button onclick="location.reload()" class="text-brand-primary font-bold hover:underline text-sm">Send another request</button>
+                        </div>
+                    </div>
+                `;
+            }, 1500);
+        });
+    </script>
+</body>
+</html>

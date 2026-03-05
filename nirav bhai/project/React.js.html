@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reliable ReactJS Development Company | Heryatech</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Outfit', 'sans-serif'],
+                        mono: ['ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', "Liberation Mono", "Courier New", 'monospace'],
+                    },
+                    colors: {
+                        brand: {
+                            dark: '#0a0f18', /* React Deep Blue/Black */
+                            card: '#131b2b', /* Elevated card */
+                            primary: '#61DAFB', /* React Cyan */
+                            accent: '#282C34',  /* Code Editor Gray */
+                            light: '#f8fafc'
+                        }
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'blob': 'blob 7s infinite',
+                        'spin-slow': 'spin 12s linear infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                        blob: {
+                            '0%': { transform: 'translate(0px, 0px) scale(1)' },
+                            '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+                            '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+                            '100%': { transform: 'translate(0px, 0px) scale(1)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #0a0f18;
+            color: #f8fafc;
+        }
+
+        .glass-panel {
+            width: 100%;
+            height: 100%;
+            background: rgba(19, 27, 43, 0.6);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        .gradient-text {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #61DAFB, #ffffff);
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            -webkit-background-clip: text;
+            background-size: 200% 200%;
+            animation: gradient-shift 5s ease infinite;
+        }
+
+        @keyframes gradient-shift {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .hero-bg {
+            background: radial-gradient(circle at top right, rgba(97, 218, 251, 0.1) 0%, #0a0f18 60%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card {
+            background: linear-gradient(145deg, #131b2b, #0a0f18);
+        }
+
+        .feature-card:hover .icon-wrapper {
+            transform: scale(1.1) rotate(5deg);
+            background: rgba(97, 218, 251, 0.2);
+            border-color: rgba(97, 218, 251, 0.5);
+        }
+
+        .glow-effect {
+            position: relative;
+        }
+
+        .glow-effect::before {
+            content: '';
+            position: absolute;
+            inset: -2px;
+            background: linear-gradient(45deg, #61DAFB, #282C34, #61DAFB);
+            z-index: -1;
+            filter: blur(10px);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            border-radius: inherit;
+        }
+
+        .glow-effect:hover::before {
+            opacity: 1;
+        }
+
+        /* Grid background pattern */
+        .bg-grid {
+            background-size: 40px 40px;
+            background-image: linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+        }
+
+        #services {
+            width: 100%;
+            height: 100%;
+            padding: 100px 0;
+            background: linear-gradient(145deg, #131b2b, #0a0f18);
+            color: #fff;
+            overflow: hidden;
+            position: relative;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            z-index: 1;
+        }
+    </style>
+</head>
+
+<body class="font-sans antialiased overflow-x-hidden container-fluid">
+
+    <!-- Header (Premium Transparent) -->
+    <header
+        class="absolute top-0 left-0 w-full z-50 text-white border-b border-white/5 bg-transparent backdrop-blur-md bg-black/30">
+        <div class="container mx-auto px-6 py-5 flex justify-between items-center">
+            <div class="flex items-center gap-3 cursor-pointer">
+                <img src="c:\Users\Admin\Pictures\logo.jpeg" alt="Heryatech"
+                    class="w-10 h-10 rounded-xl object-cover shadow-[0_0_15px_rgba(97,218,251,0.4)]">
+                <span class="text-2xl font-bold font-heading tracking-wide">Heryatech</span>
+            </div>
+
+            <nav class="hidden md:flex space-x-8 font-medium text-sm text-gray-300">
+                <a href="index.html" class="hover:text-white transition-colors">Home</a>
+                <a href="#" class="hover:text-white transition-colors">Services</a>
+                <a href="index.html" class="text-brand-primary transition-colors">Technologies</a>
+                <a href="#" class="hover:text-white transition-colors">Company</a>
+            </nav>
+
+            <a href="Start a Project.html"
+                class="hidden md:flex bg-brand-primary/20 border border-brand-primary/50 text-white px-6 py-2.5 rounded-full hover:bg-brand-primary hover:text-black transition-all items-center gap-2 text-sm font-medium">
+                Start a Project <i class="fas fa-arrow-right text-xs"></i>
+            </a>
+
+            <button class="md:hidden text-white"><i class="fas fa-bars text-xl"></i></button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-bg min-h-screen flex items-center pt-32 pb-16 relative bg-grid">
+        <!-- Animated Background Blobs -->
+        <div
+            class="absolute top-10 right-20 w-[600px] h-[600px] bg-brand-primary/10 rounded-full filter blur-[150px] animate-blob">
+        </div>
+        <div
+            class="absolute bottom-10 left-10 w-[500px] h-[500px] bg-indigo-500/10 rounded-full filter blur-[150px] animate-blob animation-delay-2000">
+        </div>
+
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="space-y-8">
+                    <div
+                        class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-brand-primary/30 bg-brand-primary/5 backdrop-blur-md text-sm text-brand-primary font-medium">
+                        <i class="fab fa-react text-lg animate-spin-slow"></i>
+                        Reliable ReactJS Development Company
+                    </div>
+                    <h1
+                        class="text-5xl md:text-7xl font-extrabold text-white leading-[1.1] font-heading tracking-tight">
+                        Crafting High-Performance <br>
+                        <span class="gradient-text">Web Experiences.</span>
+                    </h1>
+                    <p class="text-lg md:text-xl text-gray-400 max-w-xl leading-relaxed font-light">
+                        We build incredibly fast, interactive, and scalable frontend architectures using React.js. From
+                        dynamic single-page applications to enterprise-grade web portals, we engineer for velocity.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 pt-4">
+                        <a href="#services"
+                            class="bg-[#61DAFB] text-black px-8 py-4 rounded-full font-bold hover:bg-white transition-all text-center shadow-[0_0_20px_rgba(97,218,251,0.3)]">
+                            Hire React Developers
+                        </a>
+                        <a href="contact-us.html"
+                            class="px-8 py-4 rounded-full font-semibold text-white border border-gray-700 hover:bg-white/10 transition-all text-center group">
+                            Explore Projects <i
+                                class="fas fa-arrow-right ml-2 opacity-50 group-hover:opacity-100 group-hover:translate-x-1 transition-all"></i>
+                        </a>
+                    </div>
+
+                    <div class="pt-10 mt-10 border-t border-white/10 grid grid-cols-3 gap-6">
+                        <div>
+                            <h4 class="text-3xl font-bold text-white font-heading">DOM<span
+                                    class="text-brand-primary">+</span></h4>
+                            <p class="text-gray-500 text-sm mt-1 font-medium uppercase tracking-wider">Virtual Fast</p>
+                        </div>
+                        <div>
+                            <h4 class="text-3xl font-bold text-white font-heading">SEO<span
+                                    class="text-brand-primary">✓</span></h4>
+                            <p class="text-gray-500 text-sm mt-1 font-medium uppercase tracking-wider">Optimized</p>
+                        </div>
+                        <div>
+                            <h4 class="text-3xl font-bold text-white font-heading">SPA<span
+                                    class="text-brand-primary">+</span></h4>
+                            <p class="text-gray-500 text-sm mt-1 font-medium uppercase tracking-wider">Dynamic UIs</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative hidden lg:block">
+                    <div class="relative w-full aspect-square flex justify-center items-center">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-tr from-brand-primary/20 to-indigo-500/10 rounded-full filter blur-[100px] animate-pulse-slow">
+                        </div>
+
+                        <!-- 3D/Browser Window Mockup -->
+                        <div class="relative z-10 w-full">
+                            <i
+                                class="fab fa-react absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[#61DAFB] text-[350px] opacity-10 animate-spin-slow"></i>
+
+                            <!-- Browser Window -->
+                            <div class="relative w-full bg-[#0d131f] border border-[#2d3748] rounded-[1rem] shadow-2xl z-20 overflow-hidden animate-float"
+                                style="animation-delay: 1s;">
+
+                                <!-- Browser Header -->
+                                <div
+                                    class="w-full h-8 bg-[#1a202c] border-b border-[#2d3748] flex items-center px-4 gap-2">
+                                    <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                                    <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                                    <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                                    <div
+                                        class="ml-4 px-3 py-1 rounded bg-[#2d3748] text-gray-400 text-[10px] w-48 flex items-center gap-2">
+                                        <i class="fas fa-lock text-gray-500"></i> localhost:3000
+                                    </div>
+                                </div>
+
+                                <!-- Web App UI Mockup -->
+                                <div class="p-6 bg-[#0a0f18] h-[350px] flex gap-6">
+                                    <!-- Sidebar -->
+                                    <div
+                                        class="w-16 h-full bg-[#131b2b] rounded-lg border border-white/5 flex flex-col items-center py-4 space-y-6">
+                                        <div
+                                            class="w-8 h-8 rounded-full bg-brand-primary/20 text-brand-primary flex items-center justify-center">
+                                            <i class="fab fa-react"></i>
+                                        </div>
+                                        <div class="w-5 h-5 rounded text-gray-500"><i class="fas fa-home"></i></div>
+                                        <div class="w-5 h-5 rounded text-gray-500"><i class="fas fa-chart-bar"></i>
+                                        </div>
+                                        <div class="w-5 h-5 rounded text-gray-500"><i class="fas fa-cog"></i></div>
+                                    </div>
+
+                                    <!-- Main Content Area -->
+                                    <div class="flex-1 space-y-4">
+                                        <div
+                                            class="w-full h-12 bg-[#131b2b] rounded-lg border border-white/5 flex items-center justify-between px-4">
+                                            <div class="text-white font-semibold text-sm">Dashboard Overview</div>
+                                            <div
+                                                class="w-20 h-6 bg-brand-primary/10 rounded flex items-center justify-center text-brand-primary text-xs shrink-0 border border-brand-primary/20">
+                                                Syncing...</div>
+                                        </div>
+
+                                        <div class="grid grid-cols-2 gap-4">
+                                            <div
+                                                class="h-24 bg-[#131b2b] rounded-lg border border-white/5 p-4 flex flex-col justify-center">
+                                                <div class="text-gray-500 text-xs mb-1">Total Users</div>
+                                                <div class="text-white font-bold text-2xl">142,492</div>
+                                                <div class="text-green-400 text-[10px] mt-1"><i
+                                                        class="fas fa-arrow-up"></i> 12% increase</div>
+                                            </div>
+                                            <div
+                                                class="h-24 bg-[#131b2b] rounded-lg border border-white/5 p-4 flex flex-col justify-center relative overflow-hidden">
+                                                <div class="text-gray-500 text-xs mb-1 z-10">Revenue</div>
+                                                <div class="text-white font-bold text-2xl z-10">$89,200</div>
+
+                                                <!-- Graph representation -->
+                                                <svg class="absolute bottom-0 w-full h-10 left-0"
+                                                    preserveAspectRatio="none" viewBox="0 0 100 100">
+                                                    <path d="M0 100 L0 80 Q25 60 50 80 T100 30 L100 100 Z"
+                                                        fill="#61DAFB" opacity="0.2" />
+                                                    <path d="M0 80 Q25 60 50 80 T100 30" fill="transparent"
+                                                        stroke="#61DAFB" stroke-width="2" />
+                                                </svg>
+                                            </div>
+                                        </div>
+
+                                        <div
+                                            class="w-full h-32 bg-[#131b2b] rounded-lg border border-white/5 p-4 relative flex items-center justify-center group overflow-hidden">
+                                            <div
+                                                class="absolute inset-0 bg-brand-primary/5 opacity-0 group-hover:opacity-100 transition-opacity">
+                                            </div>
+                                            <div class="text-center">
+                                                <i class="fas fa-code-branch text-2xl text-gray-500 mb-2"></i>
+                                                <div class="text-gray-400 text-xs">Live Component Rendering</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Floating Elements -->
+                            <div
+                                class="absolute top-1/4 -right-8 w-auto h-auto px-4 py-3 border-0 bg-[#282C34]/90 backdrop-blur-xl rounded-xl flex items-center gap-3 z-30 transform hover:scale-105 transition-transform duration-300 shadow-xl border border-[#3d4452]">
+                                <div class="text-[#61DAFB] font-bold text-xl"><i class="fas fa-cube"></i></div>
+                                <div class="font-mono text-xs text-gray-300">
+                                    <span class="text-[#c678dd]">import</span> <span class="text-[#e5c07b]">React</span>
+                                    <span class="text-[#c678dd]">from</span> <span
+                                        class="text-[#98c379]">'react'</span>;
+                                </div>
+                            </div>
+
+                            <div
+                                class="absolute bottom-16 -left-8 w-auto h-auto px-5 py-3 border-0 bg-[#282C34]/90 backdrop-blur-xl rounded-xl flex items-center gap-3 z-30 transform hover:scale-105 transition-transform duration-300 shadow-xl border border-[#3d4452]">
+                                <div
+                                    class="w-8 h-8 rounded-full bg-[#61DAFB]/20 flex items-center justify-center text-[#61DAFB]">
+                                    <i class="fas fa-bolt"></i>
+                                </div>
+                                <span class="text-sm font-bold ml-1 text-white tracking-wide">Fast Refresh</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Capabilities Grid -->
+    <section id="services" class="w-full py-32 relative bg-[#060a0f] border-t border-white/5 overflow-hidden">
+
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+
+            <!-- Section Header -->
+            <div class="text-center max-w-3xl mx-auto mb-20">
+                <span
+                    class="text-brand-primary font-semibold tracking-wider uppercase text-xs flex items-center justify-center gap-3 mb-4">
+                    <span class="w-8 h-px bg-brand-primary"></span>
+                    Why React.js?
+                    <span class="w-8 h-px bg-brand-primary"></span>
+                </span>
+
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-6 font-heading tracking-tight">
+                    Our ReactJS Services
+                </h2>
+
+                <p class="text-gray-400 text-lg font-light leading-relaxed">
+                    We leverage the power of React to construct deeply engaging, responsive, and robust front-end
+                    architectures that drive conversion and enhance user satisfaction.
+                </p>
+            </div>
+
+            <!-- Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- Card 1 -->
+                <div
+                    class="group bg-[#0a0f18] rounded-2xl p-8 border border-white/5 hover:border-brand-primary/40 hover:-translate-y-2 transition-all duration-300 shadow-xl text-center">
+
+                    <div
+                        class="w-16 h-16 rounded-2xl bg-[#030508] border border-white/10 flex items-center justify-center mb-6 mx-auto text-brand-primary text-3xl shadow-[0_0_20px_rgba(97,218,251,0.15)] group-hover:scale-110 transition">
+                        <i class="fas fa-layer-group"></i>
+                    </div>
+
+                    <h3 class="text-xl font-bold text-white mb-4 group-hover:text-brand-primary transition">
+                        Custom React Development
+                    </h3>
+
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Tailor-made React architectures built from the ground up for startups and enterprises, ensuring
+                        highly modular and reusable component structures.
+                    </p>
+                </div>
+
+                <!-- Card 2 -->
+                <div
+                    class="group bg-[#0a0f18] rounded-2xl p-8 border border-white/5 hover:border-brand-primary/40 hover:-translate-y-2 transition-all duration-300 shadow-xl text-center">
+
+                    <div
+                        class="w-16 h-16 rounded-2xl bg-[#030508] border border-white/10 flex items-center justify-center mb-6 mx-auto text-brand-primary text-3xl shadow-[0_0_20px_rgba(97,218,251,0.15)] group-hover:scale-110 transition">
+                        <i class="fas fa-window-maximize"></i>
+                    </div>
+
+                    <h3 class="text-xl font-bold text-white mb-4 group-hover:text-brand-primary transition">
+                        SPA Development
+                    </h3>
+
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Lighting-fast Single Page Applications (SPAs) that offer native-like performance, reducing
+                        bounce rates and ensuring a seamless navigation experience without page reloads.
+                    </p>
+                </div>
+
+                <!-- Card 3 -->
+                <div
+                    class="group bg-[#0a0f18] rounded-2xl p-8 border border-white/5 hover:border-brand-primary/40 hover:-translate-y-2 transition-all duration-300 shadow-xl text-center">
+
+                    <div
+                        class="w-16 h-16 rounded-2xl bg-[#030508] border border-white/10 flex items-center justify-center mb-6 mx-auto text-brand-primary text-3xl shadow-[0_0_20px_rgba(97,218,251,0.15)] group-hover:scale-110 transition">
+                        <i class="fas fa-exchange-alt"></i>
+                    </div>
+
+                    <h3 class="text-xl font-bold text-white mb-4 group-hover:text-brand-primary transition">
+                        Migration & Upgrade
+                    </h3>
+
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Securely migrate your legacy web applications to modern React architectures, or seamlessly
+                        upgrade from older React versions without business disruption.
+                    </p>
+                </div>
+
+                <!-- Card 4 -->
+                <div
+                    class="group bg-[#0a0f18] rounded-2xl p-8 border border-white/5 hover:border-brand-primary/40 hover:-translate-y-2 transition-all duration-300 shadow-xl text-center">
+
+                    <div
+                        class="w-16 h-16 rounded-2xl bg-[#030508] border border-white/10 flex items-center justify-center mb-6 mx-auto text-brand-primary text-3xl shadow-[0_0_20px_rgba(97,218,251,0.15)] group-hover:scale-110 transition">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+
+                    <h3 class="text-xl font-bold text-white mb-4 group-hover:text-brand-primary transition">
+                        Performance Optimization
+                    </h3>
+
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Refactoring and optimizing existing React codebases. Conducting memory leak analysis,
+                        bundle-size optimization, and fixing inefficient re-renders.
+                    </p>
+                </div>
+
+                <!-- Card 5 -->
+                <div
+                    class="group bg-[#0a0f18] rounded-2xl p-8 border border-white/5 hover:border-brand-primary/40 hover:-translate-y-2 transition-all duration-300 shadow-xl text-center">
+
+                    <div
+                        class="w-16 h-16 rounded-2xl bg-[#030508] border border-white/10 flex items-center justify-center mb-6 mx-auto text-brand-primary text-3xl shadow-[0_0_20px_rgba(97,218,251,0.15)] group-hover:scale-110 transition">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+
+                    <h3 class="text-xl font-bold text-white mb-4 group-hover:text-brand-primary transition">
+                        React Native Integration
+                    </h3>
+
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Extend your web platform seamlessly to mobile. We specialize in structuring code that can be
+                        easily shared between React.js web and React Native mobile apps.
+                    </p>
+                </div>
+
+                <!-- Card 6 -->
+                <div
+                    class="group bg-[#0a0f18] rounded-2xl p-8 border border-white/5 hover:border-brand-primary/40 hover:-translate-y-2 transition-all duration-300 shadow-xl text-center">
+
+                    <div
+                        class="w-16 h-16 rounded-2xl bg-[#030508] border border-white/10 flex items-center justify-center mb-6 mx-auto text-brand-primary text-3xl shadow-[0_0_20px_rgba(97,218,251,0.15)] group-hover:scale-110 transition">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+
+                    <h3 class="text-xl font-bold text-white mb-4 group-hover:text-brand-primary transition">
+                        Maintenance & Support
+                    </h3>
+
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Dedicated ongoing support for React-based platforms, featuring rigorous code reviews, automated
+                        testing, and guaranteed uptime.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Technical Depth Section -->
+    <section
+        class="py-32 bg-[#0d131f] text-white relative overflow-hidden flex flex-col items-center border-y border-white/5">
+        <div class="absolute inset-0 bg-grid opacity-[0.2]"></div>
+        <div
+            class="absolute right-0 top-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand-primary/10 rounded-full blur-[150px]">
+        </div>
+
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+
+                <div class="order-2 lg:order-1 relative flex justify-center">
+                    <div class="w-full max-w-lg relative p-6">
+                        <!-- VS Code Mockup for React -->
+                        <div
+                            class="w-full bg-[#282c34] rounded-xl border border-white/10 shadow-2xl overflow-hidden font-mono text-xs md:text-sm">
+                            <div
+                                class="flex items-center justify-between px-4 py-3 bg-[#21252b] border-b border-[#181a1f]">
+                                <div class="flex gap-2">
+                                    <div class="w-3 h-3 rounded-full bg-[#ff5f56]"></div>
+                                    <div class="w-3 h-3 rounded-full bg-[#ffbd2e]"></div>
+                                    <div class="w-3 h-3 rounded-full bg-[#27c93f]"></div>
+                                </div>
+                                <div class="text-gray-400 text-xs flex items-center gap-2 pr-8"><i
+                                        class="fab fa-react text-brand-primary"></i> Dashboard.jsx</div>
+                                <div></div>
+                            </div>
+                            <!-- Code block highlighting inspired by One Dark Pro -->
+                            <div class="p-6 text-[#abb2bf] space-y-1 bg-[#282c34] overflow-x-auto">
+                                <div class="flex"><span
+                                        class="text-[#4b5263] w-8 inline-block select-none">1</span><span
+                                        class="text-[#c678dd]">import</span> <span class="text-[#e5c07b]">React</span>,
+                                    { <span class="text-[#e5c07b]">useState</span>, <span
+                                        class="text-[#e5c07b]">useEffect</span> } <span
+                                        class="text-[#c678dd]">from</span> <span class="text-[#98c379]">'react'</span>;
+                                </div>
+                                <div class="flex"><span
+                                        class="text-[#4b5263] w-8 inline-block select-none">2</span><span
+                                        class="text-[#c678dd]">import</span> { <span
+                                        class="text-[#e5c07b]">fetchAnalytics</span> } <span
+                                        class="text-[#c678dd]">from</span> <span
+                                        class="text-[#98c379]">'@/api/analytics'</span>;</div>
+                                <div class="flex"><span class="text-[#4b5263] w-8 inline-block select-none">3</span>
+                                </div>
+                                <div class="flex"><span
+                                        class="text-[#4b5263] w-8 inline-block select-none">4</span><span
+                                        class="text-[#c678dd]">const</span> <span
+                                        class="text-[#61afef]">Dashboard</span> = () <span
+                                        class="text-[#c678dd]">=></span> {</div>
+                                <div class="flex"><span
+                                        class="text-[#4b5263] w-8 inline-block select-none">5</span><span
+                                        class="ml-4 text-[#c678dd]">const</span> [data, setData] = <span
+                                        class="text-[#61afef]">useState</span>(<span
+                                        class="text-[#d19a66]">null</span>);</div>
+                                <div class="flex"><span
+                                        class="text-[#4b5263] w-8 inline-block select-none">6</span><span
+                                        class="ml-4 text-[#c678dd]">const</span> [loading, setLoading] = <span
+                                        class="text-[#61afef]">useState</span>(<span
+                                        class="text-[#d19a66]">true</span>);</div>
+                                <div class="flex"><span class="text-[#4b5263] w-8 inline-block select-none">7</span>
+                                </div>
+                                <div class="flex"><span
+                                        class="text-[#4b5263] w-8 inline-block select-none">8</span><span
+                                        class="ml-4 text-[#61afef]">useEffect</span>(() <span
+                                        class="text-[#c678dd]">=></span> {</div>
+                                <div class="flex"><span
+                                        class="text-[#4b5263] w-8 inline-block select-none">9</span><span
+                                        class="ml-8 text-[#c678dd]">const</span> loadData = <span
+                                        class="text-[#c678dd]">async</span> () <span class="text-[#c678dd]">=></span> {
+                                </div>
+                                <div class="flex"><span
+                                        class="text-[#4b5263] w-8 inline-block select-none">10</span><span
+                                        class="ml-12 text-[#c678dd]">try</span> {</div>
+                                <div class="flex"><span
+                                        class="text-[#4b5263] w-8 inline-block select-none">11</span><span
+                                        class="ml-16 text-[#c678dd]">const</span> result = <span
+                                        class="text-[#c678dd]">await</span> <span
+                                        class="text-[#61afef]">fetchAnalytics</span>();</div>
+                                <div class="flex"><span
+                                        class="text-[#4b5263] w-8 inline-block select-none">12</span><span
+                                        class="ml-16">setData(result);</span></div>
+                                <div class="flex"><span
+                                        class="text-[#4b5263] w-8 inline-block select-none">13</span><span
+                                        class="ml-12">}</span> <span class="text-[#c678dd]">catch</span> (err) {</div>
+                                <div class="flex"><span
+                                        class="text-[#4b5263] w-8 inline-block select-none">14</span><span
+                                        class="ml-16">console.<span class="text-[#56b6c2]">error</span>(err);</span>
+                                </div>
+                                <div class="flex"><span
+                                        class="text-[#4b5263] w-8 inline-block select-none">15</span><span
+                                        class="ml-12">}</span> <span class="text-[#c678dd]">finally</span> {</div>
+                                <div class="flex"><span
+                                        class="text-[#4b5263] w-8 inline-block select-none">16</span><span
+                                        class="ml-16">setLoading(<span class="text-[#d19a66]">false</span>);</span>
+                                </div>
+                                <div class="flex"><span
+                                        class="text-[#4b5263] w-8 inline-block select-none">17</span><span
+                                        class="ml-12">}</span></div>
+                                <div class="flex"><span
+                                        class="text-[#4b5263] w-8 inline-block select-none">18</span><span
+                                        class="ml-8">};</span></div>
+                                <div class="flex"><span
+                                        class="text-[#4b5263] w-8 inline-block select-none">19</span><span
+                                        class="ml-8 text-[#61afef]">loadData</span>();</div>
+                                <div class="flex"><span
+                                        class="text-[#4b5263] w-8 inline-block select-none">20</span><span
+                                        class="ml-4">}, []);</span></div>
+                                <div class="flex"><span class="text-[#4b5263] w-8 inline-block select-none">21</span>
+                                </div>
+                                <div class="flex"><span
+                                        class="text-[#4b5263] w-8 inline-block select-none">22</span><span
+                                        class="ml-4 text-[#c678dd]">if</span> (loading) <span
+                                        class="text-[#c678dd]">return</span> <span
+                                        class="text-[#e06c75]">&lt;</span><span class="text-[#e06c75]">Loader</span>
+                                    <span class="text-[#e06c75]">/&gt;</span>;
+                                </div>
+                                <div class="flex"><span
+                                        class="text-[#4b5263] w-8 inline-block select-none">23</span><span
+                                        class="ml-4 text-[#c678dd]">return</span> <span
+                                        class="text-[#e06c75]">&lt;</span><span
+                                        class="text-[#e06c75]">AnalyticsView</span> <span
+                                        class="text-[#d19a66]">data</span><span class="text-[#56b6c2]">=</span>{data}
+                                    <span class="text-[#e06c75]">/&gt;</span>;
+                                </div>
+                                <div class="flex"><span class="text-[#4b5263] w-8 inline-block select-none">24</span>};
+                                </div>
+                                <div class="flex"><span class="text-[#4b5263] w-8 inline-block select-none">25</span>
+                                </div>
+                                <div class="flex"><span
+                                        class="text-[#4b5263] w-8 inline-block select-none">26</span><span
+                                        class="text-[#c678dd]">export default</span> <span
+                                        class="text-[#e5c07b]">React</span>.<span
+                                        class="text-[#61afef]">memo</span>(Dashboard);</div>
+                            </div>
+                        </div>
+
+                        <!-- Decorative overlay badge -->
+                        <div
+                            class="absolute -bottom-6 -left-4 w-auto h-auto py-3 px-5 border-0 bg-[#282c34] rounded-xl flex items-center gap-3 border border-white/10 z-20 shadow-xl">
+                            <div
+                                class="w-10 h-10 rounded-full bg-blue-500/20 flex items-center justify-center text-blue-400 text-xl font-bold">
+                                <i class="fas fa-layer-group"></i>
+                            </div>
+                            <p class="text-white text-sm font-bold tracking-tight">Functional Components</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="order-1 lg:order-2">
+                    <span class="text-brand-primary font-semibold tracking-wider text-xs mb-3 block uppercase">Technical
+                        Depth</span>
+                    <h2 class="text-4xl md:text-5xl font-bold mb-6 font-heading tracking-tight">The Modern <br>Frontend
+                        Stack</h2>
+                    <p class="text-gray-400 text-lg mb-10 leading-relaxed font-light">
+                        We don't just write React; we orchestrate an entire modern ecosystem. We utilize Next.js for
+                        server-side rendering, Redux & Zustand for state management, and Tailwind CSS for rapid styling.
+                    </p>
+
+                    <ul class="space-y-8">
+                        <li class="flex gap-5 items-start group">
+                            <div
+                                class="w-14 h-14 rounded-2xl bg-[#0a0f18] border border-white/5 flex items-center justify-center flex-shrink-0 text-brand-primary group-hover:bg-brand-primary group-hover:text-black transition-colors duration-300 shadow-lg">
+                                <i class="fas fa-tachometer-alt text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold font-heading text-white tracking-tight">Virtual DOM
+                                    Superiority</h4>
+                                <p class="text-gray-400 text-sm mt-2 leading-relaxed font-light">React's Virtual DOM
+                                    ensures minimal DOM manipulation, resulting in blazing fast rendering speeds even
+                                    for incredibly complex UI structures.</p>
+                            </div>
+                        </li>
+                        <li class="flex gap-5 items-start group">
+                            <div
+                                class="w-14 h-14 rounded-2xl bg-[#0a0f18] border border-white/5 flex items-center justify-center flex-shrink-0 text-brand-primary group-hover:bg-brand-primary group-hover:text-black transition-colors duration-300 shadow-lg">
+                                <i class="fas fa-cubes text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold font-heading text-white tracking-tight">Component
+                                    Reusability</h4>
+                                <p class="text-gray-400 text-sm mt-2 leading-relaxed font-light">We engineer modular,
+                                    self-contained components. This significantly reduces development time and ensures a
+                                    highly maintainable and consistent codebase.</p>
+                            </div>
+                        </li>
+                        <li class="flex gap-5 items-start group">
+                            <div
+                                class="w-14 h-14 rounded-2xl bg-[#0a0f18] border border-white/5 flex items-center justify-center flex-shrink-0 text-brand-primary group-hover:bg-brand-primary group-hover:text-black transition-colors duration-300 shadow-lg">
+                                <i class="fas fa-project-diagram text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold font-heading text-white tracking-tight">Robust State
+                                    Management</h4>
+                                <p class="text-gray-400 text-sm mt-2 leading-relaxed font-light">Expert integration of
+                                    Context API, Redux Toolkit, or Zustand to manage complex application states
+                                    flawlessly across massive enterprise portals.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Call To Action -->
+    <section class="py-32 bg-[#0a0f18] relative overflow-hidden bg-grid">
+        <div class="absolute inset-0 bg-gradient-to-t from-brand-primary/10 to-transparent opacity-30"></div>
+        <div class="container mx-auto px-6 relative z-10 text-center">
+            <h2 class="text-5xl md:text-6xl font-extrabold text-white mb-8 font-heading tracking-tight">Scale Your
+                Vision With <br><span class="gradient-text">React.js</span></h2>
+            <p class="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto mb-12 font-light">Partner with our rigorous
+                React engineering team to construct platforms built for velocity, scale, and uncompromising user
+                experience.</p>
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-6">
+                <a href="contact-us.html"
+                    class="bg-brand-primary text-[#0a0f18] px-10 py-5 rounded-full font-bold hover:bg-white transition-all glow-effect shadow-[0_0_20px_rgba(97,218,251,0.4)] text-center w-full sm:w-auto text-lg">
+                    Start Your Project
+                </a>
+                <a href="#"
+                    class="text-white hover:text-brand-primary font-semibold transition-colors flex items-center gap-2 text-lg">
+                    View React Portfolio <i class="fas fa-arrow-right text-sm"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#030508] text-gray-400 py-16 border-t border-white/5">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <div class="lg:col-span-1">
+                    <div class="flex items-center gap-3 mb-6">
+                        <img src="c:\Users\Admin\Pictures\logo.jpeg" alt="Heryatech"
+                            class="w-8 h-8 rounded-md object-cover">
+                        <span class="text-xl font-bold text-white tracking-wide font-heading">Heryatech</span>
+                    </div>
+                    <p class="text-sm leading-relaxed mb-6 font-light">Delivering unparalleled frontend excellence via
+                        scalable React.js architectures, constructing the next generation of the web.</p>
+                    <div class="flex gap-4">
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-brand-primary hover:text-[#030508] transition-all"><i
+                                class="fab fa-linkedin-in text-sm"></i></a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-brand-primary hover:text-[#030508] transition-all"><i
+                                class="fab fa-twitter text-sm"></i></a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-brand-primary hover:text-[#030508] transition-all"><i
+                                class="fab fa-instagram text-sm"></i></a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold mb-6 font-heading tracking-wide uppercase text-xs">Web Technologies
+                    </h4>
+                    <ul class="space-y-3 text-sm font-light">
+                        <li><a href="#" class="text-brand-primary transition-colors">React.js</a></li>
+                        <li><a href="#" class="hover:text-brand-primary transition-colors">Next.js Framework</a></li>
+                        <li><a href="#" class="hover:text-brand-primary transition-colors">Angular</a></li>
+                        <li><a href="#" class="hover:text-brand-primary transition-colors">Vue.js</a></li>
+                        <li><a href="#" class="hover:text-brand-primary transition-colors">Node.js Backend</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold mb-6 font-heading tracking-wide uppercase text-xs">Company</h4>
+                    <ul class="space-y-3 text-sm font-light">
+                        <li><a href="about-us.html" class="hover:text-brand-primary transition-colors">About
+                                Heryatech</a></li>
+                        <li><a href="#" class="hover:text-brand-primary transition-colors">Careers & Culture</a></li>
+                        <li><a href="blogs.html" class="hover:text-brand-primary transition-colors">Engineering Blog</a>
+                        </li>
+                        <li><a href="contact-us.html" class="hover:text-brand-primary transition-colors">Contact
+                                Support</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold mb-6 font-heading tracking-wide uppercase text-xs">Get in Touch</h4>
+                    <ul class="space-y-4 text-sm font-light">
+                        <li class="flex gap-3 items-start"><i
+                                class="fas fa-map-marker-alt mt-1 text-brand-primary"></i><span
+                                class="leading-relaxed">Silicon Avenue, Tech District, San Jose, CA 95131</span></li>
+                        <li class="flex gap-3"><i class="fas fa-envelope mt-1 text-brand-primary"></i><a
+                                href="mailto:build@heryatech.com"
+                                class="hover:text-white transition-colors">build@heryatech.com</a></li>
+                        <li class="flex gap-3"><i class="fas fa-phone mt-1 text-brand-primary"></i><a
+                                href="tel:+15550219900" class="hover:text-white transition-colors">+1 (555) 021-9900</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div
+                class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-light text-gray-500">
+                <p>&copy; 2026 Heryatech Systems. All Rights Reserved.</p>
+                <div class="flex gap-6">
+                    <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-white transition-colors">Cookie Policy</a>
+                    <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Start a Project | Heryatech</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Outfit', sans-serif;
+    }
+
+    /* Custom Checkbox/Radio styling */
+    .service-tag input:checked+div {
+      background-color: #2563eb;
+      /* blue-600 */
+      color: white;
+      border-color: #2563eb;
+      box-shadow: 0 4px 14px 0 rgba(37, 99, 235, 0.39);
+    }
+
+    /* Gradient Animation */
+    .gradient-bg {
+      background: linear-gradient(-45deg, #0f172a, #1e1b4b, #312e81, #1e3a8a);
+      background-size: 400% 400%;
+      animation: gradientAnim 15s ease infinite;
+    }
+
+    @keyframes gradientAnim {
+      0% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
+
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    /* Floating labels */
+    .floating-input {
+      position: relative;
+      transition: all 0.2s ease;
+    }
+
+    .floating-input:focus-within label,
+    .floating-input input:not(:placeholder-shown)+label,
+    .floating-input textarea:not(:placeholder-shown)+label {
+      transform: translateY(-1.5rem) scale(0.85);
+      color: #60a5fa;
+      /* blue-400 */
+    }
+
+    /* Glassmorphism */
+    .glass-panel {
+      background: rgba(255, 255, 255, 0.03);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+  </style>
+</head>
+
+<body class="gradient-bg text-gray-100 min-h-screen relative overflow-x-hidden">
+
+  <!-- Decorative Orbs -->
+  <div class="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none z-0">
+    <div class="absolute top-[-10%] left-[-10%] w-[40rem] h-[40rem] rounded-full bg-blue-600 opacity-20 blur-[120px]">
+    </div>
+    <div
+      class="absolute bottom-[-10%] right-[-10%] w-[35rem] h-[35rem] rounded-full bg-indigo-600 opacity-20 blur-[120px]">
+    </div>
+    <div class="absolute top-[20%] right-[30%] w-[25rem] h-[25rem] rounded-full bg-purple-600 opacity-20 blur-[100px]">
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="relative z-50 w-full px-6 py-6 max-w-7xl mx-auto flex items-center justify-between">
+    <a href="index.html" class="flex items-center gap-3 group">
+      <div
+        class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center border border-white/20 group-hover:bg-white/20 transition-all duration-300">
+        <i class="fas fa-layer-group text-blue-400"></i>
+      </div>
+      <span class="text-2xl text-white font-bold tracking-wide">Heryatech</span>
+    </a>
+    <a href="index.html"
+      class="text-gray-300 hover:text-white flex items-center gap-2 text-sm font-medium transition-colors">
+      <i class="fas fa-arrow-left"></i> Back to Home
+    </a>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="relative z-10 max-w-7xl mx-auto px-6 py-12 lg:py-16 grid lg:grid-cols-5 gap-16 lg:gap-24 items-start">
+
+    <!-- Left Side: Context -->
+    <div class="lg:col-span-2 space-y-10">
+      <div>
+        <div
+          class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-semibold uppercase tracking-wider mb-6">
+          <i class="fas fa-rocket"></i> Let's Collaborate
+        </div>
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-white">
+          Got an idea? <br>
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400">Let's build
+            it.</span>
+        </h1>
+        <p class="text-gray-400 text-lg leading-relaxed">
+          Tell us about your project, vision, and the impact you want to create. Our engineers, designers, and
+          strategists are ready to turn your concept into reality.
+        </p>
+      </div>
+
+      <!-- Features -->
+      <div class="space-y-6">
+        <div class="flex gap-4 items-start">
+          <div
+            class="w-12 h-12 shrink-0 rounded-2xl bg-blue-500/10 flex items-center justify-center border border-blue-500/20 text-blue-400">
+            <i class="fas fa-bolt text-lg"></i>
+          </div>
+          <div>
+            <h4 class="text-white font-semibold mb-1 shrink-0">Fast Response</h4>
+            <p class="text-gray-400 text-sm leading-relaxed">We will review your requirements and get back to you within
+              24 hours.</p>
+          </div>
+        </div>
+        <div class="flex gap-4 items-start">
+          <div
+            class="w-12 h-12 shrink-0 rounded-2xl bg-indigo-500/10 flex items-center justify-center border border-indigo-500/20 text-indigo-400">
+            <i class="fas fa-shield-alt text-lg"></i>
+          </div>
+          <div>
+            <h4 class="text-white font-semibold mb-1 shrink-0">Strict NDA</h4>
+            <p class="text-gray-400 text-sm leading-relaxed">Your intellectual property is secure. We sign NDAs before
+              any technical discussion.</p>
+          </div>
+        </div>
+        <div class="flex gap-4 items-start">
+          <div
+            class="w-12 h-12 shrink-0 rounded-2xl bg-purple-500/10 flex items-center justify-center border border-purple-500/20 text-purple-400">
+            <i class="fas fa-award text-lg"></i>
+          </div>
+          <div>
+            <h4 class="text-white font-semibold mb-1 shrink-0">Top-Tier Talent</h4>
+            <p class="text-gray-400 text-sm leading-relaxed">Work directly with industry experts leveraging the latest
+              tech stacks.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact Help -->
+      <div class="p-6 rounded-2xl glass-panel mt-8 border-l-4 border-l-blue-500">
+        <p class="text-sm text-gray-300 mb-2">Prefer to email us directly?</p>
+        <a href="mailto:hello@heryatech.com"
+          class="text-white font-semibold hover:text-blue-400 transition-colors flex items-center gap-2">
+          hello@heryatech.com <i class="fas fa-envelope text-xs opacity-70"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- Right Side: Form -->
+    <div class="lg:col-span-3">
+      <div class="glass-panel p-8 md:p-12 rounded-3xl shadow-2xl">
+
+        <form id="project-form" class="space-y-10">
+
+          <!-- Section: Personal Info -->
+          <div>
+            <h3 class="text-xl font-semibold text-white mb-6 flex items-center gap-3">
+              <span
+                class="w-8 h-8 rounded-full bg-blue-500/20 text-blue-400 flex items-center justify-center text-sm">1</span>
+              Your Details
+            </h3>
+            <div class="grid md:grid-cols-2 gap-6">
+              <div class="floating-input group">
+                <input type="text" id="name" placeholder=" " required
+                  class="w-full bg-white/5 border border-white/10 rounded-xl px-5 py-4 pt-6 text-white text-sm focus:outline-none focus:border-blue-500 focus:bg-white/10 transition-colors peer placeholder-transparent backdrop-blur-sm shadow-inner">
+                <label for="name"
+                  class="absolute left-5 top-4 text-gray-400 text-sm peer-focus:text-blue-400 font-medium cursor-text">Full
+                  Name *</label>
+              </div>
+              <div class="floating-input group">
+                <input type="email" id="email" placeholder=" " required
+                  class="w-full bg-white/5 border border-white/10 rounded-xl px-5 py-4 pt-6 text-white text-sm focus:outline-none focus:border-blue-500 focus:bg-white/10 transition-colors peer placeholder-transparent backdrop-blur-sm shadow-inner">
+                <label for="email"
+                  class="absolute left-5 top-4 text-gray-400 text-sm peer-focus:text-blue-400 font-medium cursor-text">Work
+                  Email *</label>
+              </div>
+            </div>
+            <div class="relative floating-input group mt-6">
+              <input type="text" id="company" placeholder=" "
+                class="w-full bg-white/5 border border-white/10 rounded-xl px-5 py-4 pt-6 text-white text-sm focus:outline-none focus:border-blue-500 focus:bg-white/10 transition-colors peer placeholder-transparent backdrop-blur-sm shadow-inner">
+              <label for="company"
+                class="absolute left-5 top-4 text-gray-400 text-sm peer-focus:text-blue-400 font-medium cursor-text">Company
+                Name (Optional)</label>
+            </div>
+          </div>
+
+          <div class="w-full h-px bg-white/10"></div>
+
+          <!-- Section: Services -->
+          <div>
+            <h3 class="text-xl font-semibold text-white mb-6 flex items-center gap-3">
+              <span
+                class="w-8 h-8 rounded-full bg-indigo-500/20 text-indigo-400 flex items-center justify-center text-sm">2</span>
+              What do you need help with?
+            </h3>
+
+            <div class="grid grid-cols-2 lg:grid-cols-3 gap-3">
+              <label class="service-tag cursor-pointer">
+                <input type="checkbox" name="services" value="web" class="hidden">
+                <div
+                  class="px-3 md:px-4 py-3 rounded-xl border border-white/10 bg-white/5 text-gray-300 text-xs md:text-sm text-center transition-all hover:bg-white/10 active:scale-95 truncate">
+                  Web Development
+                </div>
+              </label>
+
+              <label class="service-tag cursor-pointer">
+                <input type="checkbox" name="services" value="mobile" class="hidden">
+                <div
+                  class="px-3 md:px-4 py-3 rounded-xl border border-white/10 bg-white/5 text-gray-300 text-xs md:text-sm text-center transition-all hover:bg-white/10 active:scale-95 truncate">
+                  Mobile Apps
+                </div>
+              </label>
+
+              <label class="service-tag cursor-pointer">
+                <input type="checkbox" name="services" value="uiux" class="hidden">
+                <div
+                  class="px-3 md:px-4 py-3 rounded-xl border border-white/10 bg-white/5 text-gray-300 text-xs md:text-sm text-center transition-all hover:bg-white/10 active:scale-95 truncate">
+                  UI/UX Design
+                </div>
+              </label>
+
+              <label class="service-tag cursor-pointer">
+                <input type="checkbox" name="services" value="cloud" class="hidden">
+                <div
+                  class="px-3 md:px-4 py-3 rounded-xl border border-white/10 bg-white/5 text-gray-300 text-xs md:text-sm text-center transition-all hover:bg-white/10 active:scale-95 truncate">
+                  Cloud & DevOps
+                </div>
+              </label>
+
+              <label class="service-tag cursor-pointer">
+                <input type="checkbox" name="services" value="game" class="hidden">
+                <div
+                  class="px-3 md:px-4 py-3 rounded-xl border border-white/10 bg-white/5 text-gray-300 text-xs md:text-sm text-center transition-all hover:bg-white/10 active:scale-95 truncate">
+                  Game Dev
+                </div>
+              </label>
+
+              <label class="service-tag cursor-pointer">
+                <input type="checkbox" name="services" value="other" class="hidden">
+                <div
+                  class="px-3 md:px-4 py-3 rounded-xl border border-white/10 bg-white/5 text-gray-300 text-xs md:text-sm text-center transition-all hover:bg-white/10 active:scale-95 truncate">
+                  Other
+                </div>
+              </label>
+            </div>
+          </div>
+
+          <div class="w-full h-px bg-white/10"></div>
+
+          <!-- Section: Budget -->
+          <div>
+            <h3 class="text-xl font-semibold text-white mb-6 flex items-center gap-3">
+              <span
+                class="w-8 h-8 rounded-full bg-purple-500/20 text-purple-400 flex items-center justify-center text-sm">3</span>
+              Project Budget
+            </h3>
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-3">
+              <label class="service-tag cursor-pointer">
+                <input type="radio" name="budget" value="10k" class="hidden" checked>
+                <div
+                  class="px-3 py-3 rounded-xl border border-white/10 bg-white/5 text-gray-300 text-xs md:text-sm text-center flex items-center justify-center transition-all hover:bg-white/10 active:scale-95 truncate">
+                  < $10k </div>
+              </label>
+              <label class="service-tag cursor-pointer">
+                <input type="radio" name="budget" value="10-25k" class="hidden">
+                <div
+                  class="px-3 py-3 rounded-xl border border-white/10 bg-white/5 text-gray-300 text-xs md:text-sm text-center flex items-center justify-center transition-all hover:bg-white/10 active:scale-95 truncate">
+                  $10k - $25k
+                </div>
+              </label>
+              <label class="service-tag cursor-pointer">
+                <input type="radio" name="budget" value="25-50k" class="hidden">
+                <div
+                  class="px-3 py-3 rounded-xl border border-white/10 bg-white/5 text-gray-300 text-xs md:text-sm text-center flex items-center justify-center transition-all hover:bg-white/10 active:scale-95 truncate">
+                  $25k - $50k
+                </div>
+              </label>
+              <label class="service-tag cursor-pointer">
+                <input type="radio" name="budget" value="50k+" class="hidden">
+                <div
+                  class="px-3 py-3 rounded-xl border border-white/10 bg-white/5 text-gray-300 text-xs md:text-sm text-center flex items-center justify-center transition-all hover:bg-white/10 active:scale-95 truncate">
+                  > $50k
+                </div>
+              </label>
+            </div>
+          </div>
+
+          <div class="w-full h-px bg-white/10"></div>
+
+          <!-- Section: Project Details -->
+          <div>
+            <h3 class="text-xl font-semibold text-white mb-6 flex items-center gap-3">
+              <span
+                class="w-8 h-8 rounded-full bg-blue-500/20 text-blue-400 flex items-center justify-center text-sm">4</span>
+              About the Project
+            </h3>
+            <div class="floating-input group">
+              <textarea id="details" rows="5" placeholder=" " required
+                class="w-full bg-white/5 border border-white/10 rounded-xl px-5 py-4 pt-6 text-white text-sm focus:outline-none focus:border-blue-500 focus:bg-white/10 transition-colors peer placeholder-transparent resize-none shadow-inner"></textarea>
+              <label for="details"
+                class="absolute left-5 top-4 text-gray-400 text-sm peer-focus:text-blue-400 font-medium cursor-text">Give
+                us a short brief about your project goals *</label>
+            </div>
+
+            <!-- File Upload -->
+            <div class="mt-4 flex flex-col md:flex-row items-start md:items-center gap-3">
+              <label
+                class="cursor-pointer inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-white/5 border border-white/10 text-sm text-white hover:bg-white/10 transition-colors shadow-sm">
+                <i class="fas fa-paperclip text-blue-400"></i> Attach files
+                <input type="file" class="hidden" multiple>
+              </label>
+              <span class="text-xs text-gray-500 line-clamp-1 truncate">Max file size 20MB (.pdf, .doc, .zip)</span>
+            </div>
+          </div>
+
+          <!-- Submit -->
+          <div class="pt-4">
+            <button type="submit"
+              class="w-full relative group overflow-hidden bg-white text-gray-900 font-bold text-lg rounded-xl py-4 transition-transform hover:scale-[1.02] active:scale-[0.98] shadow-[0_0_40px_rgba(255,255,255,0.15)] flex justify-center border border-white/20">
+              <!-- Overlay -->
+              <div
+                class="absolute inset-0 bg-gradient-to-r from-transparent via-gray-100 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none w-full h-full transform -translate-x-full group-hover:translate-x-full">
+              </div>
+
+              <span class="relative z-10 hidden" id="loading-spinner">
+                <i class="fas fa-spinner fa-spin text-gray-800 text-xl"></i>
+              </span>
+
+              <span class="relative z-10 flex items-center justify-center gap-3" id="submit-text">
+                Submit Request <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+              </span>
+            </button>
+          </div>
+        </form>
+
+      </div>
+    </div>
+  </main>
+
+  <script>
+    document.getElementById('project-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+      const btn = this.querySelector('button[type="submit"]');
+      const submitText = document.getElementById('submit-text');
+      const spinner = document.getElementById('loading-spinner');
+
+      submitText.classList.add('hidden');
+      spinner.classList.remove('hidden');
+
+      setTimeout(() => {
+        spinner.classList.add('hidden');
+        submitText.classList.remove('hidden');
+
+        submitText.innerHTML = `<span class="text-green-600 flex items-center justify-center gap-2"><i class="fas fa-check-circle"></i> Request Sent Successfully!</span>`;
+
+        setTimeout(() => {
+          this.reset();
+          submitText.innerHTML = `Submit Request <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>`;
+        }, 3000);
+      }, 1000);
+    });
+  </script>
+</body>
+
+</html>

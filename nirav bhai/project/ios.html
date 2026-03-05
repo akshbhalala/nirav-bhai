@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iOS App Development Company | Heryatech</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Outfit', 'sans-serif'],
+                        mono: ['ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', "Liberation Mono", "Courier New", 'monospace'],
+                    },
+                    colors: {
+                        brand: {
+                            dark: '#000000', /* Apple Dark */
+                            card: '#151515', /* Elevated dark */
+                            primary: '#007AFF', /* iOS Blue */
+                            accent: '#AF52DE',  /* iOS Purple */
+                            light: '#f5f5f7' /* Apple Light Gray */
+                        }
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'blob': 'blob 7s infinite',
+                        'spin-slow': 'spin 8s linear infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                        blob: {
+                            '0%': { transform: 'translate(0px, 0px) scale(1)' },
+                            '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+                            '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+                            '100%': { transform: 'translate(0px, 0px) scale(1)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #000000;
+            color: #f5f5f7;
+        }
+
+        .glass-panel {
+            width: 100%;
+            height: 100%;
+            background: rgba(21, 21, 21, 0.6);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        .gradient-text {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #007AFF, #AF52DE);
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            -webkit-background-clip: text;
+            background-size: 200% 200%;
+            animation: gradient-shift 5s ease infinite;
+        }
+
+        @keyframes gradient-shift {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .hero-bg {
+            background: radial-gradient(circle at top right, rgba(0, 122, 255, 0.1) 0%, #000000 60%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card {
+            background: linear-gradient(145deg, #1A1A1A, #0A0A0A);
+        }
+
+        .feature-card:hover .icon-wrapper {
+            transform: scale(1.1) rotate(5deg);
+            background: rgba(0, 122, 255, 0.2);
+            border-color: rgba(0, 122, 255, 0.5);
+        }
+
+        .glow-effect {
+            position: relative;
+        }
+
+        .glow-effect::before {
+            content: '';
+            position: absolute;
+            inset: -2px;
+            background: linear-gradient(45deg, #007AFF, #AF52DE, #007AFF);
+            z-index: -1;
+            filter: blur(10px);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            border-radius: inherit;
+        }
+
+        .glow-effect:hover::before {
+            opacity: 1;
+        }
+
+        /* Grid background pattern */
+        .bg-grid {
+            background-size: 40px 40px;
+            background-image: linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+        }
+
+        #services {
+            width: 100%;
+            height: 100%;
+            padding: 100px 0;
+            background: linear-gradient(145deg, #151515, #000000);
+            color: #fff;
+            overflow: hidden;
+            position: relative;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            z-index: 1;
+        }
+    </style>
+</head>
+
+<body class="font-sans antialiased overflow-x-hidden container-fluid">
+
+    <!-- Header (Premium Transparent) -->
+    <header
+        class="absolute top-0 left-0 w-full z-50 text-white border-b border-white/5 bg-transparent backdrop-blur-md bg-black/50">
+        <div class="container mx-auto px-6 py-5 flex justify-between items-center">
+            <div class="flex items-center gap-3 cursor-pointer">
+                <img src="c:\Users\Admin\Pictures\logo.jpeg" alt="Heryatech"
+                    class="w-10 h-10 rounded-xl object-cover shadow-[0_0_15px_rgba(0,122,255,0.4)]">
+                <span class="text-2xl font-bold font-heading tracking-wide">Heryatech</span>
+            </div>
+
+            <nav class="hidden md:flex space-x-8 font-medium text-sm text-gray-300">
+                <a href="index.html" class="hover:text-white transition-colors">Home</a>
+                <a href="#" class="hover:text-white transition-colors">Services</a>
+                <a href="index.html" class="text-brand-primary transition-colors">Technologies</a>
+                <a href="#" class="hover:text-white transition-colors">Company</a>
+            </nav>
+
+            <a href="Start a Project.html"
+                class="hidden md:flex bg-brand-primary/20 border border-brand-primary/50 text-white px-6 py-2.5 rounded-full hover:bg-brand-primary hover:text-white transition-all items-center gap-2 text-sm font-medium">
+                Start a Project <i class="fas fa-arrow-right text-xs"></i>
+            </a>
+
+            <button class="md:hidden text-white"><i class="fas fa-bars text-xl"></i></button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-bg min-h-screen flex items-center pt-32 pb-16 relative bg-grid">
+        <!-- Animated Background Blobs -->
+        <div
+            class="absolute top-10 left-0 w-[500px] h-[500px] bg-brand-primary/10 rounded-full filter blur-[120px] animate-blob">
+        </div>
+        <div
+            class="absolute bottom-10 right-10 w-[400px] h-[400px] bg-brand-accent/20 rounded-full filter blur-[120px] animate-blob animation-delay-2000">
+        </div>
+
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="space-y-8">
+                    <div
+                        class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-brand-primary/30 bg-brand-primary/5 backdrop-blur-md text-sm text-brand-primary font-medium">
+                        <i class="fab fa-apple text-lg"></i>
+                        Premium iOS App Development
+                    </div>
+                    <h1
+                        class="text-5xl md:text-7xl font-extrabold text-white leading-[1.1] font-heading tracking-tight">
+                        Crafting <br>
+                        Exceptional <br>
+                        <span class="gradient-text">Apple Experiences.</span>
+                    </h1>
+                    <p class="text-lg md:text-xl text-gray-400 max-w-xl leading-relaxed font-light">
+                        Specializing in high-performance, flawlessly designed native applications for iPhone, iPad,
+                        Apple Watch, and Apple TV using Swift, SwiftUI, and Objective-C.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 pt-4">
+                        <a href="#services"
+                            class="bg-[#f5f5f7] text-black px-8 py-4 rounded-full font-bold hover:bg-white transition-all text-center shadow-[0_0_20px_rgba(255,255,255,0.1)]">
+                            Hire iOS Developers
+                        </a>
+                        <a href="contact-us.html"
+                            class="px-8 py-4 rounded-full font-semibold text-white border border-gray-700 hover:bg-white/10 transition-all text-center group">
+                            Explore Projects <i
+                                class="fas fa-arrow-right ml-2 opacity-50 group-hover:opacity-100 group-hover:translate-x-1 transition-all"></i>
+                        </a>
+                    </div>
+
+                    <div class="pt-10 mt-10 border-t border-white/10 grid grid-cols-3 gap-6">
+                        <div>
+                            <h4 class="text-3xl font-bold text-white font-heading">Swift<span
+                                    class="text-brand-primary">UI</span></h4>
+                            <p class="text-gray-500 text-sm mt-1 font-medium text-xs uppercase tracking-wider">Modern
+                                Core</p>
+                        </div>
+                        <div>
+                            <h4 class="text-3xl font-bold text-white font-heading">High<span class="text-brand-primary">
+                                    ROI</span></h4>
+                            <p class="text-gray-500 text-sm mt-1 font-medium text-xs uppercase tracking-wider">Premium
+                                Audience</p>
+                        </div>
+                        <div>
+                            <h4 class="text-3xl font-bold text-white font-heading">100<span
+                                    class="text-brand-primary">%</span></h4>
+                            <p class="text-gray-500 text-sm mt-1 font-medium text-xs uppercase tracking-wider">Human
+                                Interface</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative hidden lg:block">
+                    <div class="relative w-full aspect-square flex justify-center items-center">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-tr from-brand-primary/10 to-brand-accent/10 rounded-full filter blur-[100px] animate-pulse-slow">
+                        </div>
+
+                        <!-- Apple Device Floating Mockup -->
+                        <div class="relative z-10 w-full h-[500px] flex items-center justify-center">
+
+                            <!-- Phone Mockup Frame (iPhone aesthetic) -->
+                            <div class="relative w-[240px] h-[490px] bg-black border-[6px] border-[#3f3f46] rounded-[3rem] shadow-2xl z-20 overflow-hidden animate-float ring-4 ring-black/50"
+                                style="animation-delay: 1s;">
+                                <!-- Dynamic Island -->
+                                <div
+                                    class="absolute top-2 left-1/2 -translate-x-1/2 w-20 h-6 bg-black rounded-full z-30 flex items-center justify-between px-2">
+                                    <div class="w-1.5 h-1.5 rounded-full bg-green-500/80"></div>
+                                    <div class="w-1.5 h-1.5 rounded-full bg-gray-800"></div>
+                                </div>
+                                <!-- App Screen Mockup -->
+                                <div class="w-full h-full bg-[#000000] text-white flex flex-col pt-12 pb-6 px-4">
+                                    <div class="flex justify-between items-center mb-6">
+                                        <div
+                                            class="w-10 h-10 rounded-full bg-gray-800 flex justify-center items-center">
+                                            <img src="c:\Users\Admin\Pictures\logo.jpeg"
+                                                class="w-full h-full object-cover rounded-full mix-blend-lighten opacity-80" />
+                                        </div>
+                                        <div class="text-white font-semibold text-lg tracking-tight">Wallet</div>
+                                        <div
+                                            class="w-10 h-10 rounded-full bg-gray-900 flex justify-center items-center text-brand-primary">
+                                            <i class="fas fa-plus"></i>
+                                        </div>
+                                    </div>
+
+                                    <!-- Beautiful Apple Card UI representation -->
+                                    <div
+                                        class="w-full h-48 bg-gradient-to-br from-white to-gray-200 rounded-2xl shadow-lg relative overflow-hidden flex flex-col p-5 justify-end group mb-6 transition-transform hover:scale-105 duration-300">
+                                        <div class="absolute top-4 left-4">
+                                            <i class="fab fa-apple text-xl text-black"></i>
+                                        </div>
+                                        <div class="text-black/60 text-xs font-medium">Apple Card</div>
+                                        <div class="text-black text-2xl font-bold mt-1">$ 12,490.50</div>
+                                        <div
+                                            class="absolute -right-12 -bottom-12 w-40 h-40 bg-gradient-to-tr from-purple-400 to-blue-400 opacity-20 rounded-full blur-2xl group-hover:opacity-40 transition-opacity">
+                                        </div>
+                                    </div>
+
+                                    <div class="text-white font-bold text-xl mb-4 font-heading">Recent Activity</div>
+
+                                    <div class="space-y-4">
+                                        <div class="flex justify-between items-center bg-gray-900 p-3 rounded-xl">
+                                            <div class="flex items-center gap-3">
+                                                <div
+                                                    class="w-10 h-10 rounded-full bg-orange-500/20 text-orange-400 flex items-center justify-center">
+                                                    <i class="fas fa-coffee"></i>
+                                                </div>
+                                                <div>
+                                                    <div class="font-semibold text-sm">Starbucks</div>
+                                                    <div class="text-xs text-gray-500">Apple Pay</div>
+                                                </div>
+                                            </div>
+                                            <div class="font-semibold text-sm">-$5.40</div>
+                                        </div>
+                                        <div class="flex justify-between items-center bg-gray-900 p-3 rounded-xl">
+                                            <div class="flex items-center gap-3">
+                                                <div
+                                                    class="w-10 h-10 rounded-full bg-blue-500/20 text-blue-400 flex items-center justify-center">
+                                                    <i class="fab fa-apple"></i>
+                                                </div>
+                                                <div>
+                                                    <div class="font-semibold text-sm">Apple Store</div>
+                                                    <div class="text-xs text-gray-500">Hardware</div>
+                                                </div>
+                                            </div>
+                                            <div class="font-semibold text-sm">-$999.00</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Floating Elements -->
+                            <div
+                                class="absolute top-20 right-6 w-auto h-auto px-4 py-2 border-0 bg-gray-900/60 backdrop-blur-xl rounded-xl flex items-center gap-3 z-30 transform hover:scale-105 transition-transform duration-300 shadow-xl border border-white/5">
+                                <div class="text-orange-500 font-bold text-xl"><i class="fab fa-swift"></i></div>
+                                <div class="font-mono text-xs text-gray-300">
+                                    <span class="text-pink-400">import</span> <span class="text-gray-100">SwiftUI</span>
+                                </div>
+                            </div>
+
+                            <div
+                                class="absolute bottom-28 -left-4 w-auto h-auto px-5 py-3 border-0 bg-gray-900/60 backdrop-blur-xl rounded-xl flex items-center gap-3 z-30 transform hover:scale-105 transition-transform duration-300 shadow-xl border border-white/5">
+                                <div
+                                    class="w-8 h-8 rounded-full bg-blue-500/20 flex items-center justify-center text-blue-400">
+                                    <i class="fas fa-shield-alt"></i>
+                                </div>
+                                <span class="text-sm font-bold ml-1 text-white tracking-wide">Secure Enclave</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Expertise Grid -->
+    <section id="services" class="w-full h-auto py-32 relative bg-brand-dark container border-t border-white/5">
+        <div class="container mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-20 relative z-10 w-full">
+                <span
+                    class="text-brand-primary font-semibold tracking-wider uppercase text-xs flex items-center justify-center gap-2 mb-3">
+                    <span class="w-8 h-px bg-brand-primary"></span> Why iOS Native? <span
+                        class="w-8 h-px bg-brand-primary"></span>
+                </span>
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-6 font-heading tracking-tight">Our iOS
+                    Capabilities</h2>
+                <p class="text-gray-400 text-lg font-light leading-relaxed">We architect secure, scalable, and visually
+                    breathtaking iPhone and iPad applications natively, guaranteeing maximum performance and seamless
+                    integration with the Apple Ecosystem.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-8 relative z-10">
+                <!-- Card 1 -->
+                <div
+                    class="feature-card rounded-2xl p-8 border border-white/5 hover:border-brand-primary/40 hover:-translate-y-2 transition-all duration-300 group shadow-lg text-center flex flex-col items-center">
+                    <div
+                        class="w-16 h-16 rounded-2xl bg-black border border-white/10 flex items-center justify-center mb-6 mx-auto icon-wrapper transition-all duration-300 text-brand-primary text-3xl shadow-[0_0_15px_rgba(0,122,255,0.1)]">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3
+                        class="text-xl font-bold text-white mb-4 font-heading group-hover:text-brand-primary transition-colors tracking-tight">
+                        Custom iOS Development</h3>
+                    <p class="text-gray-400 leading-relaxed text-sm font-light">End-to-end development of bespoke iOS
+                        applications from conceptualization to App Store launch, tailored for enterprise or consumer
+                        markets.</p>
+                </div>
+
+                <!-- Card 2 -->
+                <div
+                    class="feature-card rounded-2xl p-8 border border-white/5 hover:border-brand-primary/40 hover:-translate-y-2 transition-all duration-300 group shadow-lg text-center flex flex-col items-center">
+                    <div
+                        class="w-16 h-16 rounded-2xl bg-black border border-white/10 flex items-center justify-center mb-6 mx-auto icon-wrapper transition-all duration-300 text-brand-primary text-3xl shadow-[0_0_15px_rgba(0,122,255,0.1)]">
+                        <i class="fab fa-apple"></i>
+                    </div>
+                    <h3
+                        class="text-xl font-bold text-white mb-4 font-heading group-hover:text-brand-primary transition-colors tracking-tight">
+                        Apple Ecosystem Integration</h3>
+                    <p class="text-gray-400 leading-relaxed text-sm font-light">Expanding your app's reach across the
+                        entire ecosystem including iPadOS, watchOS, tvOS, and deep integration with iCloud and Apple
+                        Pay.</p>
+                </div>
+
+                <!-- Card 3 -->
+                <div
+                    class="feature-card rounded-2xl p-8 border border-white/5 hover:border-brand-primary/40 hover:-translate-y-2 transition-all duration-300 group shadow-lg text-center flex flex-col items-center">
+                    <div
+                        class="w-16 h-16 rounded-2xl bg-black border border-white/10 flex items-center justify-center mb-6 mx-auto icon-wrapper transition-all duration-300 text-brand-primary text-3xl shadow-[0_0_15px_rgba(0,122,255,0.1)]">
+                        <i class="fas fa-layer-group"></i>
+                    </div>
+                    <h3
+                        class="text-xl font-bold text-white mb-4 font-heading group-hover:text-brand-primary transition-colors tracking-tight">
+                        UI/UX & Human Interface</h3>
+                    <p class="text-gray-400 leading-relaxed text-sm font-light">Designing intuitive, stunning interfaces
+                        that strictly adhere to Apple's Human Interface Guidelines, ensuring immediate familiarity for
+                        users.</p>
+                </div>
+
+                <!-- Card 4 -->
+                <div
+                    class="feature-card rounded-2xl p-8 border border-white/5 hover:border-brand-primary/40 hover:-translate-y-2 transition-all duration-300 group shadow-lg text-center flex flex-col items-center">
+                    <div
+                        class="w-16 h-16 rounded-2xl bg-black border border-white/10 flex items-center justify-center mb-6 mx-auto icon-wrapper transition-all duration-300 text-brand-primary text-3xl shadow-[0_0_15px_rgba(0,122,255,0.1)]">
+                        <i class="fas fa-vr-cardboard"></i>
+                    </div>
+                    <h3
+                        class="text-xl font-bold text-white mb-4 font-heading group-hover:text-brand-primary transition-colors tracking-tight">
+                        ARKit & CoreML</h3>
+                    <p class="text-gray-400 leading-relaxed text-sm font-light">Leveraging advanced iOS frameworks to
+                        build immersive Augmented Reality experiences and powerful on-device Machine Learning features.
+                    </p>
+                </div>
+
+                <!-- Card 5 -->
+                <div
+                    class="feature-card rounded-2xl p-8 border border-white/5 hover:border-brand-primary/40 hover:-translate-y-2 transition-all duration-300 group shadow-lg text-center flex flex-col items-center">
+                    <div
+                        class="w-16 h-16 rounded-2xl bg-black border border-white/10 flex items-center justify-center mb-6 mx-auto icon-wrapper transition-all duration-300 text-brand-primary text-3xl shadow-[0_0_15px_rgba(0,122,255,0.1)]">
+                        <i class="fas fa-exchange-alt"></i>
+                    </div>
+                    <h3
+                        class="text-xl font-bold text-white mb-4 font-heading group-hover:text-brand-primary transition-colors tracking-tight">
+                        Migration to Swift</h3>
+                    <p class="text-gray-400 leading-relaxed text-sm font-light">Modernizing legacy apps by migrating
+                        Codebases from Objective-C to modern Swift or SwiftUI for improved stability and
+                        maintainability.</p>
+                </div>
+
+                <!-- Card 6 -->
+                <div
+                    class="feature-card rounded-2xl p-8 border border-white/5 hover:border-brand-primary/40 hover:-translate-y-2 transition-all duration-300 group shadow-lg text-center flex flex-col items-center">
+                    <div
+                        class="w-16 h-16 rounded-2xl bg-black border border-white/10 flex items-center justify-center mb-6 mx-auto icon-wrapper transition-all duration-300 text-brand-primary text-3xl shadow-[0_0_15px_rgba(0,122,255,0.1)]">
+                        <i class="fas fa-shield-check"></i>
+                    </div>
+                    <h3
+                        class="text-xl font-bold text-white mb-4 font-heading group-hover:text-brand-primary transition-colors tracking-tight">
+                        Enterprise Mobility</h3>
+                    <p class="text-gray-400 leading-relaxed text-sm font-light">Developing highly secure enterprise iOS
+                        applications with MDM integration, biometric auth, and complex data encryption protocols.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Depth Section -->
+    <section
+        class="py-32 bg-[#0A0A0A] text-white relative overflow-hidden flex flex-col items-center border-y border-white/5">
+        <div
+            class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-[0.05]">
+        </div>
+        <div
+            class="absolute left-0 top-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand-primary/10 rounded-full blur-[150px]">
+        </div>
+
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+
+                <div class="order-2 lg:order-1 relative flex justify-center">
+                    <div class="w-full max-w-lg relative p-6">
+                        <!-- Xcode / Swift Code Editor Mockup -->
+                        <div
+                            class="w-full bg-[#1e1e1e] rounded-xl border border-white/10 shadow-2xl overflow-hidden font-mono text-xs md:text-sm">
+                            <div
+                                class="flex items-center justify-between px-4 py-3 bg-[#2d2d2d] border-b border-[#404040]">
+                                <div class="flex gap-2">
+                                    <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                                    <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                                    <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                                </div>
+                                <div class="text-gray-400 text-xs flex items-center gap-2"><i
+                                        class="fab fa-swift text-orange-500"></i> ContentView.swift — Xcode</div>
+                                <div></div>
+                            </div>
+                            <div class="p-6 text-gray-300 space-y-1 bg-[#1e1e1e]">
+                                <div class="flex"><span class="text-gray-500 w-8 inline-block select-none">1</span><span
+                                        class="text-pink-400">import</span> <span class="text-blue-300">SwiftUI</span>
+                                </div>
+                                <div class="flex"><span class="text-gray-500 w-8 inline-block select-none">2</span>
+                                </div>
+                                <div class="flex"><span class="text-gray-500 w-8 inline-block select-none">3</span><span
+                                        class="text-pink-400">struct</span> <span
+                                        class="text-[#4ec9b0]">ContentView</span>: <span
+                                        class="text-[#4ec9b0]">View</span> {</div>
+                                <div class="flex"><span class="text-gray-500 w-8 inline-block select-none">4</span><span
+                                        class="ml-4 text-pink-400">var</span> body: <span
+                                        class="text-pink-400">some</span> <span class="text-[#4ec9b0]">View</span> {
+                                </div>
+                                <div class="flex"><span class="text-gray-500 w-8 inline-block select-none">5</span><span
+                                        class="ml-8 text-[#4ec9b0]">VStack</span>(alignment: .leading, spacing: <span
+                                        class="text-[#b5cea8]">16</span>) {</div>
+                                <div class="flex"><span class="text-gray-500 w-8 inline-block select-none">6</span><span
+                                        class="ml-12 text-[#4ec9b0]">Text</span>(<span class="text-[#ce9178]">"Premium
+                                        iOS App"</span>)</div>
+                                <div class="flex"><span class="text-gray-500 w-8 inline-block select-none">7</span><span
+                                        class="ml-16">.font(.largeTitle)</span></div>
+                                <div class="flex"><span class="text-gray-500 w-8 inline-block select-none">8</span><span
+                                        class="ml-16">.fontWeight(.bold)</span></div>
+                                <div class="flex"><span class="text-gray-500 w-8 inline-block select-none">9</span>
+                                </div>
+                                <div class="flex"><span
+                                        class="text-gray-500 w-8 inline-block select-none">10</span><span
+                                        class="ml-12 text-[#4ec9b0]">HStack</span> {</div>
+                                <div class="flex"><span
+                                        class="text-gray-500 w-8 inline-block select-none">11</span><span
+                                        class="ml-16 text-[#4ec9b0]">Image</span>(systemName: <span
+                                        class="text-[#ce9178]">"applelogo"</span>)</div>
+                                <div class="flex"><span
+                                        class="text-gray-500 w-8 inline-block select-none">12</span><span
+                                        class="ml-20">.foregroundColor(.primary)</span></div>
+                                <div class="flex"><span
+                                        class="text-gray-500 w-8 inline-block select-none">13</span><span
+                                        class="ml-16 text-[#4ec9b0]">Text</span>(<span class="text-[#ce9178]">"Native
+                                        Performance"</span>)</div>
+                                <div class="flex"><span
+                                        class="text-gray-500 w-8 inline-block select-none">14</span><span
+                                        class="ml-16">.foregroundColor(.secondary)</span></div>
+                                <div class="flex"><span
+                                        class="text-gray-500 w-8 inline-block select-none">15</span><span
+                                        class="ml-12">}</span></div>
+                                <div class="flex"><span
+                                        class="text-gray-500 w-8 inline-block select-none">16</span><span
+                                        class="ml-8">}</span></div>
+                                <div class="flex"><span
+                                        class="text-gray-500 w-8 inline-block select-none">17</span><span
+                                        class="ml-8">.padding()</span></div>
+                                <div class="flex"><span
+                                        class="text-gray-500 w-8 inline-block select-none">18</span><span
+                                        class="ml-8">.background(Color(.systemBackground))</span></div>
+                                <div class="flex"><span
+                                        class="text-gray-500 w-8 inline-block select-none">19</span><span
+                                        class="ml-8">.cornerRadius(<span class="text-[#b5cea8]">12</span>)</span></div>
+                                <div class="flex"><span
+                                        class="text-gray-500 w-8 inline-block select-none">20</span><span
+                                        class="ml-4">}</span></div>
+                                <div class="flex"><span
+                                        class="text-gray-500 w-8 inline-block select-none">21</span><span
+                                        class="ml-0">}</span></div>
+                            </div>
+                        </div>
+
+                        <!-- Decorative overlay badge -->
+                        <div
+                            class="absolute -bottom-6 -right-4 w-auto h-auto py-3 px-5 border-0 bg-gray-900/80 backdrop-blur-md rounded-xl flex items-center gap-3 border border-white/10 z-20 shadow-xl">
+                            <div
+                                class="w-10 h-10 rounded-full bg-orange-500/20 flex items-center justify-center text-orange-400 text-xl font-bold">
+                                <i class="fab fa-swift"></i>
+                            </div>
+                            <p class="text-white text-sm font-bold tracking-tight">SwiftUI Ready</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="order-1 lg:order-2">
+                    <span class="text-brand-primary font-semibold tracking-wider text-xs mb-3 block uppercase">Native
+                        Performance</span>
+                    <h2 class="text-4xl md:text-5xl font-bold mb-6 font-heading tracking-tight">The Core of <br>iOS
+                        Engineering</h2>
+                    <p class="text-gray-400 text-lg mb-10 leading-relaxed font-light">
+                        We don't settle for cross-platform compromises when targeting the premium Apple market. Our
+                        engineers build purely native layers ensuring ultra-fast execution, fluid animations, and robust
+                        security.
+                    </p>
+
+                    <ul class="space-y-8">
+                        <li class="flex gap-5 items-start group">
+                            <div
+                                class="w-14 h-14 rounded-2xl bg-[#1A1A1A] border border-white/5 flex items-center justify-center flex-shrink-0 text-brand-primary group-hover:bg-brand-primary group-hover:text-black transition-colors duration-300 shadow-lg">
+                                <i class="fas fa-microchip text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold font-heading text-white tracking-tight">Metal Ecosystem
+                                </h4>
+                                <p class="text-gray-400 text-sm mt-2 leading-relaxed font-light">Direct interaction with
+                                    Apple hardware utilizing Metal APIs for low-overhead, highly optimized graphics
+                                    rendering and computation.</p>
+                            </div>
+                        </li>
+                        <li class="flex gap-5 items-start group">
+                            <div
+                                class="w-14 h-14 rounded-2xl bg-[#1A1A1A] border border-white/5 flex items-center justify-center flex-shrink-0 text-brand-primary group-hover:bg-brand-primary group-hover:text-black transition-colors duration-300 shadow-lg">
+                                <i class="fas fa-lock text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold font-heading text-white tracking-tight">Bank-Grade Security
+                                </h4>
+                                <p class="text-gray-400 text-sm mt-2 leading-relaxed font-light">Implementing Keychain
+                                    access, Data Protection API, and biometric authentication (Face ID / Touch ID) to
+                                    protect sensitive user data.</p>
+                            </div>
+                        </li>
+                        <li class="flex gap-5 items-start group">
+                            <div
+                                class="w-14 h-14 rounded-2xl bg-[#1A1A1A] border border-white/5 flex items-center justify-center flex-shrink-0 text-brand-primary group-hover:bg-brand-primary group-hover:text-black transition-colors duration-300 shadow-lg">
+                                <i class="fas fa-cloud-download-alt text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold font-heading text-white tracking-tight">App Store
+                                    Optimization</h4>
+                                <p class="text-gray-400 text-sm mt-2 leading-relaxed font-light">Guiding you through the
+                                    strict App Store review guidelines to ensure a swift, hassle-free approval and
+                                    publish process.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Call To Action -->
+    <section class="py-32 bg-black relative overflow-hidden bg-grid">
+        <div class="absolute inset-0 bg-gradient-to-t from-brand-primary/10 to-transparent opacity-30"></div>
+        <div class="container mx-auto px-6 relative z-10 text-center">
+            <h2 class="text-5xl md:text-6xl font-extrabold text-white mb-8 font-heading tracking-tight">Ready to Launch
+                on the <br><span class="gradient-text">App Store?</span></h2>
+            <p class="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto mb-12 font-light">Partner with our Native iOS
+                engineering team to
+                deliver a premium application that exceeds the expectations of Apple’s discerning user base.</p>
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-6">
+                <a href="contact-us.html"
+                    class="bg-brand-primary text-white px-10 py-5 rounded-full font-bold hover:bg-blue-600 transition-all glow-effect shadow-[0_0_20px_rgba(0,122,255,0.4)] text-center w-full sm:w-auto text-lg">
+                    Schedule a Consultation
+                </a>
+                <a href="#"
+                    class="text-white hover:text-brand-primary font-semibold transition-colors flex items-center gap-2 text-lg">
+                    Explore Case Studies <i class="fas fa-arrow-right text-sm"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#050505] text-gray-400 py-16 border-t border-white/5">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <div class="lg:col-span-1">
+                    <div class="flex items-center gap-3 mb-6">
+                        <img src="c:\Users\Admin\Pictures\logo.jpeg" alt="Heryatech"
+                            class="w-8 h-8 rounded-md object-cover">
+                        <span class="text-xl font-bold text-white tracking-wide font-heading">Heryatech</span>
+                    </div>
+                    <p class="text-sm leading-relaxed mb-6 font-light">Delivering unparalleled mobile excellence via
+                        native iOS architectures, building unified solutions across the entire digital ecosystem.</p>
+                    <div class="flex gap-4">
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-brand-primary hover:text-white transition-all"><i
+                                class="fab fa-linkedin-in text-sm"></i></a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-brand-primary hover:text-white transition-all"><i
+                                class="fab fa-twitter text-sm"></i></a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-brand-primary hover:text-white transition-all"><i
+                                class="fab fa-instagram text-sm"></i></a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold mb-6 font-heading tracking-wide uppercase text-xs">Mobile Expertise
+                    </h4>
+                    <ul class="space-y-3 text-sm font-light">
+                        <li><a href="React Native.html" class="hover:text-brand-primary transition-colors">React Native
+                                Dev</a></li>
+                        <li><a href="Flutter.html" class="hover:text-brand-primary transition-colors">Flutter
+                                Development</a></li>
+                        <li><a href="#" class="hover:text-brand-primary transition-colors">Native iOS (Swift)</a></li>
+                        <li><a href="Android.html" class="hover:text-brand-primary transition-colors">Native Android
+                                (Kotlin)</a></li>
+                        <li><a href="#" class="hover:text-brand-primary transition-colors">App Maintenance</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold mb-6 font-heading tracking-wide uppercase text-xs">Company</h4>
+                    <ul class="space-y-3 text-sm font-light">
+                        <li><a href="about-us.html" class="hover:text-brand-primary transition-colors">About
+                                Heryatech</a></li>
+                        <li><a href="#" class="hover:text-brand-primary transition-colors">Careers & Culture</a></li>
+                        <li><a href="blogs.html" class="hover:text-brand-primary transition-colors">Engineering Blog</a>
+                        </li>
+                        <li><a href="contact-us.html" class="hover:text-brand-primary transition-colors">Contact
+                                Support</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold mb-6 font-heading tracking-wide uppercase text-xs">Get in Touch</h4>
+                    <ul class="space-y-4 text-sm font-light">
+                        <li class="flex gap-3 items-start"><i
+                                class="fas fa-map-marker-alt mt-1 text-brand-primary"></i><span
+                                class="leading-relaxed">Silicon Avenue, Tech District, San Jose, CA 95131</span></li>
+                        <li class="flex gap-3"><i class="fas fa-envelope mt-1 text-brand-primary"></i><a
+                                href="mailto:build@heryatech.com"
+                                class="hover:text-white transition-colors">build@heryatech.com</a></li>
+                        <li class="flex gap-3"><i class="fas fa-phone mt-1 text-brand-primary"></i><a
+                                href="tel:+15550219900" class="hover:text-white transition-colors">+1 (555) 021-9900</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div
+                class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-light text-gray-500">
+                <p>&copy; 2026 Heryatech Systems. All Rights Reserved.</p>
+                <div class="flex gap-6">
+                    <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-white transition-colors">Cookie Policy</a>
+                    <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

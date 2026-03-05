@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heryatech</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+      <!-- FontAwesome for Icons -->
+    
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            dark: '#1a2b4b',
+                            blue: '#254ba0',
+                            lightBlue: '#f0f4ff',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+   <style>
+        /* Background Map Styles */
+        .map-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://www.transparenttextures.com/patterns/cubes.png');
+            opacity: 0.05;
+            z-index: 0;
+        }
+     /* Dropdown Styles */
+        .dropdown {
+            position: relative;
+        }
+        .dropdown-menu {
+            width: auto;
+            height: auto;
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            z-index: 50;
+            min-width: 200px;
+        }
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+        .dropdown-menu a {
+            display: block;
+            padding: 0.5rem 1rem;
+            color: #374151;
+            text-decoration: none;
+            transition: background 0.2s;
+        }
+        .dropdown-menu a:hover {
+            background: #f3f4f6;
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-800 relative min-h-screen overflow-x-hidden bg-white">
+    
+
+    <!-- Background Map -->
+    <div class="map-bg"></div>
+
+    
+   <!-- Premium Enterprise Header -->
+<header class="sticky top-0 z-50 bg-white/80 backdrop-blur-xl border-b border-gray-200 shadow-sm">
+  <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
+
+    <!-- Logo -->
+    <div class="flex items-center gap-3 cursor-pointer group">
+      <div class="w-9 h-9 bg-brand-dark rounded-lg flex items-center justify-center 
+                  shadow-lg group-hover:rotate-12 transition duration-300">
+        <div class="w-4 h-4 bg-white rotate-45"></div>
+      </div>
+      <span class="text-2xl font-extrabold text-brand-dark tracking-wide">
+        Herya<span class="text-brand-blue">tech</span>
+      </span>
+    </div>
+
+    <!-- Desktop Navigation -->
+    <nav class="hidden lg:flex items-center space-x-10 text-brand-dark font-medium text-sm relative">
+
+      <!-- Services Dropdown -->
+      <div class="relative group">
+        <button class="flex items-center gap-1 hover:text-brand-blue transition">
+          Services
+          <i class="fas fa-chevron-down text-xs group-hover:rotate-180 transition duration-300"></i>
+        </button>
+
+        <!-- Mega Dropdown -->
+        <div class="absolute left-0 top-full mt-4 w-[600px] bg-white rounded-2xl shadow-2xl 
+                    border border-gray-200 p-8 opacity-0 invisible group-hover:opacity-100 
+                    group-hover:visible transition duration-300">
+
+          <div class="grid grid-cols-2 gap-6 text-sm">
+
+            <a href="web-dev.html" class="hover:text-brand-blue transition">Web Development</a>
+            <a href="mobile-dev.html" class="hover:text-brand-blue transition">Mobile App Development</a>
+            <a href="cloud-devops.html" class="hover:text-brand-blue transition">Cloud & DevOps</a>
+            <a href="ui-ux.html" class="hover:text-brand-blue transition">UI/UX & Graphics</a>
+            <a href="ar-dev.html" class="hover:text-brand-blue transition">AR Development</a>
+            <a href="game-dev.html" class="hover:text-brand-blue transition">Game Development</a>
+            <a href="digital-marketing.html" class="hover:text-brand-blue transition">Digital Marketing</a>
+            <a href="seo.html" class="hover:text-brand-blue transition">SEO</a>
+            <a href="q-testing.html" class="hover:text-brand-blue transition">QA Testing</a>
+            <a href="erp.html" class="hover:text-brand-blue transition">ERP Consultation & Support</a>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Other Links -->
+      <a href="#" class="hover:text-brand-blue transition relative group">
+        Industries
+        <span class="absolute left-0 -bottom-1 w-0 h-0.5 bg-brand-blue group-hover:w-full transition-all"></span>
+      </a>
+
+      <a href="#" class="hover:text-brand-blue transition relative group">
+        Technologies
+        <span class="absolute left-0 -bottom-1 w-0 h-0.5 bg-brand-blue group-hover:w-full transition-all"></span>
+      </a>
+
+      <a href="#" class="hover:text-brand-blue transition relative group">
+        Products
+        <span class="absolute left-0 -bottom-1 w-0 h-0.5 bg-brand-blue group-hover:w-full transition-all"></span>
+      </a>
+
+      <a href="#" class="hover:text-brand-blue transition relative group">
+        Company
+        <span class="absolute left-0 -bottom-1 w-0 h-0.5 bg-brand-blue group-hover:w-full transition-all"></span>
+      </a>
+
+    </nav>
+
+    <!-- CTA -->
+    <a href="#" 
+       class="hidden lg:flex items-center gap-2 bg-brand-dark text-white px-6 py-3 
+              rounded-xl shadow-lg hover:bg-brand-blue hover:scale-105 transition duration-300 text-sm font-semibold">
+      Start a Project
+      <i class="fas fa-rocket text-xs"></i>
+    </a>
+
+    <!-- Mobile Menu Button -->
+    <button id="menuBtn" class="lg:hidden text-2xl text-brand-dark">
+      ☰
+    </button>
+
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" class="hidden lg:hidden bg-white border-t border-gray-200 shadow-md">
+    <div class="flex flex-col px-6 py-6 space-y-4 text-sm font-medium text-brand-dark">
+      <a href="#" class="hover:text-brand-blue">Services</a>
+      <a href="#" class="hover:text-brand-blue">Industries</a>
+      <a href="#" class="hover:text-brand-blue">Technologies</a>
+      <a href="#" class="hover:text-brand-blue">Products</a>
+      <a href="#" class="hover:text-brand-blue">Company</a>
+      <a href="#" class="bg-brand-dark text-white py-2 rounded-lg text-center hover:bg-brand-blue transition">
+        Start a Project
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile Toggle Script -->
+<script>
+  const menuBtn = document.getElementById("menuBtn");
+  const mobileMenu = document.getElementById("mobileMenu");
+
+  menuBtn.addEventListener("click", () => {
+    mobileMenu.classList.toggle("hidden");
+  });
+</script>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-6 pt-12 pb-24 relative z-10 mt-2 mb-10">
+        
+        <!-- Hero Section -->
+      <section class="py-20 bg-gradient-to-br from-blue-50 to-white">
+    <div class="container mx-auto px-6">
+
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+
+            <!-- Hero Text -->
+            <div class="space-y-6">
+                
+                <span class="text-brand-blue font-semibold uppercase tracking-wide text-sm">
+                    Cloud & DevOps Services
+                </span>
+
+                <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-brand-dark leading-tight">
+                    Cloud & DevOps  
+                    <span class="text-brand-blue">Consulting Services</span>
+                </h1>
+
+                <p class="text-gray-600 text-lg leading-relaxed">
+                    We help you plan, build, and manage secure cloud infrastructure that aligns with your business goals. 
+                    From streamlined CI/CD pipelines to scalable architecture and performance optimization, 
+                    we simplify operations and deliver measurable long-term value.
+                </p>
+
+                <!-- CTA Buttons -->
+                <div class="flex flex-wrap gap-4 pt-4">
+                    <a href="#contact" 
+                       class="bg-brand-dark text-white px-6 py-3 rounded-lg shadow-lg hover:bg-brand-blue transition font-medium">
+                        Get Free Consultation
+                    </a>
+
+                    <a href="#services" 
+                       class="border border-brand-dark text-brand-dark px-6 py-3 rounded-lg hover:bg-brand-dark hover:text-white transition font-medium">
+                        Explore Services
+                    </a>
+                </div>
+            </div>
+
+            <!-- Hero Image -->
+            <div class="relative flex justify-center md:justify-end">
+                <img src="c:\Users\Admin\Pictures\cloud_devops_banner.png" 
+                     alt="Cloud & DevOps Consulting Services" 
+                     class="w-full max-w-lg drop-shadow-2xl">
+            </div>
+
+        </div>
+
+        <!-- Stats Section -->
+        <div class="mt-20">
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-10 text-center">
+
+                <div>
+                    <div class="text-5xl font-bold text-brand-blue">75+</div>
+                    <p class="text-brand-dark font-semibold mt-2">Expert Team Members</p>
+                </div>
+
+                <div>
+                    <div class="text-5xl font-bold text-brand-blue">10+ Years</div>
+                    <p class="text-brand-dark font-semibold mt-2">Industry Experience</p>
+                </div>
+
+                <div>
+                    <div class="text-5xl font-bold text-brand-blue">100%</div>
+                    <p class="text-brand-dark font-semibold mt-2">Client Satisfaction</p>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</section> 
+
+          
+
+          <!-- Industries We Serve Section -->
+       <section class="py-24 bg-gray-50">
+    <div class="container mx-auto px-6">
+
+        <!-- Section Header -->
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-brand-dark mb-4">
+                Industries We Build Digital Solutions For
+            </h2>
+            <div class="w-20 h-1 bg-brand-blue mx-auto mb-6"></div>
+            <p class="text-gray-600 text-lg">
+                We deliver tailored web and digital solutions across diverse industries. 
+                If your sector isn’t listed, our team is ready to understand your requirements 
+                and craft a customized solution for your business.
+            </p>
+        </div>
+
+        <!-- Industries Grid -->
+        <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
+
+            <!-- Industry Card -->
+            <div class="bg-white rounded-xl p-6 text-center shadow-sm hover:shadow-xl transition duration-300 group cursor-pointer">
+                <i class="fas fa-plane text-3xl text-brand-blue mb-4 group-hover:scale-110 transition"></i>
+                <p class="font-semibold text-brand-dark">Travel</p>
+            </div>
+
+            <div class="bg-white rounded-xl p-6 text-center shadow-sm hover:shadow-xl transition duration-300 group cursor-pointer">
+                <i class="fas fa-table-tennis-paddle-ball text-3xl text-brand-blue mb-4 group-hover:scale-110 transition"></i>
+                <p class="font-semibold text-brand-dark">Sports</p>
+            </div>
+
+            <div class="bg-white rounded-xl p-6 text-center shadow-sm hover:shadow-xl transition duration-300 group cursor-pointer">
+                <i class="fas fa-piggy-bank text-3xl text-brand-blue mb-4 group-hover:scale-110 transition"></i>
+                <p class="font-semibold text-brand-dark">Fintech</p>
+            </div>
+
+            <div class="bg-white rounded-xl p-6 text-center shadow-sm hover:shadow-xl transition duration-300 group cursor-pointer">
+                <i class="fas fa-dumbbell text-3xl text-brand-blue mb-4 group-hover:scale-110 transition"></i>
+                <p class="font-semibold text-brand-dark">Fitness</p>
+            </div>
+
+            <div class="bg-white rounded-xl p-6 text-center shadow-sm hover:shadow-xl transition duration-300 group cursor-pointer">
+                <i class="fas fa-graduation-cap text-3xl text-brand-blue mb-4 group-hover:scale-110 transition"></i>
+                <p class="font-semibold text-brand-dark">Education</p>
+            </div>
+
+            <div class="bg-white rounded-xl p-6 text-center shadow-sm hover:shadow-xl transition duration-300 group cursor-pointer">
+                <i class="fas fa-warehouse text-3xl text-brand-blue mb-4 group-hover:scale-110 transition"></i>
+                <p class="font-semibold text-brand-dark">Real Estate</p>
+            </div>
+
+            <div class="bg-white rounded-xl p-6 text-center shadow-sm hover:shadow-xl transition duration-300 group cursor-pointer">
+                <i class="fas fa-store text-3xl text-brand-blue mb-4 group-hover:scale-110 transition"></i>
+                <p class="font-semibold text-brand-dark">Ecommerce</p>
+            </div>
+
+            <div class="bg-white rounded-xl p-6 text-center shadow-sm hover:shadow-xl transition duration-300 group cursor-pointer">
+                <i class="fas fa-briefcase-medical text-3xl text-brand-blue mb-4 group-hover:scale-110 transition"></i>
+                <p class="font-semibold text-brand-dark">Healthcare</p>
+            </div>
+
+            <div class="bg-white rounded-xl p-6 text-center shadow-sm hover:shadow-xl transition duration-300 group cursor-pointer">
+                <i class="fas fa-seedling text-3xl text-brand-blue mb-4 group-hover:scale-110 transition"></i>
+                <p class="font-semibold text-brand-dark">Agriculture</p>
+            </div>
+
+            <div class="bg-white rounded-xl p-6 text-center shadow-sm hover:shadow-xl transition duration-300 group cursor-pointer">
+                <i class="fas fa-microphone-lines text-3xl text-brand-blue mb-4 group-hover:scale-110 transition"></i>
+                <p class="font-semibold text-brand-dark">Media & Entertainment</p>
+            </div>
+
+            <div class="bg-white rounded-xl p-6 text-center shadow-sm hover:shadow-xl transition duration-300 group cursor-pointer">
+                <i class="fas fa-dolly text-3xl text-brand-blue mb-4 group-hover:scale-110 transition"></i>
+                <p class="font-semibold text-brand-dark">Logistics</p>
+            </div>
+
+            <div class="bg-white rounded-xl p-6 text-center shadow-sm hover:shadow-xl transition duration-300 group cursor-pointer">
+                <i class="fas fa-utensils text-3xl text-brand-blue mb-4 group-hover:scale-110 transition"></i>
+                <p class="font-semibold text-brand-dark">Restaurant</p>
+            </div>
+
+            <div class="bg-white rounded-xl p-6 text-center shadow-sm hover:shadow-xl transition duration-300 group cursor-pointer">
+                <i class="fas fa-car text-3xl text-brand-blue mb-4 group-hover:scale-110 transition"></i>
+                <p class="font-semibold text-brand-dark">Automotive</p>
+            </div>
+
+            <div class="bg-white rounded-xl p-6 text-center shadow-sm hover:shadow-xl transition duration-300 group cursor-pointer">
+                <i class="fas fa-building-columns text-3xl text-brand-blue mb-4 group-hover:scale-110 transition"></i>
+                <p class="font-semibold text-brand-dark">Banking</p>
+            </div>
+
+            <div class="bg-white rounded-xl p-6 text-center shadow-sm hover:shadow-xl transition duration-300 group cursor-pointer">
+                <i class="fas fa-file-shield text-3xl text-brand-blue mb-4 group-hover:scale-110 transition"></i>
+                <p class="font-semibold text-brand-dark">Insurance</p>
+            </div>
+
+            <div class="bg-white rounded-xl p-6 text-center shadow-sm hover:shadow-xl transition duration-300 group cursor-pointer">
+                <i class="fas fa-solar-panel text-3xl text-brand-blue mb-4 group-hover:scale-110 transition"></i>
+                <p class="font-semibold text-brand-dark">Renewable Energy</p>
+            </div>
+
+            <div class="bg-white rounded-xl p-6 text-center shadow-sm hover:shadow-xl transition duration-300 group cursor-pointer">
+                <i class="fas fa-gem text-3xl text-brand-blue mb-4 group-hover:scale-110 transition"></i>
+                <p class="font-semibold text-brand-dark">Jewellery & Diamond</p>
+            </div>
+
+            <div class="bg-white rounded-xl p-6 text-center shadow-sm hover:shadow-xl transition duration-300 group cursor-pointer">
+                <i class="fas fa-landmark-dome text-3xl text-brand-blue mb-4 group-hover:scale-110 transition"></i>
+                <p class="font-semibold text-brand-dark">Government & Public Sector</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+         <!-- How Do We Work Section -->
+       <section class="py-24 bg-white">
+    <div class="container mx-auto px-6">
+
+        <!-- Section Header -->
+        <div class="text-center max-w-3xl mx-auto mb-20">
+            <h2 class="text-3xl md:text-4xl font-bold text-brand-dark mb-4">
+                Our Trusted Web Development Process
+            </h2>
+            <div class="w-20 h-1 bg-brand-blue mx-auto mb-6"></div>
+            <p class="text-gray-600 text-lg">
+                We keep things transparent, collaborative, and goal-oriented so you're always 
+                involved as we transform your idea into a powerful digital solution.
+            </p>
+        </div>
+
+        <!-- Timeline -->
+        <div class="relative max-w-4xl mx-auto">
+  
+            <!-- Vertical Line -->
+            <div class="hidden md:block absolute left-1/2 top-0 h-full w-1 bg-blue-100 transform -translate-x-1/2"></div>
+
+            <div class="space-y-16">
+
+                <!-- Step 1 -->
+                <div class="relative md:flex items-center">
+                    <div class="md:w-1/2 md:pr-12 text-center md:text-right">
+                        <h3 class="text-xl font-bold text-brand-blue mb-3">
+                            Discovery & Consultation
+                        </h3>
+                        <p class="text-gray-600">
+                            We begin by understanding your business goals, target users, and 
+                            technical requirements to define the right direction.
+                        </p>
+                    </div>
+
+                    <div class="hidden md:flex absolute left-1/2 transform -translate-x-1/2">
+                        <div class="w-14 h-14 rounded-full bg-brand-blue text-white flex items-center justify-center font-bold text-lg shadow-lg">
+                            1
+                        </div>
+                    </div>
+
+                    <div class="md:w-1/2 md:pl-12"></div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="relative md:flex items-center">
+                    <div class="md:w-1/2 md:pr-12"></div>
+
+                    <div class="hidden md:flex absolute left-1/2 transform -translate-x-1/2">
+                        <div class="w-14 h-14 rounded-full bg-brand-blue text-white flex items-center justify-center font-bold text-lg shadow-lg">
+                            2
+                        </div>
+                    </div>
+
+                    <div class="md:w-1/2 md:pl-12 text-center md:text-left">
+                        <h3 class="text-xl font-bold text-brand-blue mb-3">
+                            Planning & Strategy
+                        </h3>
+                        <p class="text-gray-600">
+                            We define scope, choose the right tech stack, build a roadmap, 
+                            and align timelines to ensure clarity from start to finish.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="relative md:flex items-center">
+                    <div class="md:w-1/2 md:pr-12 text-center md:text-right">
+                        <h3 class="text-xl font-bold text-brand-blue mb-3">
+                            Design & Prototyping
+                        </h3>
+                        <p class="text-gray-600">
+                            Our UI/UX experts create intuitive, user-focused designs and 
+                            interactive prototypes for early feedback and validation.
+                        </p>
+                    </div>
+
+                    <div class="hidden md:flex absolute left-1/2 transform -translate-x-1/2">
+                        <div class="w-14 h-14 rounded-full bg-brand-blue text-white flex items-center justify-center font-bold text-lg shadow-lg">
+                            3
+                        </div>
+                    </div>
+
+                    <div class="md:w-1/2 md:pl-12"></div>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="relative md:flex items-center">
+                    <div class="md:w-1/2 md:pr-12"></div>
+
+                    <div class="hidden md:flex absolute left-1/2 transform -translate-x-1/2">
+                        <div class="w-14 h-14 rounded-full bg-brand-blue text-white flex items-center justify-center font-bold text-lg shadow-lg">
+                            4
+                        </div>
+                    </div>
+
+                    <div class="md:w-1/2 md:pl-12 text-center md:text-left">
+                        <h3 class="text-xl font-bold text-brand-blue mb-3">
+                            Web Development
+                        </h3>
+                        <p class="text-gray-600">
+                            Our developers build scalable, secure solutions using clean code 
+                            and agile methodologies with continuous progress updates.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Step 5 -->
+                <div class="relative md:flex items-center">
+                    <div class="md:w-1/2 md:pr-12 text-center md:text-right">
+                        <h3 class="text-xl font-bold text-brand-blue mb-3">
+                            Testing & QA
+                        </h3>
+                        <p class="text-gray-600">
+                            We conduct thorough cross-browser, device, and performance testing 
+                            to ensure stability, security, and reliability.
+                        </p>
+                    </div>
+
+                    <div class="hidden md:flex absolute left-1/2 transform -translate-x-1/2">
+                        <div class="w-14 h-14 rounded-full bg-brand-blue text-white flex items-center justify-center font-bold text-lg shadow-lg">
+                            5
+                        </div>
+                    </div>
+
+                    <div class="md:w-1/2 md:pl-12"></div>
+                </div>
+
+                <!-- Step 6 -->
+                <div class="relative md:flex items-center">
+                    <div class="md:w-1/2 md:pr-12"></div>
+
+                    <div class="hidden md:flex absolute left-1/2 transform -translate-x-1/2">
+                        <div class="w-14 h-14 rounded-full bg-brand-blue text-white flex items-center justify-center font-bold text-lg shadow-lg">
+                            6
+                        </div>
+                    </div>
+
+                    <div class="md:w-1/2 md:pl-12 text-center md:text-left">
+                        <h3 class="text-xl font-bold text-brand-blue mb-3">
+                            Launch & Ongoing Support
+                        </h3>
+                        <p class="text-gray-600">
+                            We deploy securely and provide continuous maintenance, support, 
+                            and improvements as your business scales.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+
+           <!-- Cloud & DevOps Section -->
+     <section class="py-24 bg-gray-50">
+    <div class="container mx-auto px-6">
+
+        <!-- Section Header -->
+        <div class="text-center max-w-3xl mx-auto mb-20">
+            <h2 class="text-3xl md:text-4xl font-bold text-brand-dark mb-4">
+                Our Cloud & DevOps Services
+            </h2>
+            <div class="w-20 h-1 bg-brand-blue mx-auto mb-6"></div>
+            <p class="text-gray-600 text-lg">
+                We provide end-to-end cloud and DevOps solutions to help you scale, automate, 
+                and maintain high-performing infrastructure.
+            </p>
+        </div>
+
+        <!-- Services Grid -->
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
+
+            <!-- Service Card -->
+            <div class="bg-white rounded-xl p-8 shadow-sm hover:shadow-xl transition duration-300">
+                <h3 class="text-lg font-bold text-brand-blue mb-3">
+                    Cloud Infrastructure Setup
+                </h3>
+                <p class="text-gray-600 text-sm leading-relaxed">
+                    Design and implement scalable, secure cloud architectures on AWS, Azure, 
+                    or Google Cloud tailored to your business needs.
+                </p>
+            </div>
+
+            <div class="bg-white rounded-xl p-8 shadow-sm hover:shadow-xl transition duration-300">
+                <h3 class="text-lg font-bold text-brand-blue mb-3">
+                    DevOps Consulting Services
+                </h3>
+                <p class="text-gray-600 text-sm leading-relaxed">
+                    Identify bottlenecks, optimize workflows, and create a DevOps roadmap 
+                    that aligns with your business goals and team scalability.
+                </p>
+            </div>
+
+            <div class="bg-white rounded-xl p-8 shadow-sm hover:shadow-xl transition duration-300">
+                <h3 class="text-lg font-bold text-brand-blue mb-3">
+                    CI/CD Pipeline Implementation
+                </h3>
+                <p class="text-gray-600 text-sm leading-relaxed">
+                    Accelerate releases with automated pipelines that reduce manual effort, 
+                    minimize errors, and improve deployment reliability.
+                </p>
+            </div>
+
+            <div class="bg-white rounded-xl p-8 shadow-sm hover:shadow-xl transition duration-300">
+                <h3 class="text-lg font-bold text-brand-blue mb-3">
+                    Cloud Migration
+                </h3>
+                <p class="text-gray-600 text-sm leading-relaxed">
+                    Seamlessly migrate applications, workloads, and data to the cloud 
+                    with minimal downtime and zero disruption.
+                </p>
+            </div>
+
+            <div class="bg-white rounded-xl p-8 shadow-sm hover:shadow-xl transition duration-300">
+                <h3 class="text-lg font-bold text-brand-blue mb-3">
+                    Infrastructure as Code (IaC)
+                </h3>
+                <p class="text-gray-600 text-sm leading-relaxed">
+                    Manage infrastructure through code for greater consistency, 
+                    faster deployments, and simplified rollback processes.
+                </p>
+            </div>
+
+            <div class="bg-white rounded-xl p-8 shadow-sm hover:shadow-xl transition duration-300">
+                <h3 class="text-lg font-bold text-brand-blue mb-3">
+                    Microservices Architecture
+                </h3>
+                <p class="text-gray-600 text-sm leading-relaxed">
+                    Build flexible, scalable systems by breaking large applications 
+                    into manageable and independent microservices.
+                </p>
+            </div>
+
+            <div class="bg-white rounded-xl p-8 shadow-sm hover:shadow-xl transition duration-300">
+                <h3 class="text-lg font-bold text-brand-blue mb-3">
+                    DevSecOps Services
+                </h3>
+                <p class="text-gray-600 text-sm leading-relaxed">
+                    Integrate security into every development stage to reduce risks, 
+                    ensure compliance, and strengthen system resilience.
+                </p>
+            </div>
+
+            <div class="bg-white rounded-xl p-8 shadow-sm hover:shadow-xl transition duration-300">
+                <h3 class="text-lg font-bold text-brand-blue mb-3">
+                    Monitoring & Performance Optimization
+                </h3>
+                <p class="text-gray-600 text-sm leading-relaxed">
+                    Monitor system health, detect issues early, and optimize performance 
+                    to ensure smooth operation even during peak demand.
+                </p>
+            </div>
+
+            <div class="bg-white rounded-xl p-8 shadow-sm hover:shadow-xl transition duration-300">
+                <h3 class="text-lg font-bold text-brand-blue mb-3">
+                    Security & Compliance
+                </h3>
+                <p class="text-gray-600 text-sm leading-relaxed">
+                    Implement strong access controls, data protection strategies, 
+                    and compliance frameworks to safeguard your infrastructure.
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+    
+
+        <!--  Important for Your Business -->
+      <section class="py-24 bg-white">
+    <div class="container mx-auto px-6">
+
+        <!-- Section Header -->
+        <div class="text-center max-w-3xl mx-auto mb-20">
+            <h2 class="text-3xl md:text-4xl font-bold text-brand-dark mb-4">
+                Why Cloud & DevOps Services Matter for Your Business
+            </h2>
+            <div class="w-20 h-1 bg-brand-blue mx-auto mb-6"></div>
+            <p class="text-gray-600 text-lg">
+                Modern businesses need systems that are fast, flexible, and reliable. 
+                Here’s how Cloud and DevOps create measurable business impact.
+            </p>
+        </div>
+
+        <!-- Benefits Grid -->
+        <div class="grid md:grid-cols-2 gap-10 max-w-5xl mx-auto">
+
+            <!-- Card -->
+            <div class="bg-gray-50 p-8 rounded-xl shadow-sm hover:shadow-lg transition duration-300">
+                <h3 class="text-xl font-bold text-brand-blue mb-3">
+                    Faster Time to Market
+                </h3>
+                <p class="text-gray-600 leading-relaxed">
+                    Automated workflows and CI/CD pipelines help you release updates 
+                    quickly and consistently, keeping you ahead of competitors.
+                </p>
+            </div>
+
+            <div class="bg-gray-50 p-8 rounded-xl shadow-sm hover:shadow-lg transition duration-300">
+                <h3 class="text-xl font-bold text-brand-blue mb-3">
+                    Better System Reliability
+                </h3>
+                <p class="text-gray-600 leading-relaxed">
+                    Monitoring, automation, and resilient cloud infrastructure ensure 
+                    stability—even during high traffic or unexpected demand spikes.
+                </p>
+            </div>
+
+            <div class="bg-gray-50 p-8 rounded-xl shadow-sm hover:shadow-lg transition duration-300">
+                <h3 class="text-xl font-bold text-brand-blue mb-3">
+                    Scalability Made Simple
+                </h3>
+                <p class="text-gray-600 leading-relaxed">
+                    Scale applications up or down based on demand without wasting 
+                    resources or compromising performance.
+                </p>
+            </div>
+
+            <div class="bg-gray-50 p-8 rounded-xl shadow-sm hover:shadow-lg transition duration-300">
+                <h3 class="text-xl font-bold text-brand-blue mb-3">
+                    Built-In Security
+                </h3>
+                <p class="text-gray-600 leading-relaxed">
+                    DevSecOps integrates security at every stage, helping prevent 
+                    vulnerabilities and maintain compliance from day one.
+                </p>
+            </div>
+
+            <div class="bg-gray-50 p-8 rounded-xl shadow-sm hover:shadow-lg transition duration-300">
+                <h3 class="text-xl font-bold text-brand-blue mb-3">
+                    Long-Term Cost Efficiency
+                </h3>
+                <p class="text-gray-600 leading-relaxed">
+                    Automation and optimized infrastructure reduce manual effort, 
+                    minimize errors, and lower operational costs.
+                </p>
+            </div>
+
+            <div class="bg-gray-50 p-8 rounded-xl shadow-sm hover:shadow-lg transition duration-300">
+                <h3 class="text-xl font-bold text-brand-blue mb-3">
+                    Improved Team Collaboration
+                </h3>
+                <p class="text-gray-600 leading-relaxed">
+                    DevOps fosters collaboration between development and operations, 
+                    improving communication and accelerating problem resolution.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<section class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-6">
+        
+        <!-- Section Header -->
+        <div class="text-center mb-14">
+            <h2 class="text-3xl md:text-4xl font-bold text-blue-900">
+                Key Insights From Our Cloud Experts
+            </h2>
+            <p class="text-gray-600 mt-4 text-sm md:text-base max-w-2xl mx-auto">
+                Explore expert insights, practical strategies, and real-world guidance on Cloud, DevOps, and modern application development.
+            </p>
+        </div>
+
+        <!-- Blog Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+            <!-- Blog Card 1 -->
+            <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition duration-300 overflow-hidden group">
+                <div class="h-52 overflow-hidden">
+                    <img src="images/software-deployment.webp" 
+                         alt="Software Deployment" 
+                         class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                </div>
+                <div class="p-6">
+                    <h3 class="font-bold text-lg text-blue-900 mb-2">
+                        What is Software Deployment? Meaning, Process & Examples
+                    </h3>
+                    <p class="text-gray-500 text-sm">
+                        January 23, 2026 • 15 min read
+                    </p>
+                </div>
+            </div>
+
+            <!-- Blog Card 2 -->
+            <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition duration-300 overflow-hidden group">
+                <div class="h-52 overflow-hidden">
+                    <img src="images/devops-concept.webp" 
+                         alt="DevOps Concept" 
+                         class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                </div>
+                <div class="p-6">
+                    <h3 class="font-bold text-lg text-blue-900 mb-2">
+                        Top DevOps Challenges & Solutions for Successful Implementation
+                    </h3>
+                    <p class="text-gray-500 text-sm">
+                        January 30, 2026 • 10 min read
+                    </p>
+                </div>
+            </div>
+
+            <!-- Blog Card 3 -->
+            <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition duration-300 overflow-hidden group">
+                <div class="h-52 overflow-hidden">
+                    <img src="images/desktop-development.webp" 
+                         alt="Desktop Application Development" 
+                         class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                </div>
+                <div class="p-6">
+                    <h3 class="font-bold text-lg text-blue-900 mb-2">
+                        Is Desktop Application Development Still Relevant in a Cloud-First World?
+                    </h3>
+                    <p class="text-gray-500 text-sm">
+                        January 9, 2026 • 8 min read
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- CTA Button -->
+        <div class="mt-14 text-center">
+            <a href="blog.html" 
+               class="inline-block bg-blue-900 text-white px-8 py-3 rounded-full font-medium hover:bg-blue-700 transition duration-300">
+                Explore More Articles
+            </a>
+        </div>
+
+    </div>
+</section>
+
+    </main>
+
+
+           <!-- FOOTER -->
+<footer class="bg-[#0f172a] text-gray-300">
+  <div class="max-w-7xl mx-auto px-6 py-14 grid grid-cols-1 md:grid-cols-4 gap-10">
+
+    <!-- Brand -->
+    <div>
+      <div class="flex items-center gap-2 mb-4">
+        <div class="w-9 h-9 bg-blue-600 rounded-md shadow-lg"></div>
+        <span class="text-2xl font-semibold text-white tracking-wide">Heryatech</span>
+      </div>
+      <p class="text-gray-400 text-sm leading-relaxed">
+        Step-up progress by uniting people, business & technology
+      </p>
+    </div>
+
+    <!-- Company -->
+    <div>
+      <h4 class="font-semibold text-white mb-4">Company</h4>
+      <ul class="space-y-3 text-sm">
+        <li><a class="footer-link">Contact Us</a></li>
+        <li><a class="footer-link">About Us</a></li>
+        <li><a class="footer-link">Join Team</a></li>
+        <li><a class="footer-link">Gallery</a></li>
+        <li><a class="footer-link">Blogs</a></li>
+      </ul>
+    </div>
+     
+    <!-- Legal -->
+    <div>
+      <h4 class="font-semibold text-white mb-4">Legal</h4>
+      <ul class="space-y-3 text-sm">
+        <li><a class="footer-link">Privacy Policy</a></li>
+        <li><a class="footer-link">Cookie Policy</a></li>
+        <li><a class="footer-link">Terms of Use</a></li>
+      </ul>
+    </div>
+
+    <!-- Locations -->
+    <div>
+      <h4 class="font-semibold text-white mb-4">Locations</h4>
+      <ul class="space-y-4 text-sm">
+        <li class="flex items-center gap-2 hover:text-blue-400 transition">
+          🇮🇳 <span> India</span>
+        </li>
+        <li class="flex items-center gap-2 hover:text-blue-400 transition">
+          🇺🇸 <span>United States</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Bottom Bar -->
+  <div class="border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-6 py-5 flex flex-col md:flex-row items-center justify-between gap-4">
+
+      <p class="text-gray-400 text-sm">
+        © <span id="year"></span> Heryatech Consultancy Private Limited
+      </p>
+
+      <!-- Social Icons -->
+      <div class="flex items-center gap-5 text-lg">
+        <a class="social-whatsapp"><i class="fab fa-whatsapp"></i></a>
+        <a class="social-facebook"><i class="fab fa-facebook-f"></i></a>
+        <a class="social-instagram"><i class="fab fa-instagram"></i></a>
+        <a class="social-linkedin"><i class="fab fa-linkedin-in"></i></a>
+        <a class="social-twitter"><i class="fab fa-x-twitter"></i></a>
+        <a class="social-youtube"><i class="fab fa-youtube"></i></a>
+      </div>
+
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Set current year in footer
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
